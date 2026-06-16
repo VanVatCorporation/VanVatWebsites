@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active Learning Streak Mode</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="manifest"
+    href="https://www.vanvatcorp.com/FullyPublic/progressive-web-apps/manifests/van-vat-study/timing-quiz.json">
+
+  <link href="https://academy.vanvatcorp.com/active-learning/multiple-choice-learning/scripts/streak-shake.css"
+    rel="stylesheet" />
+
+</head>
+
+<body id="body" class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow fixed top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
+      <div class="flex items-center space-x-2">
+        <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" class="h-10 w-10" alt="logo">
+        <span class="font-bold text-xl text-blue-700">Active Learning Test</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🧠 MAIN QUIZ AREA -->
+  <main class="flex-grow flex flex-col items-center justify-center py-10 px-4">
+
+
+    <button onclick="location.href='https://donate.vanvatcorp.com/donate/method';"
+      class="relative group bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-3 rounded-lg font-semibold overflow-hidden transition-all duration-300 shadow-lg mb-4">
+      <span class="relative z-10">💖 Đóng góp duy trì (Donate)</span>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-500">
+      </div>
+      <div class="absolute inset-0 border border-blue-300 opacity-0 group-hover:opacity-100 rounded-lg animate-pulse">
+      </div>
+    </button>
+
+
+
+
+
+    <!-- Progress Bar -->
+    <div class="w-full max-w-2xl mb-4 relative">
+      <div class="w-full bg-gray-300 h-3 rounded-full overflow-hidden">
+        <div id="progress-bar" class="h-3 bg-blue-600 rounded-full transition-all duration-300"></div>
+      </div>
+      <div id="progress-text" class="text-right text-sm text-gray-600 mt-1"></div>
+      <canvas id="progress-particles" class="absolute top-0 left-0 w-full h-3 pointer-events-none"></canvas>
+    </div>
+
+    <!-- Streak Display -->
+    <div id="streak-display" class="text-2xl font-semibold text-blue-700 mb-6">
+      🔥 Streak: -
+    </div>
+
+
+    <!-- Timer Bar -->
+    <div class="w-full max-w-2xl mb-4">
+      <div class="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
+        <div id="timer-bar" class="h-2 bg-red-500 rounded-full transition-all duration-100 linear" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Question Container -->
+    <div id="question-container"
+      class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg transition-transform duration-500 ease-in-out">
+      <!-- Question and choices injected here -->
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">
+        © 2026 Tập đoàn Vạn Vật. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a aria-label="Privacy Policy" class="hover:text-white" href="https://www.vanvatcorp.com/privacy-policy">
+          Privacy Policy
+        </a>
+        <a aria-label="Terms of Service" class="hover:text-white" href="https://www.vanvatcorp.com/terms-of-service">
+          Terms of Service
+        </a>
+        <a aria-label="Sitemap" class="hover:text-white" href="/van-vat-corporation/sitemap/">
+          Sitemap
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!-- Confetti canvas 
+  <canvas id="confetti-canvas" class="fixed top-0 left-0 w-full h-full pointer-events-none"></canvas>
+-->
+
+
+  <!-- Confetti lib -->
+  <script src="https://www.vanvatcorp.com/public-res/libraries/confetti-lib.js"></script>
+
+
+  <script src="https://academy.vanvatcorp.com/active-learning/multiple-choice-learning/scripts/utils.js"></script>
+
+  <script
+    src="https://academy.vanvatcorp.com/active-learning/multiple-choice-learning/scripts/confetti-celebrate.js"></script>
+
+  <script
+    src="https://academy.vanvatcorp.com/active-learning/multiple-choice-learning/timing-quiz-mode/testHandler.js"></script>
+
+  <!-- Dynamic Auth Navbar - will be populated by auth-navbar.js -->
+  <div class="hidden md:flex" id="auth-navbar-placeholder">
+    <!-- Auth navbar will be inserted here dynamically -->
+</body>
+
+</html>

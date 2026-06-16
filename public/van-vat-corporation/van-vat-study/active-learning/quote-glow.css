@@ -1,0 +1,15 @@
+    /* Glowing pulse effect for lightbulb */
+    @keyframes glowPulse {
+      0%, 100% {
+        text-shadow: 0 0 5px rgba(251, 191, 36, 0.6), 0 0 10px rgba(251, 191, 36, 0.4);
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(251, 191, 36, 0.9), 0 0 30px rgba(251, 191, 36, 0.7);
+        transform: scale(1.2);
+      }
+    }
+
+    .glow {
+      animation: glowPulse 1.5s ease-in-out;
+    

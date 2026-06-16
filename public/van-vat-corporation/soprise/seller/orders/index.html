@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soprise Kênh Người Bán — Quản lý đơn hàng</title>
+    <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="/seller/dashboard/style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Top bar -->
+    <header class="dash-topbar">
+        <a class="dash-logo" href="/">
+            <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" alt="Soprise" />
+            <span class="dash-logo-text">Sop<span>rise</span></span>
+            <span class="dash-logo-sub">Kênh Người Bán</span>
+        </a>
+        <div class="dash-topbar-right">
+            <button class="dash-topbar-btn" title="Tải xuống"><i class="fas fa-download"></i></button>
+            <button class="dash-topbar-btn dash-notif" title="Thông báo">
+                <i class="fas fa-bell"></i>
+                <span class="dash-notif-badge">5</span>
+            </button>
+            <button class="dash-topbar-btn" title="Trung tâm hỗ trợ"><i class="fas fa-headset"></i></button>
+            <button class="dash-user-btn" id="user-btn">
+                <div class="dash-avatar">V</div>
+                vavastore1234
+                <i class="fas fa-chevron-down" style="font-size:10px;opacity:.7"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="dash-body">
+
+        <!-- Sidebar -->
+        <aside class="dash-sidebar">
+            <div class="sidebar-store">
+                <div class="store-avatar">V</div>
+                <div>
+                    <div class="store-info-name">vavastore1234</div>
+                    <div class="store-info-status"><span class="status-dot"></span> Đang hoạt động</div>
+                </div>
+            </div>
+            <nav class="sidebar-nav" id="sidebar-nav">
+                <div class="sidebar-group">
+                    <a class="sidebar-link" href="/seller/dashboard" style="padding-left:16px;font-weight:600">
+                        <i class="fas fa-th-large"></i> Tổng quan
+                    </a>
+                </div>
+                <div class="sidebar-group" data-group="orders">
+                    <button class="sidebar-group-btn open" aria-expanded="true">
+                        <span class="group-left"><i class="fas fa-box"></i> Đơn hàng</span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children open">
+                        <a class="sidebar-link active" href="index.html">Tất cả đơn <span
+                                class="sidebar-badge">3</span></a>
+                        <a class="sidebar-link" href="#">Chờ xác nhận</a>
+                        <a class="sidebar-link" href="#">Chờ lấy hàng</a>
+                        <a class="sidebar-link" href="#">Đang giao</a>
+                        <a class="sidebar-link" href="#">Hoàn trả / Huỷ</a>
+                        <a class="sidebar-link" href="#">Cài đặt vận chuyển</a>
+                    </div>
+                </div>
+                <div class="sidebar-group" data-group="products">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left"><i class="fas fa-tags"></i> Sản phẩm</span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="../products/index.html">Tất cả sản phẩm</a>
+                        <a class="sidebar-link" href="../products/add.html">Thêm sản phẩm</a>
+                        <a class="sidebar-link" href="#">Cần bổ sung hàng</a>
+                        <a class="sidebar-link" href="#">Tối ưu AI <span class="sidebar-badge"
+                                style="background:var(--green)">Mới</span></a>
+                    </div>
+                </div>
+                <div class="sidebar-group" data-group="marketing">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left"><i class="fas fa-bullhorn"></i> Marketing</span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Quảng cáo</a>
+                        <a class="sidebar-link" href="#">Flash Sale</a>
+                        <a class="sidebar-link" href="#">Mã giảm giá</a>
+                        <a class="sidebar-link" href="#">Live & Video</a>
+                    </div>
+                </div>
+                <div class="sidebar-group" data-group="analytics">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left"><i class="fas fa-chart-line"></i> Phân tích</span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Phân tích bán hàng</a>
+                        <a class="sidebar-link" href="#">Hiệu suất sản phẩm</a>
+                        <a class="sidebar-link" href="#">Khách hàng</a>
+                    </div>
+                </div>
+                <div class="sidebar-group" data-group="finance">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left"><i class="fas fa-wallet"></i> Tài chính</span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Số dư tài khoản</a>
+                        <a class="sidebar-link" href="#">Lịch sử giao dịch</a>
+                        <a class="sidebar-link" href="#">Phí dịch vụ</a>
+                    </div>
+                </div>
+                <div class="sidebar-group" data-group="settings">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left"><i class="fas fa-cog"></i> Cài đặt</span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Hồ sơ gian hàng</a>
+                        <a class="sidebar-link" href="#">Thiết lập shop</a>
+                        <a class="sidebar-link" href="#">Tài khoản phụ</a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="dash-content">
+
+            <!-- Page top -->
+            <div class="page-topbar">
+                <div class="breadcrumb">
+                    <a href="../dashboard.html">Trang chủ</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span class="breadcrumb-current">Quản lý đơn hàng</span>
+                </div>
+                <div class="page-actions">
+                    <button class="btn-outline" id="btn-export">
+                        <i class="fas fa-file-export"></i> Xuất
+                    </button>
+                    <button class="btn-outline" id="btn-export-history">
+                        <i class="fas fa-history"></i> Lịch sử xuất báo cáo
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bulk action bar -->
+            <div class="bulk-bar" id="bulk-bar">
+                <span class="bulk-bar-count" id="bulk-count">0 đơn được chọn</span>
+                <button class="bulk-btn" id="bulk-ship-all">
+                    <i class="fas fa-truck"></i> Giao hàng loạt
+                </button>
+                <button class="bulk-btn" id="bulk-cancel">
+                    <i class="fas fa-times"></i> Huỷ đơn
+                </button>
+                <button class="bulk-btn" id="bulk-clear" style="margin-left:auto">
+                    <i class="fas fa-times-circle"></i> Bỏ chọn
+                </button>
+            </div>
+
+            <!-- Status tabs -->
+            <div class="order-tabs" id="order-tabs" role="tablist"></div>
+
+            <!-- Filter panel -->
+            <div class="filter-panel">
+                <div class="filter-chip-group">
+                    <span class="filter-chip-label">Trạng thái:</span>
+                    <button class="filter-chip active" data-proc="all">Tất cả</button>
+                    <button class="filter-chip" data-proc="unprocessed">Chưa xử lý</button>
+                    <button class="filter-chip" data-proc="processed">Đã xử lý</button>
+                </div>
+                <div class="filter-divider"></div>
+                <div class="filter-search-wrap">
+                    <div class="filter-select-wrap">
+                        <select class="filter-select" id="filter-field">
+                            <option value="code">Mã đơn hàng</option>
+                            <option value="product">Tên sản phẩm</option>
+                            <option value="buyer">Người mua</option>
+                        </select>
+                    </div>
+                    <div class="filter-input-wrap">
+                        <i class="fas fa-search filter-search-icon"></i>
+                        <input class="filter-search" id="filter-search" type="text" placeholder="Nhập để tìm kiếm..." />
+                    </div>
+                    <div class="filter-select-wrap">
+                        <select class="filter-select" id="filter-shipping">
+                            <option value="all">Tất cả ĐVVC</option>
+                            <option value="GHTK">GHTK</option>
+                            <option value="GHN">GHN</option>
+                            <option value="VNPT">VNPT</option>
+                            <option value="JT">J&T Express</option>
+                            <option value="Viettel">Viettel Post</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-action-btns">
+                    <button class="btn-reset" id="btn-reset">Đặt lại</button>
+                    <button class="btn-apply" id="btn-apply">Áp dụng</button>
+                </div>
+            </div>
+
+            <!-- Sort row -->
+            <div class="sort-row">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                    <span class="sort-label">Sắp xếp:</span>
+                    <button class="sort-btn active" data-sort="deadline">Hạn gửi hàng (Xa – Gần)</button>
+                    <button class="sort-btn" data-sort="newest">Mới nhất</button>
+                    <button class="sort-btn" data-sort="amount-desc">Giá trị cao nhất</button>
+                </div>
+                <button class="bulk-ship-btn" id="btn-bulk-ship">
+                    <i class="fas fa-truck"></i> Giao hàng loạt
+                </button>
+            </div>
+
+            <!-- Orders table -->
+            <div class="orders-table-wrap">
+                <table class="orders-table" id="orders-table">
+                    <thead>
+                        <tr>
+                            <th style="width:36px">
+                                <input type="checkbox" class="row-check" id="check-all" aria-label="Chọn tất cả" />
+                            </th>
+                            <th>Sản phẩm / Mã đơn</th>
+                            <th>Tổng tiền</th>
+                            <th class="center">Trạng thái</th>
+                            <th class="center">Đếm ngược</th>
+                            <th>ĐVVC</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-tbody"></tbody>
+                </table>
+                <div class="orders-empty" id="orders-empty">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>Không tìm thấy đơn hàng nào</p>
+                    <span>Thử thay đổi bộ lọc hoặc tìm kiếm với từ khóa khác</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="toast" role="alert" aria-live="polite"></div>
+    <script src="/seller/dashboard/scripts.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

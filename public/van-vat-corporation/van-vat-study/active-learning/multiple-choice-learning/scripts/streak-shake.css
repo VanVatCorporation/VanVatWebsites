@@ -1,0 +1,23 @@
+@keyframes shake-horizontal {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-25px, 0); }
+  40% { transform: translate(25px, 0); }
+  60% { transform: translate(-15px, 0); }
+  80% { transform: translate(15px, 0); }
+}
+
+@keyframes shake-incline {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-25deg); }
+  40% { transform: rotate(25deg); }
+  60% { transform: rotate(-15deg); }
+  80% { transform: rotate(15deg); }
+}
+
+.streak-shake {
+  animation: shake-incline 0.5s ease;
+}
+
+.incorrect-shake {
+  animation: shake-horizontal 0.5s ease;
+}

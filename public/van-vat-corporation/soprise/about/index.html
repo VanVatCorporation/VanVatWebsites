@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Soprise — Vươn lên cùng bạn</title>
+
+    <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+    <meta content="Soprise" property="og:title" />
+    <meta content="Sàn thương mại công bằng — nơi người bán vươn lên, người mua tin tưởng." property="og:description" />
+    <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+    <meta content="https://www.vanvatcorp.com" property="og:url" />
+    <meta content="website" property="og:type" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+
+    <link href="style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════
+         NAVBAR
+    ════════════════════════════════════ -->
+    <nav id="main-nav" role="navigation" aria-label="Điều hướng chính">
+        <div class="nav-inner">
+            <a class="nav-logo" href="https://www.vanvatcorp.com/">
+                <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" alt="Logo Tập đoàn Vạn Vật" />
+                <span class="nav-brand">Sop<span>rise</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#value">Tính năng</a></li>
+                <li><a href="#seller-story">Vì sao chọn Soprise</a></li>
+                <li><a href="#how-it-works">Cách hoạt động</a></li>
+                <li><a href="#testimonials">Đánh giá</a></li>
+                <li><a class="nav-cta" href="#final-cta">Bắt đầu bán</a></li>
+            </ul>
+            <button class="nav-hamburger" id="hamburger-btn" aria-label="Mở menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" role="menu">
+            <a href="#value">Tính năng</a>
+            <a href="#seller-story">Vì sao chọn Soprise</a>
+            <a href="#how-it-works">Cách hoạt động</a>
+            <a href="#testimonials">Đánh giá</a>
+            <a href="#final-cta" style="color: var(--blue); font-weight: 700;">Bắt đầu bán ngay →</a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════
+         HERO
+    ════════════════════════════════════ -->
+    <section id="hero" aria-label="Giới thiệu Soprise">
+        <div class="hero-glow-1" aria-hidden="true"></div>
+        <div class="hero-glow-2" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge" aria-label="Trạng thái">
+                <span class="hero-badge-dot" aria-hidden="true"></span>
+                Sàn thương mại đang mở cho người bán
+            </div>
+
+            <h1 class="hero-title">
+                Soprise —<br>
+                <span class="hero-title-accent">Vươn lên cùng bạn</span>
+            </h1>
+
+            <p class="hero-tagline">Sàn thương mại công bằng từ Vạn Vật</p>
+
+            <p class="hero-sub">
+                Chúng tôi tin rằng người bán xứng đáng được đối xử công bằng.
+                Không phí ẩn, không bất ngờ — chỉ có tăng trưởng thật sự.
+            </p>
+
+            <div class="hero-cta-row">
+                <a class="btn-primary" href="#final-cta">
+                    <i class="fas fa-store" aria-hidden="true"></i>
+                    Đăng ký bán hàng
+                </a>
+                <a class="btn-ghost" href="#value">
+                    <i class="fas fa-play-circle" aria-hidden="true"></i>
+                    Khám phá thêm
+                </a>
+            </div>
+
+            <div class="hero-stats" aria-label="Thống kê">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">0%<span>*</span></div>
+                    <div class="hero-stat-label">Phí ẩn cho người bán</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number"><span>+</span>500</div>
+                    <div class="hero-stat-label">Danh mục sản phẩm</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number"><span>24</span>/7</div>
+                    <div class="hero-stat-label">Hỗ trợ người bán</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100<span>%</span></div>
+                    <div class="hero-stat-label">Minh bạch phí dịch vụ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         VALUE PROPS
+    ════════════════════════════════════ -->
+    <section id="value" aria-label="Tính năng nổi bật">
+        <div class="section-container" style="padding-top: 88px; padding-bottom: 88px;">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Tính năng</span>
+                <h2 class="section-title">Mọi thứ bạn cần để vươn lên</h2>
+                <p class="section-subtitle">
+                    Soprise được xây dựng từ đầu với mục tiêu giúp cả người bán lẫn người mua đều thắng.
+                </p>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-card reveal reveal-delay-1">
+                    <div class="value-icon"><i class="fas fa-hand-holding-usd" aria-hidden="true"></i></div>
+                    <h3 class="value-title">Phí minh bạch, không ẩn</h3>
+                    <p class="value-desc">
+                        Mọi khoản phí đều được công khai rõ ràng trước khi bạn đăng ký.
+                        Không có điều khoản mập mờ, không có phí bất ngờ sau khi bạn đã đầu tư.
+                    </p>
+                </div>
+                <div class="value-card reveal reveal-delay-2">
+                    <div class="value-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                    <h3 class="value-title">Công cụ tăng trưởng thật sự</h3>
+                    <p class="value-desc">
+                        Phân tích bán hàng chi tiết, gợi ý tối ưu sản phẩm và hỗ trợ tiếp thị —
+                        tất cả để giúp gian hàng của bạn phát triển bền vững.
+                    </p>
+                </div>
+                <div class="value-card reveal reveal-delay-3">
+                    <div class="value-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                    <h3 class="value-title">Bảo vệ người mua &amp; người bán</h3>
+                    <p class="value-desc">
+                        Hệ thống đánh giá trung thực, chính sách hoàn trả công bằng, và đội ngũ
+                        hỗ trợ tranh chấp đứng ra làm trọng tài — không thiên vị bên nào.
+                    </p>
+                </div>
+                <div class="value-card reveal reveal-delay-1">
+                    <div class="value-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+                    <h3 class="value-title">Hỗ trợ 24/7 cho người bán</h3>
+                    <p class="value-desc">
+                        Đội ngũ hỗ trợ chuyên biệt cho người bán, không phải chatbot chung chung.
+                        Vấn đề thật sự được giải quyết bởi con người thật sự.
+                    </p>
+                </div>
+                <div class="value-card reveal reveal-delay-2">
+                    <div class="value-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+                    <h3 class="value-title">Lên sàn nhanh chóng</h3>
+                    <p class="value-desc">
+                        Từ đăng ký đến gian hàng hoạt động chỉ trong 30 phút.
+                        Giao diện quản lý đơn giản, phù hợp ngay cả với người bán lần đầu.
+                    </p>
+                </div>
+                <div class="value-card reveal reveal-delay-3">
+                    <div class="value-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                    <h3 class="value-title">Cộng đồng người bán</h3>
+                    <p class="value-desc">
+                        Tham gia cộng đồng người bán Soprise — chia sẻ kinh nghiệm,
+                        học hỏi chiến lược và cùng nhau phát triển.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════
+         SELLER STORY
+    ════════════════════════════════════ -->
+    <section id="seller-story" aria-label="Vì sao chọn Soprise">
+        <div class="section-container" style="padding-top: 88px; padding-bottom: 88px;">
+            <div class="story-grid">
+                <!-- Left: text -->
+                <div class="story-text-block reveal">
+                    <span class="story-label">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                        Câu chuyện của chúng tôi
+                    </span>
+                    <h2 class="story-heading">
+                        Người bán xứng đáng được đối xử tốt hơn.
+                    </h2>
+                    <p class="story-body">
+                        Chúng tôi thấy điều gì đó không ổn trên thị trường thương mại điện tử hiện nay.
+                        Các sàn lớn ban đầu hứa hẹn công bằng với người bán — rồi từng bước tăng phí,
+                        đổ ưu đãi về phía người mua, và bỏ mặc những người đã dày công xây dựng sản phẩm.
+                    </p>
+                    <p class="story-body">
+                        Soprise được lập ra với một cam kết: <strong>không bao giờ đổi phe.</strong>
+                        Khi người bán thịnh vượng, người mua tìm được nhiều hàng tốt hơn —
+                        và cả hai cùng thắng.
+                    </p>
+                    <div class="story-callout">
+                        Soprise cam kết <em>không tăng phí hoa hồng quá 15%</em> trong 3 năm đầu hoạt động,
+                        và mọi thay đổi phí sẽ thông báo trước <em>ít nhất 60 ngày</em>.
+                    </div>
+                </div>
+
+                <!-- Right: comparison table -->
+                <div class="reveal reveal-delay-2">
+                    <div class="compare-card">
+                        <div class="compare-header">
+                            <div class="compare-header-cell" style="text-align:left;">Tiêu chí</div>
+                            <div class="compare-header-cell brand">Sàn khác</div>
+                            <div class="compare-header-cell brand soprise">Soprise</div>
+                        </div>
+                        <div class="compare-row">
+                            <div class="compare-cell label">Phí hoa hồng</div>
+                            <div class="compare-cell"><span class="bad">✗</span> Ngày càng tăng</div>
+                            <div class="compare-cell"><span class="good">✓</span> Cố định, rõ ràng</div>
+                        </div>
+                        <div class="compare-row">
+                            <div class="compare-cell label">Phí ẩn</div>
+                            <div class="compare-cell"><span class="bad">✗</span> Nhiều khoản ẩn</div>
+                            <div class="compare-cell"><span class="good">✓</span> Không có</div>
+                        </div>
+                        <div class="compare-row">
+                            <div class="compare-cell label">Hỗ trợ người bán</div>
+                            <div class="compare-cell"><span class="mid">~</span> Hạn chế</div>
+                            <div class="compare-cell"><span class="good">✓</span> Chuyên biệt 24/7</div>
+                        </div>
+                        <div class="compare-row">
+                            <div class="compare-cell label">Ưu đãi người mua</div>
+                            <div class="compare-cell"><span class="good">✓</span> Nhiều</div>
+                            <div class="compare-cell"><span class="good">✓</span> Nhiều</div>
+                        </div>
+                        <div class="compare-row">
+                            <div class="compare-cell label">Thay đổi chính sách</div>
+                            <div class="compare-cell"><span class="bad">✗</span> Không báo trước</div>
+                            <div class="compare-cell"><span class="good">✓</span> Báo trước 60 ngày</div>
+                        </div>
+                        <div class="compare-row">
+                            <div class="compare-cell label">Dữ liệu người bán</div>
+                            <div class="compare-cell"><span class="bad">✗</span> Sàn sở hữu</div>
+                            <div class="compare-cell"><span class="good">✓</span> Bạn sở hữu</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════
+         HOW IT WORKS
+    ════════════════════════════════════ -->
+    <section id="how-it-works" aria-label="Cách hoạt động">
+        <div class="section-container" style="padding-top: 88px; padding-bottom: 88px;">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Quy trình</span>
+                <h2 class="section-title">Bắt đầu chỉ trong 3 bước</h2>
+                <p class="section-subtitle">
+                    Từ ý tưởng đến gian hàng hoạt động — đơn giản, nhanh chóng, không rào cản.
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card reveal reveal-delay-1">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Đăng ký tài khoản</h3>
+                    <p class="step-desc">
+                        Tạo tài khoản người bán miễn phí chỉ với email và số điện thoại.
+                        Xác minh danh tính trong vài phút — không cần giấy tờ phức tạp.
+                    </p>
+                </div>
+                <div class="step-card reveal reveal-delay-2">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Đăng sản phẩm</h3>
+                    <p class="step-desc">
+                        Tải ảnh, viết mô tả, đặt giá. Công cụ gợi ý thông minh giúp sản phẩm
+                        của bạn nổi bật và dễ được tìm thấy hơn.
+                    </p>
+                </div>
+                <div class="step-card reveal reveal-delay-3">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Bán &amp; vươn lên</h3>
+                    <p class="step-desc">
+                        Nhận đơn, xử lý giao vận qua đối tác của Soprise, và theo dõi
+                        doanh thu tăng trưởng theo thời gian thực.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════
+         CATEGORIES
+    ════════════════════════════════════ -->
+    <section id="categories" aria-label="Danh mục sản phẩm">
+        <div class="section-container" style="padding-top: 88px; padding-bottom: 88px;">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Danh mục</span>
+                <h2 class="section-title">Mọi thứ bạn cần, đều có ở đây</h2>
+                <p class="section-subtitle">Từ thời trang đến công nghệ — hàng trăm danh mục chờ bạn khám phá.</p>
+            </div>
+
+            <div class="cat-grid">
+                <a class="cat-card reveal reveal-delay-1" href="#">
+                    <div class="cat-icon" style="background:#eff6ff;"><span>👗</span></div>
+                    <span class="cat-name">Thời trang</span>
+                </a>
+                <a class="cat-card reveal reveal-delay-1" href="#">
+                    <div class="cat-icon" style="background:#fef9c3;"><span>📱</span></div>
+                    <span class="cat-name">Điện tử</span>
+                </a>
+                <a class="cat-card reveal reveal-delay-2" href="#">
+                    <div class="cat-icon" style="background:#f0fdf4;"><span>🏠</span></div>
+                    <span class="cat-name">Nhà cửa</span>
+                </a>
+                <a class="cat-card reveal reveal-delay-2" href="#">
+                    <div class="cat-icon" style="background:#fdf2f8;"><span>💄</span></div>
+                    <span class="cat-name">Làm đẹp</span>
+                </a>
+                <a class="cat-card reveal reveal-delay-3" href="#">
+                    <div class="cat-icon" style="background:#fff7ed;"><span>🍜</span></div>
+                    <span class="cat-name">Thực phẩm</span>
+                </a>
+                <a class="cat-card reveal reveal-delay-3" href="#">
+                    <div class="cat-icon" style="background:#f0f9ff;"><span>📚</span></div>
+                    <span class="cat-name">Sách &amp; VPP</span>
+                </a>
+                <a class="cat-card reveal reveal-delay-1" href="#">
+                    <div class="cat-icon" style="background:#fefce8;"><span>🧸</span></div>
+                    <span class="cat-name">Đồ chơi</span>
+                </a>
+                <a class="cat-card reveal reveal-delay-2" href="#">
+                    <div class="cat-icon" style="background:#fdf4ff;"><span>🎮</span></div>
+                    <span class="cat-name">Game &amp; Giải trí</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════════
+         TESTIMONIALS
+    ════════════════════════════════════ -->
+    <section id="testimonials" aria-label="Đánh giá từ người dùng">
+        <div class="section-container" style="padding-top: 88px; padding-bottom: 88px;">
+            <div class="section-header reveal">
+                <span class="section-eyebrow">Đánh giá</span>
+                <h2 class="section-title">Người bán nói gì về Soprise?</h2>
+                <p class="section-subtitle">Không phải lời hứa của chúng tôi — đây là câu chuyện của họ.</p>
+            </div>
+
+            <div class="testi-grid">
+                <div class="testi-card reveal reveal-delay-1">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-quote">
+                        "Trước đây tôi bán trên một sàn lớn khác, cứ mỗi 3 tháng là thêm một khoản phí mới.
+                        Soprise cho tôi biết chính xác tôi sẽ mất bao nhiêu phần trăm — và con số đó không thay đổi."
+                    </p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background: linear-gradient(135deg, #1d4ed8, #3b82f6);">H</div>
+                        <div>
+                            <div class="testi-name">Minh Hoàng</div>
+                            <div class="testi-role">Chủ shop thời trang, TP.HCM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card reveal reveal-delay-2">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-quote">
+                        "Lần đầu mở gian hàng online, tôi rất sợ phức tạp. Soprise giúp tôi từ đăng ký đến
+                        bán đơn đầu tiên chỉ trong nửa ngày. Đội hỗ trợ trả lời trong vòng 10 phút!"
+                    </p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">L</div>
+                        <div>
+                            <div class="testi-name">Thanh Lan</div>
+                            <div class="testi-role">Tiểu thương thực phẩm, Hà Nội</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testi-card reveal reveal-delay-3">
+                    <div class="testi-stars">★★★★★</div>
+                    <p class="testi-quote">
+                        "Tôi thích nhất cái so sánh phí rõ ràng ngay trên trang web. Không cần đọc điều khoản dài,
+                        mọi thứ đều hiển thị thẳng thắn. Đó là sự tôn trọng người bán."
+                    </p>
+                    <div class="testi-author">
+                        <div class="testi-avatar" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">D</div>
+                        <div>
+                            <div class="testi-name">Đức Trung</div>
+                            <div class="testi-role">Seller điện tử, Đà Nẵng</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         FINAL CTA
+    ════════════════════════════════════ -->
+    <section id="final-cta" aria-label="Kêu gọi hành động">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-content reveal">
+            <h2 class="cta-title">Sẵn sàng vươn lên<br>cùng Soprise?</h2>
+            <p class="cta-sub">
+                Đăng ký miễn phí hôm nay. Không cần thẻ tín dụng.
+                Không cam kết dài hạn. Chỉ cần bạn và sản phẩm của bạn.
+            </p>
+            <div class="cta-btns">
+                <a class="btn-cta-primary" href="/seller/register">
+                    <i class="fas fa-store" aria-hidden="true"></i>
+                    Đăng ký bán hàng miễn phí
+                </a>
+                <a class="btn-cta-ghost" href="https://www.vanvatcorp.com">
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                    Về Vạn Vật Corporation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════
+         FOOTER
+    ════════════════════════════════════ -->
+    <footer id="main-footer" aria-label="Chân trang">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <a class="footer-brand" href="https://www.vanvatcorp.com/">
+                    <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" alt="Logo Vạn Vật" />
+                    <span class="footer-brand-text">Soprise by Tập đoàn Vạn Vật</span>
+                </a>
+                <div class="footer-links">
+                    <a href="https://www.vanvatcorp.com/privacy-policy">Chính sách bảo mật</a>
+                    <a href="https://www.vanvatcorp.com/terms-of-service">Điều khoản dịch vụ</a>
+                    <a href="https://services.vanvatcorp.com/">Dịch vụ</a>
+                    <a href="https://www.vanvatcorp.com/van-vat-corporation/contact-us/">Liên hệ</a>
+                </div>
+            </div>
+            <p class="footer-copy">
+                © 2026 Tập đoàn Vạn Vật. All rights reserved.
+                Soprise là sản phẩm của Vạn Vật Corporation.
+                *Phí 0% áp dụng cho 3 tháng đầu.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════
+         SCRIPTS
+    ════════════════════════════════════ -->
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+    <script src="scripts.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,704 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>
+    Landing Page - Van Vat Book
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Particle container and particles */
+    .particle-container {
+      position: relative;
+      display: inline-block;
+      overflow: visible;
+    }
+
+    .particle-text {
+      position: relative;
+      z-index: 10;
+      font-style: italic;
+      font-weight: 700;
+      cursor: default;
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 5;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0;
+      transform: translateX(0) translateY(0) scale(1);
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes shootRightFadeInOut {
+      0% {
+        opacity: 0;
+        transform: translateX(0) translateY(0) scale(1);
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      60% {
+        opacity: 0.8;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateX(var(--max-distance, 100px)) translateY(var(--y-move, 0)) scale(0);
+      }
+    }
+
+    /* Red color for "Âm nhạc" text */
+    .particle-container b {
+      color: #dc2626;
+      /* Tailwind red-600 */
+      position: relative;
+      z-index: 10;
+      padding: 0 0.25rem;
+      /* Extended background with fade out opacity left to right */
+      background: linear-gradient(to right,
+          rgba(255, 38, 38, 0.5) 0%,
+          rgba(255, 38, 38, 0.5) 80%,
+          rgba(255, 38, 38, 0.05) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* fallback for non-webkit browsers */
+      color: #dc2626;
+      position: relative;
+    }
+
+    /* Overlay to show background behind clipped text */
+    .particle-container b::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to right,
+          rgba(220, 220, 220, 0.5) 0%,
+          rgba(220, 220, 220, 0.5) 60%,
+          rgba(220, 220, 220, 0.05) 100%);
+      z-index: -1;
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      /* Scale background width to 1.25 times text width */
+      transform-origin: left center;
+      transform: scaleX(1.25);
+    }
+
+    /* Custom audio player styles */
+    .audio-player {
+      width: 100%;
+      max-width: 400px;
+      user-select: none;
+    }
+
+    .play-button {
+      cursor: pointer;
+      font-size: 2.5rem;
+      color: #2563eb;
+      /* Tailwind blue-600 */
+      transition: color 0.3s ease;
+    }
+
+    .play-button:hover {
+      color: #1d4ed8;
+      /* Tailwind blue-700 */
+    }
+
+    .seek-bar {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #d1d5db;
+      /* Tailwind gray-300 */
+      outline: none;
+      cursor: pointer;
+      margin: 0 0.5rem;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .seek-bar::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2563eb;
+      /* Tailwind blue-600 */
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .seek-bar::-webkit-slider-thumb:hover {
+      background: #1d4ed8;
+      /* Tailwind blue-700 */
+    }
+
+    .seek-bar::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #2563eb;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .seek-bar::-moz-range-thumb:hover {
+      background: #1d4ed8;
+    }
+
+    .time-display {
+      font-variant-numeric: tabular-nums;
+      font-size: 0.875rem;
+      color: #374151;
+      /* Tailwind gray-700 */
+      width: 40px;
+      text-align: center;
+      user-select: none;
+    }
+
+    /* Playlist styles */
+    .playlist {
+      max-width: 240px;
+      background-color: #f9fafb;
+      /* Tailwind gray-50 */
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+      overflow-y: auto;
+      max-height: 360px;
+    }
+
+    .playlist-item {
+      cursor: pointer;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e5e7eb;
+      /* Tailwind gray-200 */
+      transition: background-color 0.2s ease;
+    }
+
+    .playlist-item:last-child {
+      border-bottom: none;
+    }
+
+    .playlist-item:hover,
+    .playlist-item.active {
+      background-color: #bfdbfe;
+      /* Tailwind blue-200 */
+      color: #1e40af;
+      /* Tailwind blue-800 */
+    }
+
+    /* Lyrics styles */
+    .lyrics {
+      max-width: 320px;
+      background-color: #f9fafb;
+      /* Tailwind gray-50 */
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+      padding: 1rem;
+      max-height: 360px;
+      overflow-y: auto;
+      font-size: 0.9rem;
+      color: #374151;
+      /* Tailwind gray-700 */
+      white-space: pre-wrap;
+      line-height: 1.5;
+    }
+
+    /* Scrollbar styling for playlist and lyrics */
+    .playlist::-webkit-scrollbar,
+    .lyrics::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .playlist::-webkit-scrollbar-thumb,
+    .lyrics::-webkit-scrollbar-thumb {
+      background-color: #93c5fd;
+      /* Tailwind blue-300 */
+      border-radius: 4px;
+    }
+
+    .playlist::-webkit-scrollbar-track,
+    .lyrics::-webkit-scrollbar-track {
+      background-color: #f3f4f6;
+      /* Tailwind gray-100 */
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-inter">
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-16">
+        <a class="flex items-center space-x-2" href="https://www.vanvatcorp.com/">
+          <img alt="Corporation logo, blue and white abstract geometric shape" class="h-10 w-10" height="40"
+            src="https://storage.googleapis.com/a1aa/image/ff61740e-9851-4881-b7bc-0187d051ac31.jpg" width="40" />
+          <span class="text-2xl font-bold text-blue-700">
+            Tập đoàn Vạn Vật
+          </span>
+        </a>
+        <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+          <a class="hover:text-blue-700 transition" href="#services">
+            Dịch vụ
+          </a>
+          <a class="hover:text-blue-700 transition" href="#about">
+            Về chúng tôi
+          </a>
+          <a class="hover:text-blue-700 transition" href="#team">
+            Nhóm
+          </a>
+          <a class="hover:text-blue-700 transition" href="#careers">
+            Sự nghiệp
+          </a>
+          <a class="hover:text-blue-700 transition" href="/van-vat-corporation/contact-us/">
+            Liên hệ
+          </a>
+        </div>
+        <div class="hidden md:flex">
+          <a class="inline-block px-5 py-2 rounded-md bg-blue-700 text-white font-semibold hover:bg-blue-800 transition"
+            href="/van-vat-corporation/contact-us/">
+            Liên hệ chúng tôi
+          </a>
+        </div>
+        <div class="md:hidden">
+          <button aria-label="Toggle menu"
+            class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
+            id="mobile-menu-button">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="#services">
+        Dịch vụ
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="#about">
+        Về chúng tôi
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="#team">
+        Nhóm
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="#careers">
+        Sự nghiệp
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/contact-us/">
+        Liên hệ
+      </a>
+      <a class="block mx-6 my-3 px-5 py-2 rounded-md bg-blue-700 text-white font-semibold text-center hover:bg-blue-800 transition"
+        href="/van-vat-corporation/contact-us/">
+        Liên hệ chúng tôi
+      </a>
+    </div>
+  </nav>
+  <!-- Main Section -->
+  <main class="pt-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+    <h1 class="text-3xl font-bold text-blue-700 mb-8 flex flex-wrap items-center space-x-2 select-none">
+      <a class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700"
+        href="#vanvat-project">
+        <span class="relative z-10">
+          Vạn Vật Project
+        </span>
+        <span
+          class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+      </a>
+      <i class="fas fa-chevron-right text-blue-500 z-20"></i>
+      <a class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700"
+        href="#vanvat-hoctap">
+        <span class="relative z-10">
+          Vạn Vật
+          <span class="particle-container">
+            <b>Âm nhạc</b>
+            <span aria-hidden="true" class="particles"></span>
+          </span>
+        </span>
+        <span
+          class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+      </a>
+    </h1>
+    <!-- Music Player with Playlist and Lyrics -->
+    <section aria-label="Music Player Section" class="max-w-7xl mx-auto bg-gray-50 rounded-lg shadow-md p-6">
+      <h2 class="text-xl font-semibold text-blue-700 mb-6 text-center">
+        Trình phát nhạc
+      </h2>
+      <div class="flex flex-col md:flex-row md:space-x-6">
+        <!-- Playlist -->
+        <aside class="playlist shrink-0 mb-6 md:mb-0" id="playlist" aria-label="Playlist">
+          <div class="playlist-item active" data-index="0" tabindex="0" role="button" aria-pressed="true">
+            Bài hát mẫu 1 - Nghệ sĩ mẫu
+          </div>
+          <div class="playlist-item" data-index="1" tabindex="0" role="button" aria-pressed="false">
+            Bài hát mẫu 2 - Nghệ sĩ mẫu
+          </div>
+          <div class="playlist-item" data-index="2" tabindex="0" role="button" aria-pressed="false">
+            Bài hát mẫu 3 - Nghệ sĩ mẫu
+          </div>
+          <div class="playlist-item" data-index="3" tabindex="0" role="button" aria-pressed="false">
+            Bài hát mẫu 4 - Nghệ sĩ mẫu
+          </div>
+          <div class="playlist-item" data-index="4" tabindex="0" role="button" aria-pressed="false">
+            Bài hát mẫu 5 - Nghệ sĩ mẫu
+          </div>
+        </aside>
+        <!-- Player and Album Art -->
+        <div class="flex flex-col items-center flex-grow">
+          <img alt="Album cover art showing a colorful abstract music wave with vibrant blues and reds"
+            class="w-48 h-48 rounded-md shadow-lg object-cover mb-6" height="192" id="album-art"
+            src="https://storage.googleapis.com/a1aa/image/061a64da-804c-4aba-4fba-b0f9e1d877b9.jpg" width="192" />
+          <div class="audio-player w-full max-w-md flex flex-col items-center select-none">
+            <button aria-label="Play/Pause" class="play-button mb-4" id="play-pause-btn" type="button">
+              <i class="fas fa-play"></i>
+            </button>
+            <div class="w-full flex items-center space-x-2">
+              <span class="time-display" id="current-time">0:00</span>
+              <input aria-label="Seek bar" class="seek-bar" id="seek-bar" max="100" min="0" step="0.1" type="range"
+                value="0" />
+              <span class="time-display" id="duration">0:00</span>
+            </div>
+          </div>
+          <audio id="audio" preload="metadata"
+            src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+          <div class="w-full text-center mt-4">
+            <p class="text-lg font-semibold text-gray-800" id="song-title">
+              Bài hát mẫu 1
+            </p>
+            <p class="text-sm text-gray-600" id="song-artist">
+              Nghệ sĩ: Nghệ sĩ mẫu
+            </p>
+          </div>
+        </div>
+        <!-- Lyrics -->
+        <aside class="lyrics mt-6 md:mt-0 md:ml-6 shrink-0" id="lyrics" aria-label="Lyrics">
+          Loading lyrics...
+        </aside>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">
+        © 2026 Tập đoàn Vạn Vật. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a aria-label="Privacy Policy" class="hover:text-white" href="https://www.vanvatcorp.com/privacy-policy">
+          Privacy Policy
+        </a>
+        <a aria-label="Terms of Service" class="hover:text-white" href="https://www.vanvatcorp.com/terms-of-service">
+          Terms of Service
+        </a>
+        <a aria-label="Sitemap" class="hover:text-white" href="#">
+          Sitemap
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Particle effect for "Âm nhạc"
+    function initParticles() {
+      const container = document.querySelector('.particle-container .particles');
+      const textEl = document.querySelector('.particle-container b');
+      if (!container || !textEl) return;
+
+      const particleCount = 8; // fewer particles
+
+      // Get computed color of the "Âm nhạc" text
+      const computedStyle = window.getComputedStyle(textEl);
+      const particleColor = computedStyle.color || '#dc2626';
+
+      // Get bounding rect of the text to position particles inside it
+      const rect = textEl.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const offsetX = rect.left - containerRect.left;
+      const offsetY = rect.top - containerRect.top;
+
+      // Calculate max distance as half the text width
+      let maxDistance = rect.width / 2;
+
+      // Helper to create a particle element
+      function createParticle() {
+        const p = document.createElement('span');
+        p.classList.add('particle');
+        const size = Math.random() * 4 + 2; // 2px to 6px
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.backgroundColor = particleColor;
+        // Random start position inside the text bounding box
+        const startX = offsetX + Math.random() * rect.width;
+        const startY = offsetY + Math.random() * rect.height;
+        p.style.left = startX + 'px';
+        p.style.top = startY + 'px';
+        p.style.setProperty('--start-x', startX + 'px');
+        p.style.setProperty('--y-move', (Math.random() * 40 - 20).toFixed(2) + 'px');
+        p.style.setProperty('--max-distance', maxDistance + 'px');
+        p.style.animationTimingFunction = 'linear';
+        return p;
+      }
+
+      // Animate a particle with fade in, shoot right, fade out
+      function animateParticle(p, delay) {
+        // Speed in px per second (adjust for desired speed)
+        const speedPxPerSec = 120; // ~120px per second
+        // Duration based on maxDistance and speed
+        const duration = (maxDistance / speedPxPerSec) * 1000; // in ms
+
+        p.style.animation = 'none';
+        // Trigger reflow to restart animation
+        void p.offsetWidth;
+        p.style.animation = `shootRightFadeInOut ${duration}ms linear forwards`;
+        p.style.animationDelay = delay + 'ms';
+
+        // When animation ends, remove and respawn
+        p.addEventListener('animationend', () => {
+          container.removeChild(p);
+          spawnParticle();
+        }, { once: true });
+      }
+
+      // Spawn a new particle and animate it
+      function spawnParticle() {
+        const p = createParticle();
+        container.appendChild(p);
+        animateParticle(p, 0);
+      }
+
+      // Initially spawn particles with staggered delays
+      for (let i = 0; i < particleCount; i++) {
+        const p = createParticle();
+        container.appendChild(p);
+        animateParticle(p, i * 600);
+      }
+
+      // Update maxDistance and restart animations on resize
+      function updateMaxDistance() {
+        const newRect = textEl.getBoundingClientRect();
+        maxDistance = newRect.width / 2;
+        const currentParticles = container.querySelectorAll('.particle');
+        currentParticles.forEach(p => {
+          p.style.setProperty('--max-distance', maxDistance + 'px');
+          p.style.animation = 'none';
+          void p.offsetWidth;
+          const speedPxPerSec = 120;
+          const duration = (maxDistance / speedPxPerSec) * 1000;
+          p.style.animation = `shootRightFadeInOut ${duration}ms linear forwards`;
+          p.style.animationDelay = '0ms';
+        });
+      }
+
+      window.addEventListener('resize', updateMaxDistance);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initParticles();
+
+      const audio = document.getElementById('audio');
+      const playPauseBtn = document.getElementById('play-pause-btn');
+      const seekBar = document.getElementById('seek-bar');
+      const currentTimeEl = document.getElementById('current-time');
+      const durationEl = document.getElementById('duration');
+      const playIconClass = 'fas fa-play';
+      const pauseIconClass = 'fas fa-pause';
+      const playlistEl = document.getElementById('playlist');
+      const albumArt = document.getElementById('album-art');
+      const songTitleEl = document.getElementById('song-title');
+      const songArtistEl = document.getElementById('song-artist');
+      const lyricsEl = document.getElementById('lyrics');
+
+      // Playlist data
+      const playlist = [
+        {
+          title: "Bài hát mẫu 1",
+          artist: "Nghệ sĩ mẫu",
+          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+          albumArt: "https://storage.googleapis.com/a1aa/image/061a64da-804c-4aba-4fba-b0f9e1d877b9.jpg",
+          lyrics: `Đây là lời bài hát mẫu 1.\nNội dung lời bài hát được hiển thị ở đây.\nDòng thứ ba của lời bài hát.\nDòng thứ tư của lời bài hát.`
+        },
+        {
+          title: "Bài hát mẫu 2",
+          artist: "Nghệ sĩ mẫu",
+          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+          albumArt: "https://placehold.co/192x192/png?text=Album+2&font=Inter&font-size=24",
+          lyrics: `Lời bài hát mẫu 2 bắt đầu ở đây.\nTiếp tục với dòng thứ hai.\nVà dòng thứ ba.\nKết thúc lời bài hát mẫu 2.`
+        },
+        {
+          title: "Bài hát mẫu 3",
+          artist: "Nghệ sĩ mẫu",
+          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+          albumArt: "https://placehold.co/192x192/png?text=Album+3&font=Inter&font-size=24",
+          lyrics: `Lời bài hát mẫu 3.\nDòng thứ hai.\nDòng thứ ba.\nDòng thứ tư.`
+        },
+        {
+          title: "Bài hát mẫu 4",
+          artist: "Nghệ sĩ mẫu",
+          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+          albumArt: "https://placehold.co/192x192/png?text=Album+4&font=Inter&font-size=24",
+          lyrics: `Lời bài hát mẫu 4.\nNội dung lời bài hát.\nDòng thứ ba.\nDòng thứ tư.`
+        },
+        {
+          title: "Bài hát mẫu 5",
+          artist: "Nghệ sĩ mẫu",
+          src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+          albumArt: "https://placehold.co/192x192/png?text=Album+5&font=Inter&font-size=24",
+          lyrics: `Lời bài hát mẫu 5.\nNội dung lời bài hát.\nDòng thứ ba.\nDòng thứ tư.`
+        }
+      ];
+
+      let currentIndex = 0;
+
+      // Format seconds to mm:ss
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      }
+
+      // Load song by index
+      function loadSong(index) {
+        const song = playlist[index];
+        audio.src = song.src;
+        albumArt.src = song.albumArt;
+        songTitleEl.textContent = song.title;
+        songArtistEl.textContent = `Nghệ sĩ: ${song.artist}`;
+        lyricsEl.textContent = song.lyrics;
+        seekBar.value = 0;
+        currentTimeEl.textContent = '0:00';
+        durationEl.textContent = '0:00';
+        playPauseBtn.querySelector('i').className = playIconClass;
+        // Update active playlist item
+        Array.from(playlistEl.children).forEach((item, i) => {
+          if (i === index) {
+            item.classList.add('active');
+            item.setAttribute('aria-pressed', 'true');
+            item.focus();
+          } else {
+            item.classList.remove('active');
+            item.setAttribute('aria-pressed', 'false');
+          }
+        });
+        currentIndex = index;
+      }
+
+      // Update duration display when metadata is loaded
+      audio.addEventListener('loadedmetadata', () => {
+        durationEl.textContent = formatTime(audio.duration);
+        seekBar.max = Math.floor(audio.duration);
+      });
+
+      // Update current time and seek bar as audio plays
+      audio.addEventListener('timeupdate', () => {
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+        seekBar.value = Math.floor(audio.currentTime);
+      });
+
+      // Play/pause toggle
+      playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          playPauseBtn.querySelector('i').className = pauseIconClass;
+        } else {
+          audio.pause();
+          playPauseBtn.querySelector('i').className = playIconClass;
+        }
+      });
+
+      // Seek bar change
+      seekBar.addEventListener('input', () => {
+        audio.currentTime = seekBar.value;
+        currentTimeEl.textContent = formatTime(audio.currentTime);
+      });
+
+      // When audio ends, play next song or reset
+      audio.addEventListener('ended', () => {
+        if (currentIndex < playlist.length - 1) {
+          loadSong(currentIndex + 1);
+          audio.play();
+          playPauseBtn.querySelector('i').className = pauseIconClass;
+        } else {
+          playPauseBtn.querySelector('i').className = playIconClass;
+          seekBar.value = 0;
+          currentTimeEl.textContent = '0:00';
+        }
+      });
+
+      // Playlist item click handler
+      playlistEl.addEventListener('click', (e) => {
+        const item = e.target.closest('.playlist-item');
+        if (!item) return;
+        const index = parseInt(item.getAttribute('data-index'), 10);
+        if (index !== currentIndex) {
+          loadSong(index);
+          audio.play();
+          playPauseBtn.querySelector('i').className = pauseIconClass;
+        }
+      });
+
+      // Keyboard accessibility for playlist items
+      playlistEl.addEventListener('keydown', (e) => {
+        if (e.target.classList.contains('playlist-item')) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            e.target.click();
+          }
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            const next = e.target.nextElementSibling || playlistEl.firstElementChild;
+            next.focus();
+          }
+          if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            const prev = e.target.previousElementSibling || playlistEl.lastElementChild;
+            prev.focus();
+          }
+        }
+      });
+
+      // Initialize
+      loadSong(0);
+      initParticles();
+    });
+  </script>
+</body>
+
+</html>

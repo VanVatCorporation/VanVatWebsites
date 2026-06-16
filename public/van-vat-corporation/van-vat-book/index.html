@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#060b18" />
+  <title>OpenBooks – Van Vat Corporation</title>
+  <meta content="OpenBooks" property="og:title" />
+  <meta content="Kho sách giá rẻ!" property="og:description" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link href="index.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="https://www.vanvatcorp.com">
+      <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" alt="Van Vat Corporation logo" />
+      <span>Vạn Vật <span class="product-name">OpenBooks</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Browse</a></li>
+      <li><a href="#">Collections</a></li>
+      <li><a href="https://www.vanvatcorp.com/van-vat-corporation/about-us/">About</a></li>
+      <li><a href="https://www.vanvatcorp.com/van-vat-corporation/contact-us/">Contact</a></li>
+      <li><a href="#" class="nav-cta">Start Reading</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- Book + its firefly canvas -->
+    <div class="book-scene">
+      <div class="book-wrapper">
+        <svg class="book-svg" viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="leftPage" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#fffbe8" stop-opacity="0.88" />
+              <stop offset="80%" stop-color="#fff8d0" stop-opacity="0.96" />
+              <stop offset="100%" stop-color="#f0e8b0" stop-opacity="0.82" />
+            </linearGradient>
+            <linearGradient id="rightPage" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#f0e8b0" stop-opacity="0.82" />
+              <stop offset="20%" stop-color="#fff8d0" stop-opacity="0.96" />
+              <stop offset="100%" stop-color="#fffbe8" stop-opacity="0.88" />
+            </linearGradient>
+            <linearGradient id="leftCover" x1="0" y1="0" x2="0.3" y2="1">
+              <stop offset="0%" stop-color="#1a2e50" />
+              <stop offset="100%" stop-color="#0d1c34" />
+            </linearGradient>
+            <linearGradient id="rightCover" x1="0" y1="0" x2="0.3" y2="1">
+              <stop offset="0%" stop-color="#1a2e50" />
+              <stop offset="100%" stop-color="#0d1c34" />
+            </linearGradient>
+            <!-- warm gold glow from the pages -->
+            <radialGradient id="pageGlow" cx="50%" cy="80%" r="65%">
+              <stop offset="0%" stop-color="#f5c842" stop-opacity="0.32" />
+              <stop offset="100%" stop-color="#f5c842" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="innerGlow" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="#fff5c0" stop-opacity="0.30" />
+              <stop offset="100%" stop-color="#fff5c0" stop-opacity="0" />
+            </radialGradient>
+            <!-- glow filter for the book -->
+            <filter id="bookGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="5" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+
+          <!-- shadow -->
+          <ellipse cx="100" cy="154" rx="74" ry="8" fill="rgba(0,0,0,0.38)" />
+
+          <!-- covers -->
+          <path d="M14,126 Q10,78 18,32 L100,28 L100,130 Q56,134 14,126 Z" fill="url(#leftCover)" opacity="0.75" />
+          <path d="M186,126 Q190,78 182,32 L100,28 L100,130 Q144,134 186,126 Z" fill="url(#rightCover)"
+            opacity="0.75" />
+
+          <!-- pages -->
+          <path d="M18,122 Q15,75 22,30 L100,26 L100,126 Q60,130 18,122 Z" fill="url(#leftPage)" />
+          <path d="M18,122 Q15,75 22,30 L100,26 L100,126 Q60,130 18,122 Z" fill="url(#innerGlow)" />
+          <path d="M182,122 Q185,75 178,30 L100,26 L100,126 Q140,130 182,122 Z" fill="url(#rightPage)" />
+          <path d="M182,122 Q185,75 178,30 L100,26 L100,126 Q140,130 182,122 Z" fill="url(#innerGlow)" />
+
+          <!-- spine -->
+          <path d="M100,26 L100,126" stroke="#d4a820" stroke-width="2.5" stroke-linecap="round" opacity="0.5" />
+          <path d="M100,26 L100,126" stroke="#f5c842" stroke-width="1.2" stroke-linecap="round" opacity="0.8" />
+
+          <!-- LEFT text lines -->
+          <path d="M28,46 Q62,44 93,45" stroke="#c9a12e" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+          <path d="M26,56 Q60,54 93,55" stroke="#8a7040" stroke-width="1.4" stroke-linecap="round" opacity="0.6" />
+          <path d="M26,64 Q60,62 93,63" stroke="#8a7040" stroke-width="1.4" stroke-linecap="round" opacity="0.55" />
+          <path d="M26,72 Q60,70 93,71" stroke="#8a7040" stroke-width="1.4" stroke-linecap="round" opacity="0.50" />
+          <path d="M26,80 Q60,78 93,79" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.42" />
+          <path d="M26,88 Q54,86 78,87" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.35" />
+          <path d="M26,100 Q60,98 93,99" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.42" />
+          <path d="M26,108 Q60,106 93,107" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.36" />
+          <path d="M26,116 Q46,114 68,115" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.28" />
+
+          <!-- RIGHT text lines -->
+          <path d="M107,46 Q141,44 172,45" stroke="#c9a12e" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+          <path d="M107,56 Q141,54 174,55" stroke="#8a7040" stroke-width="1.4" stroke-linecap="round" opacity="0.6" />
+          <path d="M107,64 Q141,62 174,63" stroke="#8a7040" stroke-width="1.4" stroke-linecap="round" opacity="0.55" />
+          <path d="M107,72 Q141,70 174,71" stroke="#8a7040" stroke-width="1.4" stroke-linecap="round" opacity="0.50" />
+          <path d="M107,80 Q141,78 174,79" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.42" />
+          <path d="M107,88 Q136,86 162,87" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.35" />
+          <path d="M107,100 Q141,98 174,99" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round" opacity="0.42" />
+          <path d="M107,108 Q141,106 174,107" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round"
+            opacity="0.36" />
+          <path d="M107,116 Q128,114 152,115" stroke="#8a7040" stroke-width="1.2" stroke-linecap="round"
+            opacity="0.28" />
+
+          <!-- page curl bottom-right -->
+          <path d="M174,122 Q180,127 176,134 Q169,127 165,120 Q170,121 174,122 Z" fill="#f0e0a0" opacity="0.55" />
+          <path d="M174,122 Q180,127 176,134 Q169,127 165,120 Q170,121 174,122 Z" fill="#1a2e50" opacity="0.12" />
+
+          <!-- ambient warm glow pooling below pages -->
+          <path d="M18,122 Q60,132 100,128 Q140,132 182,122 L186,129 Q144,140 100,136 Q56,140 14,129 Z"
+            fill="url(#pageGlow)" />
+        </svg>
+      </div>
+      <canvas id="bookCanvas"></canvas>
+    </div>
+
+    <!-- Quote + its firefly canvas -->
+    <div class="quote-block">
+      <canvas id="quoteCanvas"></canvas>
+      <span class="quote-pre"><em>No one</em> deserves to be</span>
+      <div class="quote-glow-line">
+        <span class="quote-static">—&thinsp;</span>
+        <span class="cycling-word-wrap" id="cyclingWrap">
+          <span class="cycling-word">illiterate</span>
+        </span>
+        <span class="quote-static">&thinsp;—</span>
+      </div>
+
+      <p class="tagline">
+        <strong>OpenBooks</strong> opens the door to learning, reading, and growing — free, accessible, and built for
+        everyone who believes knowledge should have no barriers.
+      </p>
+
+      <div class="hero-ctas">
+        <div class="btn-primary-wrap">
+          <a href="https://books.vanvatcorp.com" class="btn-primary" id="btnStart">Start Reading Free</a>
+          <canvas id="btnCanvas"></canvas>
+        </div>
+        <a href="https://books.vanvatcorp.com" class="btn-ghost">Browse the Library →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="feature-card">
+      <span class="feature-icon">📖</span>
+      <div class="feature-title">Thousands of Titles</div>
+      <p class="feature-desc">From timeless classics to modern reads, our library grows every week with curated books
+        across every genre.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">✨</span>
+      <div class="feature-title">Read Anywhere</div>
+      <p class="feature-desc">Open a book on your phone, tablet, or desktop. Your progress syncs seamlessly, so you
+        never lose your place.</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌐</span>
+      <div class="feature-title">Free & Open Access</div>
+      <p class="feature-desc">Education should never be gated by cost. OpenBooks offers free access with no sign-up
+        required to start reading.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a class="footer-logo" href="https://www.vanvatcorp.com">
+        <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" alt="Van Vat Corporation logo" />
+        Tập đoàn Vạn Vật
+      </a>
+      <ul class="footer-links">
+        <li><a href="https://www.vanvatcorp.com/privacy-policy">Privacy Policy</a></li>
+        <li><a href="https://www.vanvatcorp.com/terms-of-service">Terms of Service</a></li>
+        <li><a href="https://services.vanvatcorp.com/">Services</a></li>
+        <li><a href="https://books.vanvatcorp.com/van-vat-corporation/contact-us/">Contact</a></li>
+      </ul>
+      <span class="footer-copy">© 2026 Tập đoàn Vạn Vật. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+
+</body>
+
+</html>

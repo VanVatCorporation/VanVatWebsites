@@ -1,0 +1,99 @@
+﻿<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 mb-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Việt Nam Tiềm Ẩn</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a class="text-gray-700 hover:text-gray-900" href="../">Trang chủ</a></li>
+                    <li><a class="text-gray-700 hover:text-gray-900" href="#">Về chúng tôi</a></li>
+                    <li><a class="text-gray-700 hover:text-gray-900" href="#">Dịch vụ</a></li>
+                    <li><a class="text-gray-700 hover:text-gray-900" href="#">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container mx-auto">
+        <!-- Large image with text inside -->
+        <div class="relative mb-12 fade-in">
+            <img alt="Large placeholder image with a scenic view" class="w-full h-64 object-cover" src="./main.jpg" />
+            <div class="absolute inset-0 flex items-center justify-center">
+                <p class="text-white text-2xl font-bold bg-black bg-opacity-50 p-4 rounded">Đông Bắc</p>
+            </div>
+        </div>
+        <!-- Text box above 2 images -->
+        <div class="text-center mb-6 fade-in">
+            <p class="text-lg font-bold">Khám phá Đông Bắc!</p>
+            <p class="text-gray-900 mt-2">Là vùng đất núi non trùng điệp phía Đông Bắc Việt Nam – nổi tiếng với những danh thắng như thác Bản Giốc (một trong những thác nước đẹp nhất Đông Nam Á), hồ Ba Bể (hồ nước ngọt tự nhiên lớn nhất Việt Nam), và các di tích lịch sử như ATK Định Hóa. Nơi đây còn lưu giữ bản sắc văn hóa độc đáo của các dân tộc Tày, Nùng, Dao với những phiên chợ vùng cao đầy màu sắc. Đến Đông Bắc, bạn sẽ được khám phá thiên nhiên hoang sơ, trải nghiệm văn hóa đa dạng và thưởng thức ẩm thực đặc trưng như phở chua, thịt trâu gác bếp.  </p>
+        </div>
+        <!-- Section with 2 images and text -->
+        <div class="flex flex-col items-center mb-12 fade-in">
+            <div class="flex flex-col md:flex-row items-center mb-6">
+                <div class="flex flex-col items-center mb-4 md:mb-0 md:mr-4">
+                    <img alt="Placeholder image 1 with a scenic view" class="w-full md:w-1/2 rounded-tl-lg" height="200" src="./media (1).jpg" width="300" />
+                    <p class="text-center text-lg mt-2">Hoàng Sù Phì, Hà Giang.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img alt="Placeholder image 2 with a scenic view" class="w-full md:w-1/2 rounded-tl-lg" height="200" src="./media (3).jpg" width="300" />
+                    <p class="text-center text-lg mt-2">Cột cờ Lũng Cú, Đồng Văn.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Section with 4 images crumped together to form a square with curved corners -->
+        <div class="flex justify-center mb-4 fade-in">
+            <div class="grid grid-cols-2 gap-0">
+                <img alt="Placeholder image 3 with a scenic view" class="h-96 w-96 object-cover rounded-tl-lg" src="./media.jpg" />
+                <img alt="Placeholder image 4 with a scenic view" class="h-96 w-96 object-cover rounded-tr-lg" src="./media (1).jpg" />
+                <img alt="Placeholder image 5 with a scenic view" class="h-96 w-96 object-cover rounded-bl-lg" src="./media (2).jpg" />
+                <img alt="Placeholder image 6 with a scenic view" class="h-96 w-96 object-cover rounded-br-lg" src="./media (3).jpg" />
+            </div>
+        </div>
+        <div class="text-center mb-12">
+            <p class="text-lg font-bold">Các hình ảnh Đông Bắc</p>
+        </div>
+        <!-- Section with YouTube video and Google Maps embed -->
+        <div class="flex flex-col md:flex-row items-center justify-between fade-in">
+            <div class="w-full md:w-1/2 mb-6 md:mb-0 md:mr-4">
+                <p class="text-center text-lg font-bold mb-2">Video quang cảnh Đông Bắc</p>
+                <iframe width="600" height="400" src="https://www.youtube.com/embed/GyxixPcAcOg?si=HaNIMsRBv9BFh3DT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="w-full md:w-1/2">
+                <p class="text-center text-lg font-bold mb-2">Bản Đồ Đông Bắc</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1893574.5993414852!2d104.88910918844186!3d22.034752848582155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cc79388fd89053%3A0x510e1028bcfd166a!2zxJDDtG5nIELhuq9jIELhu5ksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1744136261425!5m2!1svi!2s" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-white shadow-md py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-700">&copy; 2025 Vạn Vật Corp. 12A1. 17-43 All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

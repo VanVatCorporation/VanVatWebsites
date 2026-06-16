@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active Learning — Points & Combo Mode</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      20%,
+      60% {
+        transform: translateX(-6px);
+      }
+
+      40%,
+      80% {
+        transform: translateX(6px);
+      }
+    }
+
+    .shake {
+      animation: shake 0.5s ease;
+    }
+
+    @keyframes heartDrop {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(20px) scale(1.2) rotate(20deg);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(60px) scale(0.8) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .drop-heart {
+      animation: heartDrop 0.8s ease forwards;
+      position: absolute;
+    }
+
+    @keyframes heartBounceIn {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .bounce-heart {
+      animation: heartBounceIn 0.6s ease;
+    }
+
+    /* ✨ Combo pop */
+    @keyframes comboPop {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1.4);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .combo-pop {
+      animation: comboPop 0.5s ease forwards;
+    }
+  </style>
+</head>
+
+<body id="body" class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- 🧭 Navbar -->
+  <nav class="w-full bg-white shadow fixed top-0 left-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 flex justify-between items-center h-16">
+      <div class="flex items-center space-x-2">
+        <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" class="h-10 w-10" alt="logo">
+        <span class="font-bold text-xl text-blue-700">Active Learning — Points Mode</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🧠 Main Quiz Area -->
+  <main class="flex-grow flex flex-col items-center justify-center py-10 px-4 mt-16">
+    <button onclick="location.href='https://donate.vanvatcorp.com/donate/method';"
+      class="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 font-semibold mb-4">
+      Đóng góp duy trì (Donate)
+    </button>
+
+    <!-- Timer + Progress -->
+    <div class="w-full max-w-2xl mb-4 flex justify-between items-center">
+      <div id="timer-display" class="text-sm text-gray-700 flex items-center space-x-1">
+        <span>🕒</span>
+        <span id="timer-text">00:00</span>
+      </div>
+      <div class="flex-grow mx-4">
+        <div class="w-full bg-gray-300 h-3 rounded-full overflow-hidden">
+          <div id="progress-bar" class="h-3 bg-blue-600 rounded-full transition-all duration-300" style="width: 0%;">
+          </div>
+        </div>
+      </div>
+      <div id="progress-text" class="text-sm text-gray-600"></div>
+    </div>
+
+    <!-- ❤️ Lives + Score -->
+    <div class="w-full max-w-2xl flex justify-between items-center mb-2">
+      <div id="lives-display" class="text-3xl text-red-600 flex space-x-2"></div>
+      <div id="score-display" class="text-lg font-bold text-blue-700">Score: 0</div>
+    </div>
+
+    <!-- 🔥 Combo -->
+    <div id="combo-display" class="text-2xl font-bold text-orange-500 mb-4 h-8"></div>
+
+    <!-- Question Box -->
+    <div id="question-container"
+      class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg transition-transform duration-500 ease-in-out"></div>
+  </main>
+
+  <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">© 2026 Tập đoàn Vạn Vật. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script
+    src="https://academy.vanvatcorp.com/active-learning/multiple-choice-learning/quiz-mode/confetti-lib.js"></script>
+
+  <script>
+    let questions = [];
+    let currentIndex = 0;
+    let correctCount = 0;
+    let lives = 3;
+    const maxLives = 3;
+    let acceptAnswer = true;
+
+    // ⏱ Timer
+    let startTime = null;
+    let timerInterval = null;
+    let elapsedTime = 0;
+
+    // 🪙 Points + Combo
+    let score = 0;
+    let combo = 0;
+    let questionStartTime = null;
+
+    const questionContainer = document.getElementById("question-container");
+    const body = document.getElementById("body");
+    const progressBar = document.getElementById("progress-bar");
+    const progressText = document.getElementById("progress-text");
+    const timerText = document.getElementById("timer-text");
+    const scoreDisplay = document.getElementById("score-display");
+    const comboDisplay = document.getElementById("combo-display");
+
+    function updateLives(dropIndex = null) {
+      const livesDisplay = document.getElementById("lives-display");
+      livesDisplay.innerHTML = "";
+      livesDisplay.classList.remove("shake");
+
+      for (let i = 0; i < maxLives; i++) {
+        const heart = document.createElement("span");
+        heart.textContent = i < lives ? "❤️" : "🩶";
+        heart.className = "text-3xl transition-all relative";
+        if (dropIndex !== null && i === dropIndex) {
+          heart.classList.add("drop-heart");
+        } else if (dropIndex === null) {
+          heart.classList.add("bounce-heart");
+        }
+        livesDisplay.appendChild(heart);
+      }
+      if (dropIndex !== null) {
+        livesDisplay.classList.add("shake");
+        setTimeout(() => livesDisplay.classList.remove("shake"), 600);
+      }
+    }
+
+    function loadQuestions() {
+      questions = [
+        { question: "Which of the following are fruits?", choices: ["Apple", "Carrot", "Banana", "Onion"], correctAnswers: [0, 2] },
+        { question: "2 + 2 = ?", choices: ["3", "4", "5", "6"], correctAnswers: [1] },
+        { question: "Capital of France?", choices: ["Paris", "Rome", "Berlin", "Madrid"], correctAnswers: [0] },
+      ];
+      questions.sort(() => Math.random() - 0.5);
+      showQuestion(true);
+      updateProgress();
+      startTimer();
+    }
+
+    function showQuestion(skipAnim = false) {
+      questionStartTime = Date.now();
+      questionContainer.innerHTML = "";
+      const q = questions[currentIndex];
+      const qTitle = document.createElement("h2");
+      qTitle.className = "text-xl font-bold mb-4";
+      qTitle.textContent = q.question;
+      questionContainer.appendChild(qTitle);
+
+      const choicesWrapper = document.createElement("div");
+      choicesWrapper.className = "grid grid-cols-2 gap-4";
+
+      q.choices.forEach((choice, idx) => {
+        const btn = document.createElement("button");
+        btn.textContent = choice;
+        btn.className = "border px-4 py-2 rounded-lg hover:bg-blue-100 transition-colors duration-500 text-left";
+        btn.addEventListener("click", () => { if (acceptAnswer) handleChoice(btn, idx); });
+        choicesWrapper.appendChild(btn);
+      });
+      questionContainer.appendChild(choicesWrapper);
+    }
+
+    function handleChoice(button, idx) {
+      const q = questions[currentIndex];
+      const isCorrect = q.correctAnswers.includes(idx);
+      acceptAnswer = false;
+
+      const timeTaken = (Date.now() - questionStartTime) / 1000;
+      if (isCorrect) {
+        correctCount++;
+        combo++;
+        updateComboDisplay();
+        const points = calculatePoints(timeTaken, combo);
+        score += points;
+        scoreDisplay.textContent = `Score: ${score}`;
+        celebrate();
+        button.style.backgroundColor = "#bbf7d0";
+        setTimeout(nextQuestion, 700);
+      } else {
+        combo = 0;
+        updateComboDisplay();
+        const lostHeartIndex = lives - 1;
+        updateLives(lostHeartIndex);
+        setTimeout(() => {
+          lives--;
+          updateLives();
+          if (lives <= 0) setTimeout(showEndScreen, 500);
+        }, 200);
+        button.style.backgroundColor = "#fecaca";
+        button.disabled = true;
+        button.classList.add("cursor-not-allowed", "opacity-50");
+        acceptAnswer = true;
+      }
+    }
+
+    function calculatePoints(timeTaken, combo) {
+      let base = 50;
+      if (timeTaken < 3) base = 100;
+      else if (timeTaken < 7) base = 70;
+      const comboBonus = base * (combo * 0.1);
+      return Math.round(base + comboBonus);
+    }
+
+    function updateComboDisplay() {
+      if (combo > 0) {
+        comboDisplay.textContent = `🔥 Combo x${combo}!`;
+        comboDisplay.classList.remove("combo-pop");
+        void comboDisplay.offsetWidth; // restart animation
+        comboDisplay.classList.add("combo-pop");
+      } else {
+        comboDisplay.textContent = "";
+      }
+    }
+
+    function nextQuestion() {
+      currentIndex++;
+      updateProgress();
+      acceptAnswer = true;
+      if (currentIndex >= questions.length) {
+        showEndScreen();
+      } else {
+        showQuestion();
+      }
+    }
+
+    function celebrate() {
+      confetti({
+        particleCount: 50,
+        startVelocity: 40,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: ['#34d399', '#60a5fa', '#f472b6', '#facc15', '#f87171']
+      });
+    }
+
+    function updateProgress() {
+      const percent = (currentIndex / questions.length) * 100;
+      progressBar.style.width = `${percent}%`;
+      progressText.textContent = `${currentIndex} / ${questions.length}`;
+    }
+
+    function startTimer() {
+      startTime = Date.now();
+      timerInterval = setInterval(() => {
+        elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+        const min = String(Math.floor(elapsedTime / 60)).padStart(2, "0");
+        const sec = String(elapsedTime % 60).padStart(2, "0");
+        timerText.textContent = `${min}:${sec}`;
+      }, 1000);
+    }
+
+    function stopTimer() { clearInterval(timerInterval); }
+
+    function showEndScreen() {
+      stopTimer();
+      progressBar.style.width = "100%";
+      progressText.textContent = `${questions.length} / ${questions.length}`;
+
+      const min = String(Math.floor(elapsedTime / 60)).padStart(2, "0");
+      const sec = String(elapsedTime % 60).padStart(2, "0");
+
+      questionContainer.innerHTML = `
+        <div class="text-center p-6 bg-white rounded-lg border shadow">
+          <h2 class="text-3xl font-bold mb-4">🎯 Result</h2>
+          <p class="text-lg mb-2">✅ Correct: ${correctCount} / ${questions.length}</p>
+          <p class="text-lg mb-2">❤️ Lives remaining: ${lives}</p>
+          <p class="text-lg mb-2">🕒 Time: ${min}:${sec}</p>
+          <p class="text-2xl font-bold text-blue-600 mb-4">🏆 Score: ${score}</p>
+          <button onclick="restart()" class="mt-6 bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 transition">
+            Restart
+          </button>
+        </div>
+      `;
+    }
+
+    function restart() {
+      currentIndex = 0;
+      correctCount = 0;
+      lives = maxLives;
+      combo = 0;
+      score = 0;
+      elapsedTime = 0;
+      timerText.textContent = "00:00";
+      scoreDisplay.textContent = "Score: 0";
+      updateComboDisplay();
+      updateLives();
+      updateProgress();
+      showQuestion(true);
+      startTimer();
+    }
+
+    loadQuestions();
+    updateLives();
+  </script>
+</body>
+
+</html>

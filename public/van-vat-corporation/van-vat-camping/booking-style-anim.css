@@ -1,0 +1,153 @@
+@keyframes moveUpFadeOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes moveUpFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  
+  .fade-scale-out-keep {
+    animation: moveUpFadeOut 0.6s ease forwards;
+  }
+  
+  .fade-scale-in-keep {
+    animation: moveUpFadeIn 0.6s ease forwards;
+  }
+  
+  .fade-scale-out {
+    animation: moveUpFadeOut 0.2s ease;
+  }
+  
+  .fade-scale-in {
+    animation: moveUpFadeIn 0.2s ease;
+  }
+
+
+
+
+
+
+
+
+
+/* Modal Scale-Up Animation */
+#terms-modal-card:not(.hidden) {
+    animation: scaleUp 0.75s forwards;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.75);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Title Fade In/Out */
+.title-fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+.title-fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+/* Description Slide Animations */
+.desc-slide-in-left {
+    animation: slideInLeft 0.6s forwards;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.desc-slide-out-right {
+    animation: slideOutRight 0.6s forwards;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.desc-slide-in-right {
+    animation: slideInRight 0.6s forwards;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.desc-slide-out-left {
+    animation: slideOutLeft 0.6s forwards;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+@keyframes slideInLeft {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Initial hidden state for sections */
+#title-section, #description-section {
+    transition: opacity 0.3s ease;
+}

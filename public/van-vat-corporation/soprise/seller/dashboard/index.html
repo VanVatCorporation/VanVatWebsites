@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Soprise Kênh Người Bán — Tổng quan</title>
+    <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Top bar -->
+    <header class="dash-topbar">
+        <a class="dash-logo" href="/">
+            <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" alt="Soprise" />
+            <span class="dash-logo-text">Sop<span>rise</span></span>
+            <span class="dash-logo-sub">Kênh Người Bán</span>
+        </a>
+
+        <div class="dash-topbar-right">
+            <button class="dash-topbar-btn" title="Tải xuống" aria-label="Tải xuống">
+                <i class="fas fa-download"></i>
+            </button>
+            <button class="dash-topbar-btn dash-notif" title="Thông báo" aria-label="Thông báo">
+                <i class="fas fa-bell"></i>
+                <span class="dash-notif-badge">5</span>
+            </button>
+            <button class="dash-topbar-btn" title="Trung tâm hỗ trợ" aria-label="Trung tâm hỗ trợ">
+                <i class="fas fa-headset"></i>
+            </button>
+            <button class="dash-user-btn" id="user-btn">
+                <div class="dash-avatar">V</div>
+                vavastore1234
+                <i class="fas fa-chevron-down" style="font-size:10px;opacity:.7"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="dash-body">
+
+        <!-- Sidebar -->
+        <aside class="dash-sidebar" aria-label="Điều hướng người bán">
+
+            <!-- Store info -->
+            <div class="sidebar-store">
+                <div class="store-avatar">V</div>
+                <div>
+                    <div class="store-info-name">vavastore1234</div>
+                    <div class="store-info-status">
+                        <span class="status-dot"></span> Đang hoạt động
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav groups -->
+            <nav class="sidebar-nav" id="sidebar-nav">
+
+                <!-- Tổng quan -->
+                <div class="sidebar-group">
+                    <a class="sidebar-link active" href="dashboard.html" style="padding-left:16px;font-weight:600">
+                        <i class="fas fa-th-large"></i> Tổng quan
+                    </a>
+                </div>
+
+                <!-- Đơn hàng -->
+                <div class="sidebar-group" data-group="orders">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left">
+                            <i class="fas fa-box"></i>
+                            Đơn hàng
+                        </span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="/seller/orders" target="content-frame">Tất cả đơn <span
+                                class="sidebar-badge">3</span></a>
+                        <a class="sidebar-link" href="#">Chờ xác nhận</a>
+                        <a class="sidebar-link" href="#">Chờ lấy hàng</a>
+                        <a class="sidebar-link" href="#">Đang giao</a>
+                        <a class="sidebar-link" href="#">Hoàn trả / Huỷ</a>
+                        <a class="sidebar-link" href="#">Cài đặt vận chuyển</a>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm -->
+                <div class="sidebar-group" data-group="products">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left">
+                            <i class="fas fa-tags"></i>
+                            Sản phẩm
+                        </span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Tất cả sản phẩm</a>
+                        <a class="sidebar-link" href="#">Thêm sản phẩm</a>
+                        <a class="sidebar-link" href="#">Cần bổ sung hàng</a>
+                        <a class="sidebar-link" href="#">Tối ưu AI <span class="sidebar-badge"
+                                style="background:var(--green)">Mới</span></a>
+                    </div>
+                </div>
+
+                <!-- Marketing -->
+                <div class="sidebar-group" data-group="marketing">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left">
+                            <i class="fas fa-bullhorn"></i>
+                            Marketing
+                        </span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Quảng cáo</a>
+                        <a class="sidebar-link" href="#">Flash Sale</a>
+                        <a class="sidebar-link" href="#">Mã giảm giá</a>
+                        <a class="sidebar-link" href="#">Live & Video</a>
+                        <a class="sidebar-link" href="#">Chương trình</a>
+                    </div>
+                </div>
+
+                <!-- Phân tích -->
+                <div class="sidebar-group" data-group="analytics">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left">
+                            <i class="fas fa-chart-line"></i>
+                            Phân tích
+                        </span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Phân tích bán hàng</a>
+                        <a class="sidebar-link" href="#">Hiệu suất sản phẩm</a>
+                        <a class="sidebar-link" href="#">Khách hàng</a>
+                    </div>
+                </div>
+
+                <!-- Tài chính -->
+                <div class="sidebar-group" data-group="finance">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left">
+                            <i class="fas fa-wallet"></i>
+                            Tài chính
+                        </span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Số dư tài khoản</a>
+                        <a class="sidebar-link" href="#">Lịch sử giao dịch</a>
+                        <a class="sidebar-link" href="#">Phí dịch vụ</a>
+                    </div>
+                </div>
+
+                <!-- Cài đặt -->
+                <div class="sidebar-group" data-group="settings">
+                    <button class="sidebar-group-btn" aria-expanded="false">
+                        <span class="group-left">
+                            <i class="fas fa-cog"></i>
+                            Cài đặt
+                        </span>
+                        <i class="fas fa-chevron-right chevron"></i>
+                    </button>
+                    <div class="sidebar-children">
+                        <a class="sidebar-link" href="#">Hồ sơ gian hàng</a>
+                        <a class="sidebar-link" href="#">Thiết lập shop</a>
+                        <a class="sidebar-link" href="#">Tài khoản phụ</a>
+                    </div>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- Main content -->
+        <main class="dash-content">
+
+            <!-- Alert -->
+            <div class="dash-alert">
+                <i class="fas fa-info-circle"></i>
+                <span>Hoàn tất hồ sơ gian hàng để tăng hiển thị sản phẩm. <a href="#">Cập nhật ngay →</a></span>
+            </div>
+
+            <div class="dash-page-title">Tổng quan</div>
+
+            <!-- Order stats -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-card-num">3</div>
+                    <div class="stat-card-label">Chờ Xác Nhận</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-num" style="color:var(--orange)">1</div>
+                    <div class="stat-card-label">Chờ Lấy Hàng</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-num" style="color:var(--green)">12</div>
+                    <div class="stat-card-label">Đã Xử Lý</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-card-num" style="color:var(--red)">0</div>
+                    <div class="stat-card-label">Sản Phẩm Tạm Khoá</div>
+                </div>
+            </div>
+
+            <!-- Main grid -->
+            <div class="dash-grid">
+
+                <!-- Left column -->
+                <div class="dash-grid-main">
+
+                    <!-- Analytics card -->
+                    <div class="dash-card">
+                        <div class="dash-card-header">
+                            <div>
+                                <div class="dash-card-title">Phân Tích Bán Hàng</div>
+                                <div class="dash-card-sub">Hôm nay 00:00 — 16:00 GMT+7</div>
+                            </div>
+                            <a class="dash-see-more" href="#">Xem thêm <i class="fas fa-chevron-right"></i></a>
+                        </div>
+
+                        <table class="analytics-table">
+                            <thead>
+                                <tr>
+                                    <th>Chỉ số</th>
+                                    <th>Hôm nay</th>
+                                    <th>Hôm qua</th>
+                                    <th>Thay đổi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Doanh số</td>
+                                    <td class="val">đ1.250.000</td>
+                                    <td>đ980.000</td>
+                                    <td><span class="change-up">▲ 27.6%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lượt truy cập</td>
+                                    <td class="val">248</td>
+                                    <td>191</td>
+                                    <td><span class="change-up">▲ 29.8%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Product Clicks</td>
+                                    <td class="val">84</td>
+                                    <td>67</td>
+                                    <td><span class="change-up">▲ 25.4%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Đơn hàng</td>
+                                    <td class="val">16</td>
+                                    <td>11</td>
+                                    <td><span class="change-up">▲ 45.5%</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Tỷ lệ chuyển đổi</td>
+                                    <td class="val">6.45%</td>
+                                    <td>5.76%</td>
+                                    <td><span class="change-up">▲ 12.0%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Mini bar chart -->
+                        <div style="margin-top:16px">
+                            <div style="font-size:11px;color:var(--gray-400);margin-bottom:8px">Doanh số 7 ngày qua
+                            </div>
+                            <div class="chart-bars" id="chart-bars"></div>
+                        </div>
+                    </div>
+
+                    <!-- Promo banner -->
+                    <div class="promo-banner">
+                        <div class="promo-text">
+                            <div class="promo-title">🚀 Bắt đầu dịch vụ hiển thị đầu tiên của bạn</div>
+                            <div class="promo-sub">Tăng trưởng doanh số ước tính +15% — Nhận ngay đ100.000 tín dụng
+                                quảng cáo miễn phí</div>
+                        </div>
+                        <button class="promo-btn">Tạo ngay</button>
+                    </div>
+
+                </div>
+
+                <!-- Right column -->
+                <div class="dash-grid-side">
+
+                    <!-- Performance -->
+                    <div class="dash-card">
+                        <div class="dash-card-header">
+                            <div class="dash-card-title">Hiệu quả bán hàng</div>
+                            <a class="dash-see-more" href="#"><i class="fas fa-chevron-right"></i></a>
+                        </div>
+                        <div class="perf-status">Tốt</div>
+                        <div class="perf-sub">1 chỉ số cần cải thiện</div>
+                        <div class="perf-item">
+                            <span class="perf-item-label">Tỷ lệ phản hồi chat</span>
+                            <span class="perf-item-val good">98.2%</span>
+                        </div>
+                        <div class="perf-item">
+                            <span class="perf-item-label">Thời gian phản hồi</span>
+                            <span class="perf-item-val good">&lt; 1 giờ</span>
+                        </div>
+                        <div class="perf-item">
+                            <span class="perf-item-label">Tỷ lệ đơn huỷ</span>
+                            <span class="perf-item-val warn">2.1%</span>
+                        </div>
+                        <div class="perf-item">
+                            <span class="perf-item-label">Đánh giá trung bình</span>
+                            <span class="perf-item-val good">4.8 ⭐</span>
+                        </div>
+                        <div class="perf-item">
+                            <span class="perf-item-label">Giao hàng đúng hạn</span>
+                            <span class="perf-item-val good">99.1%</span>
+                        </div>
+                    </div>
+
+                    <!-- Suggestions -->
+                    <div class="dash-card">
+                        <div class="dash-card-header">
+                            <div class="dash-card-title">Gợi ý kinh doanh</div>
+                            <span style="font-size:11px;color:var(--gray-400)">3 gợi ý</span>
+                        </div>
+
+                        <div class="suggestion-item">
+                            <div class="suggestion-icon blue"><i class="fas fa-chart-bar"></i></div>
+                            <div>
+                                <div class="suggestion-text"><strong>Tăng trưởng ước tính +15%</strong> nếu bật quảng
+                                    cáo cho sản phẩm bán chạy nhất</div>
+                                <button class="suggestion-action">Tạo quảng cáo</button>
+                            </div>
+                        </div>
+
+                        <div class="suggestion-item">
+                            <div class="suggestion-icon yellow"><i class="fas fa-tag"></i></div>
+                            <div>
+                                <div class="suggestion-text"><strong>Tạo mã giảm giá</strong> — Nhận đ3.000 tín dụng
+                                    dịch vụ hiển thị</div>
+                                <button class="suggestion-action">Thực hiện</button>
+                            </div>
+                        </div>
+
+                        <div class="suggestion-item">
+                            <div class="suggestion-icon green"><i class="fas fa-graduation-cap"></i></div>
+                            <div>
+                                <div class="suggestion-text"><strong>Hoàn thành khoá học</strong> Bán hàng Soprise —
+                                    Nhận <strong>5 lần</strong> đẩy sản phẩm miễn phí</div>
+                                <button class="suggestion-action">Học ngay</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="toast" role="alert" aria-live="polite"></div>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Đăng nhập - Vạn Vật Corporation
+    </title>
+
+
+
+    <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+    <script async="" crossorigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708105276845874"></script>
+    <meta content="Đăng Nhập - Vạn Vật" property="og:title" />
+    <meta content="Đăng nhập vào hệ thống!" property="og:description" />
+    <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+    <meta content="https://www.vanvatcorp.com" property="og:url" />
+    <meta content="website" property="og:type" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white text-gray-800 font-inter min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <a class="flex items-center space-x-2" href="https://www.vanvatcorp.com/">
+                    <img alt="Corporation logo, blue and white abstract geometric shape" class="h-10 w-10" height="40"
+                        src="https://www.vanvatcorp.com/public-res/logo-512.jpg"
+                        altSrc="https://storage.googleapis.com/a1aa/image/ff61740e-9851-4881-b7bc-0187d051ac31.jpg"
+                        width="40" />
+                    <span class="text-2xl font-bold text-blue-700">
+                        Tập đoàn Vạn Vật
+                    </span>
+                </a>
+                <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+                    <a class="hover:text-blue-700 transition" href="https://services.vanvatcorp.com/">
+                        Services
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/about-us/">
+                        About Us
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/teams/">
+                        Team
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/careers/">
+                        Careers
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/contact-us/">
+                        Contact
+                    </a>
+                </div>
+                <!-- Dynamic Auth Navbar - will be populated by auth-navbar.js -->
+                <div class="hidden md:flex" id="auth-navbar-placeholder">
+                    <!-- Auth navbar will be inserted here dynamically -->
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Toggle menu"
+                        class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
+                        id="mobile-menu-button">
+                        <i class="fas fa-bars fa-lg">
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="https://services.vanvatcorp.com/">
+                Services
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/about-us/">
+                About Us
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/teams/">
+                Team
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/careers/">
+                Careers
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/contact-us/">
+                Contact
+            </a>
+            <!-- Dynamic Auth Navbar Mobile - will be populated by auth-navbar.js -->
+            <div id="auth-navbar-mobile-placeholder">
+                <!-- Auth navbar mobile will be inserted here dynamically -->
+            </div>
+    </nav>
+    <!-- Login Section -->
+    <main class="pt-24 max-w-md mx-auto px-6 sm:px-8 lg:px-12 py-20">
+        <h1 class="text-4xl font-bold text-center text-gray-900 mb-12">
+            Login to Your Account
+        </h1>
+        <form action="https://account.vanvatcorp.com/api/login" method="POST"
+            class="bg-white p-8 rounded-lg shadow-lg space-y-6">
+            <div>
+                <label for="email" class="block text-gray-700 font-semibold mb-2">
+                    Email Address
+                </label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-700" />
+            </div>
+            <div>
+                <label for="password" class="block text-gray-700 font-semibold mb-2">
+                    Password
+                </label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required
+                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-700" />
+            </div>
+            <div id="errorMessage" class="hidden text-red-600 font-semibold text-center"></div>
+            <button type="submit"
+                class="w-full bg-blue-700 text-white font-semibold py-3 rounded-md hover:bg-blue-800 transition">
+                Login
+            </button>
+
+            <!-- Social Login Section -->
+            <div class="relative flex items-center justify-center my-6">
+                <div class="border-t border-gray-300 w-full"></div>
+                <span class="absolute bg-white px-4 text-gray-500 text-sm">hoặc đăng nhập với</span>
+            </div>
+
+            <div class="space-y-3">
+                <!-- Google Login Button -->
+                <button type="button" onclick="location.href='/api/auth/google'"
+                    class="w-full flex items-center justify-center gap-3 bg-white border border-gray-300 text-gray-700 font-semibold py-3 rounded-md hover:bg-gray-50 transition shadow-sm">
+                    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#4285F4"
+                            d="M23.745 12.27c0-.79-.07-1.54-.19-2.27h-11.3v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z" />
+                        <path fill="#34A853"
+                            d="M12.255 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96h-3.98v3.09C3.515 21.3 7.565 24 12.255 24z" />
+                        <path fill="#FBBC05"
+                            d="M5.525 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62h-3.98a11.86 11.86 0 000 10.76l3.98-3.09z" />
+                        <path fill="#EA4335"
+                            d="M12.255 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C18.205 1.19 15.495 0 12.255 0c-4.69 0-8.74 2.7-10.71 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z" />
+                    </svg>
+                    Tiếp tục với Google
+                </button>
+
+                <!-- Facebook Login Button -->
+                <button type="button" onclick="location.href='/api/auth/facebook'"
+                    class="w-full flex items-center justify-center gap-3 bg-[#1877F2] text-white font-semibold py-3 rounded-md hover:bg-[#166FE5] transition shadow-sm">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                    Tiếp tục với Facebook
+                </button>
+
+                <!-- Apple Login Button -->
+                <button type="button" onclick="location.href='/api/auth/apple'"
+                    class="w-full flex items-center justify-center gap-3 bg-black text-white font-semibold py-3 rounded-md hover:bg-gray-900 transition shadow-sm">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                    </svg>
+                    Tiếp tục với Apple
+                </button>
+            </div>
+
+            <p class="text-center text-gray-600">
+                Don't have an account? <a href="https://account.vanvatcorp.com/register"
+                    class="text-blue-700 font-semibold hover:underline">Register here</a>
+            </p>
+        </form>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">
+                © 2026 Tập đoàn Vạn Vật. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Privacy Policy" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/privacy-policy">
+                    Privacy Policy
+                </a>
+                <a aria-label="Terms of Service" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/terms-of-service">
+                    Terms of Service
+                </a>
+                <a aria-label="Sitemap" class="hover:text-white" href="/van-vat-corporation/sitemap/">
+                    Sitemap
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+    <script src="https://account.vanvatcorp.com/login/login.js"></script>
+</body>
+
+</html>

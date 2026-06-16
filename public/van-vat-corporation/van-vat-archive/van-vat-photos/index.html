@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Lưu Trữ > Ảnh - Archive > Photos
+    </title>
+
+
+
+    <link href="web.ico" rel="icon" type="image/x-icon" />
+    <script async="" crossorigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708105276845874"></script>
+    <meta content="Lưu Trữ > Ảnh" property="og:title" />
+    <meta content="Kỉ niệm đáng nhớ dưới dạng ảnh!" property="og:description" />
+    <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+    <meta content="https://www.vanvatcorp.com" property="og:url" />
+    <meta content="website" property="og:type" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/particles-style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white text-gray-800 font-inter">
+    <!-- Navbar -->
+    <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <a class="flex items-center space-x-2" href="https://www.vanvatcorp.com/">
+                    <img alt="Corporation logo, blue and white abstract geometric shape" class="h-10 w-10" height="40"
+                        src="https://www.vanvatcorp.com/public-res/logo-512.jpg"
+                        altSrc="https://storage.googleapis.com/a1aa/image/ff61740e-9851-4881-b7bc-0187d051ac31.jpg"
+                        width="40" />
+                    <span class="text-2xl font-bold text-blue-700">
+                        Tập đoàn Vạn Vật
+                    </span>
+                </a>
+                <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+                    <a class="hover:text-blue-700 transition" href="https://services.vanvatcorp.com/">
+                        Dịch vụ
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/about-us/">
+                        Về chúng tôi
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/teams/">
+                        Nhóm
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/careers/">
+                        Sự nghiệp
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/contact-us/">
+                        Liên hệ
+                    </a>
+                </div>
+                <!-- Dynamic Auth Navbar - will be populated by auth-navbar.js -->
+                <div class="hidden md:flex" id="auth-navbar-placeholder">
+                    <!-- Auth navbar will be inserted here dynamically -->
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Toggle menu"
+                        class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
+                        id="mobile-menu-button">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="https://services.vanvatcorp.com/">
+                Dịch vụ
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/about-us/">
+                Về chúng tôi
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/teams/">
+                Nhóm
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/careers/">
+                Sự nghiệp
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/contact-us/">
+                Liên hệ
+            </a>
+            <!-- Dynamic Auth Navbar Mobile - will be populated by auth-navbar.js -->
+            <div id="auth-navbar-mobile-placeholder">
+                <!-- Auth navbar mobile will be inserted here dynamically -->
+            </div>
+    </nav>
+    <!-- PDF Viewer Section -->
+    <main class="pt-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+        <h1 class="text-3xl font-bold text-blue-700 mb-8 flex flex-wrap items-center space-x-2 select-none">
+            <a href="https://services.vanvatcorp.com/"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">Vạn Vật Project</span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+            <i class="fas fa-chevron-right text-blue-500 z-20"></i>
+            <a href="https://archive.vanvatcorp.com/"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">Vạn Vật Lưu Trữ</span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+            <i class="fas fa-chevron-right text-blue-500 z-20"></i>
+            <a href="./"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">
+                    <span class="particle-container">
+                        <b>Ảnh</b>
+                        <span class="particles" aria-hidden="true"></span>
+                    </span>
+                </span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+        </h1>
+        <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-6 pdf-container">
+            <div class="flex justify-between items-center mb-3">
+                <p class="text-sm text-gray-600 font-semibold select-none">Recommended</p>
+                <p class="text-sm text-gray-600 font-semibold select-none">Last Updated</p>
+            </div>
+            <!-- Actual body of the web -->
+
+
+
+
+            <section aria-label="Pinterest style image gallery" class="flex flex-wrap justify-center gap-4"
+                id="image-container">
+
+
+                <!--
+        <!-- Original 4:3 ratio images --
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="Mountain sunset with orange sky and pine trees in the foreground" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c88995e0-55d4-4fda-f323-2d09f61332bb.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Mountain Sunset
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="Cozy living room with modern furniture, green plants, and natural light" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ecadf30d-2682-43b3-76a5-a9983ffd7f46.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Cozy Living Room
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="Delicious avocado toast topped with egg and cherry tomatoes on a wooden table" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/848a31cc-5ab2-4681-4e45-549c91a59148.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Avocado Toast
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="City skyline at night with bright lights reflecting on water" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1251abbf-927c-453e-083b-431b8bd88304.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            City Skyline
+                        </div>
+                    </article>
+                    <!-- 3:4 ratio images (portrait) --
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(20% - 1rem); min-width: 180px; max-width: 320px">
+                        <div class="aspect-[3/4] w-full">
+                            <img alt="Portrait of a woman with flowing hair in a natural outdoor setting" class="w-full h-full object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1846d565-4a43-40f0-a9a1-3c0b83482703.jpg" width="300" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Portrait Woman
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(20% - 1rem); min-width: 180px; max-width: 320px">
+                        <div class="aspect-[3/4] w-full">
+                            <img alt="Tall tree with autumn leaves in a forest during golden hour" class="w-full h-full object-cover" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7535f6f8-0612-4087-bb3c-d9130f825d57.jpg" width="300" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Autumn Tree
+                        </div>
+                    </article>
+                    <!-- 9:16 ratio images (tall portrait) --
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(15% - 1rem); min-width: 140px; max-width: 280px">
+                        <div class="aspect-[9/16] w-full">
+                            <img alt="Young woman practicing yoga on a beach at sunrise" class="w-full h-full object-cover" height="480" loading="lazy" src="https://storage.googleapis.com/a1aa/image/cd24f2b4-473a-4493-fbb4-a58226a378ac.jpg" width="270" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Yoga Beach
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(15% - 1rem); min-width: 140px; max-width: 280px">
+                        <div class="aspect-[9/16] w-full">
+                            <img alt="City street at night with neon lights and reflections" class="w-full h-full object-cover" height="480" loading="lazy" src="https://storage.googleapis.com/a1aa/image/35a09fa9-e2b6-4d53-f2f9-a80a4e8eb5ae.jpg" width="270" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            City Night
+                        </div>
+                    </article>
+                    <!-- 16:9 ratio images (wide landscape) --
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(30% - 1rem); min-width: 260px; max-width: 480px">
+                        <div class="aspect-[16/9] w-full">
+                            <img alt="Wide panoramic view of a desert landscape with sand dunes" class="w-full h-full object-cover" height="270" loading="lazy" src="https://storage.googleapis.com/a1aa/image/381ecb1e-e265-48de-6175-122061dd6852.jpg" width="480" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Desert Panorama
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(30% - 1rem); min-width: 260px; max-width: 480px">
+                        <div class="aspect-[16/9] w-full">
+                            <img alt="Wide shot of a city skyline during sunset with colorful sky" class="w-full h-full object-cover" height="270" loading="lazy" src="https://storage.googleapis.com/a1aa/image/47bd34b0-902a-4693-f094-390bb58d2b8f.jpg" width="480" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            City Sunset
+                        </div>
+                    </article>
+                    <!-- Additional original 4:3 images to fill gallery --
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="Colorful hot air balloons flying over green fields under a blue sky" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/53ec2c1d-5ca6-4863-9b36-162ddcaacf0d.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Hot Air Balloons
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="Minimalist workspace with laptop, succulent plants, and clean desk" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ed4525a6-f993-4895-d4f8-b52bc40c28bc.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Minimalist Workspace
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="Snowy mountain peak under a clear blue sky with some clouds" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/24dbfa19-6368-4d00-a905-fb012abf2611.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Snowy Mountain
+                        </div>
+                    </article>
+                    <article class="relative rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex-grow" style="flex-basis: calc(25% - 1rem); min-width: 220px; max-width: 400px">
+                        <div class="aspect-[4/3] w-full">
+                            <img alt="Delicious cupcakes with colorful frosting and sprinkles on a white plate" class="w-full h-full object-cover" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d6bbddf5-ced1-4117-8a1e-6e926efcd9b1.jpg" />
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white text-sm font-semibold px-3 py-2 truncate">
+                            Colorful Cupcakes
+                        </div>
+                    </article>
+
+                    -->
+            </section>
+
+            <div class="flex justify-center mt-8" id="load-more-btn">
+                <button
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                    Load More
+                </button>
+            </div>
+            <div class="flex justify-center mt-8">
+                <input type="number"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    id="load-more-txt" />
+                <input type="number"
+                    class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    id="load-amount-txt" />
+            </div>
+
+
+
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">
+                © 2026 Tập đoàn Vạn Vật. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Privacy Policy" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/privacy-policy">
+                    Privacy Policy
+                </a>
+                <a aria-label="Terms of Service" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/terms-of-service">
+                    Terms of Service
+                </a>
+                <a aria-label="Sitemap" class="hover:text-white" href="/van-vat-corporation/sitemap/">
+                    Sitemap
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/particles-title.js"></script>
+    <script src="https://archive.vanvatcorp.com/van-vat-photos/script.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-ui.js"></script>
+</body>
+
+</html>

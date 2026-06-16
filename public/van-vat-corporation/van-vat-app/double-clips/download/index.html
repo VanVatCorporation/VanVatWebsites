@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download DoubleClips - AI Video Editor</title>
+    <meta name="description"
+        content="Download DoubleClips for macOS, Windows, and Android. The most powerful AI video editor with smart templates and creative tools.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/download.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">DoubleClips</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="../templates/index.html">Templates</a></li>
+                    <li><a href="../index.html#tools">Tools</a></li>
+                    <li><a href="../index.html#testimonials">Reviews</a></li>
+                </ul>
+                <div class="flex gap-sm">
+                    <a href="../index.html#try-online" class="btn btn-primary">Try Online</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Detected Platform Hero -->
+        <section class="download-hero">
+            <div class="container">
+                <div id="detected-platform-container" class="detected-platform-card animate-fade-in">
+                    <!-- Loading state -->
+                    <div class="platform-badge">System Detection</div>
+                    <h2>Detecting your platform...</h2>
+                    <div class="skeleton" style="height: 60px; width: 200px; margin: var(--space-lg) auto;"></div>
+                </div>
+
+                <div class="text-center" style="margin-bottom: var(--space-2xl);">
+                    <h2>Available for all your devices</h2>
+                    <p>Choose your platform and start creating incredible content today.</p>
+                </div>
+
+                <!-- Manual Platform Selection -->
+                <div class="download-platforms-grid">
+                    <!-- macOS -->
+                    <div class="platform-selection-card animate-fade-in" style="animation-delay: 0.1s;">
+                        <span class="platform-icon">🍎</span>
+                        <h3>macOS</h3>
+                        <p class="version-info" id="mac-version">Checking for latest version...</p>
+                        <a href="#" id="mac-download-btn" class="btn btn-secondary w-full">Download .dmg</a>
+                    </div>
+
+                    <!-- Windows -->
+                    <div class="platform-selection-card animate-fade-in" style="animation-delay: 0.2s;">
+                        <span class="platform-icon">🪟</span>
+                        <h3>Windows</h3>
+                        <p class="version-info" id="win-version">Checking for latest version...</p>
+                        <a href="#" id="win-download-btn" class="btn btn-secondary w-full">Download .exe</a>
+                    </div>
+
+                    <!-- Android -->
+                    <div class="platform-selection-card animate-fade-in" style="animation-delay: 0.3s;">
+                        <span class="platform-icon">🤖</span>
+                        <h3>Android</h3>
+                        <p class="version-info" id="android-version">Checking for latest version...</p>
+                        <div class="flex flex-col gap-sm">
+                            <a href="#" id="android-download-btn" class="btn btn-secondary w-full">Download .apk</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.vvcorp.doubleclips" class="btn-playstore">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Older Releases Section -->
+                <section class="older-releases-section animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="flex items-center justify-between" style="margin-bottom: var(--space-lg);">
+                        <h2>Older Releases</h2>
+                        <div id="platform-filter" class="flex gap-sm">
+                            <button class="btn btn-secondary btn-sm active" data-filter="all">All</button>
+                            <button class="btn btn-secondary btn-sm" data-filter="macOS">macOS</button>
+                            <button class="btn btn-secondary btn-sm" data-filter="Windows">Windows</button>
+                            <button class="btn btn-secondary btn-sm" data-filter="Android">Android</button>
+                        </div>
+                    </div>
+                    
+                    <div class="releases-table-container">
+                        <table class="releases-table">
+                            <thead>
+                                <tr>
+                                    <th>Version</th>
+                                    <th>Platform</th>
+                                    <th>Release Date</th>
+                                    <th>Size</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="releases-tbody">
+                                <!-- Data will be populated by JS -->
+                                <tr>
+                                    <td colspan="5" class="text-center">Loading versions...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 DoubleClips by Van Vat Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/download.js"></script>
+</body>
+
+</html>

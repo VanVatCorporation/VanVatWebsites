@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Template - DoubleClips</title>
+    <meta name="description" content="Preview and use this video template in DoubleClips">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Template detail page styles */
+        .template-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-2xl) var(--space-lg);
+        }
+
+        .template-video-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .video-player-wrapper {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            background: var(--color-bg-secondary);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .video-player-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .template-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .template-meta {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            padding: var(--space-md);
+            background: var(--color-bg-card);
+            border-radius: var(--radius-md);
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .related-templates {
+            margin-top: var(--space-3xl);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .related-template-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .related-template-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .related-template-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-lg);
+        }
+
+        @media (max-width: 968px) {
+            .template-video-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: var(--space-sm);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-accent);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-top: var(--space-xs);
+        }
+
+        .comment-item {
+            background: var(--color-bg-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: var(--space-sm);
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: var(--color-text-accent);
+        }
+
+        .comment-date {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .comment-text {
+            line-height: 1.6;
+            margin-bottom: var(--space-md);
+        }
+
+        .comment-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .comment-media-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background: var(--color-bg-secondary);
+        }
+
+        .comment-media-item img,
+        .comment-media-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        .comment-action-btn {
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+
+        .comment-action-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-text-primary);
+        }
+
+        .comment-action-btn.active {
+            color: var(--color-text-accent);
+        }
+
+        .media-preview-item {
+            position: relative;
+            display: inline-block;
+            margin-right: var(--space-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .media-preview-item img,
+        .media-preview-item video {
+            max-width: 150px;
+            max-height: 150px;
+            border-radius: var(--radius-md);
+        }
+
+        .media-preview-remove {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--color-text-accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .reply-form {
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="../index.html" class="logo">DoubleClips</a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="../templates/index.html">Templates</a></li>
+                    <li><a href="../index.html#tools">Tools</a></li>
+                    <li><a href="../index.html#testimonials">Reviews</a></li>
+                </ul>
+                <div class="flex gap-sm">
+                    <a href="#download" class="btn btn-secondary">Download</a>
+                    <a href="#try-online" class="btn btn-primary">Try Online</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Template Detail Content -->
+    <div class="template-detail-container">
+        <!-- Back Button -->
+        <div style="margin-bottom: var(--space-lg);">
+            <a href="../templates/index.html"
+                style="color: var(--color-text-secondary); display: inline-flex; align-items: center; gap: 0.5rem;">
+                ← Back to Templates
+            </a>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-state" style="text-align: center; padding: var(--space-3xl);">
+            <div class="skeleton"
+                style="height: 400px; border-radius: var(--radius-xl); margin-bottom: var(--space-lg);"></div>
+            <div class="skeleton" style="height: 60px; max-width: 600px; margin: 0 auto var(--space-md);"></div>
+            <div class="skeleton" style="height: 100px; max-width: 800px; margin: 0 auto;"></div>
+        </div>
+
+        <!-- Template Content (hidden until loaded) -->
+        <div id="template-content" style="display: none;">
+            <div class="template-video-section">
+                <!-- Video Player -->
+                <div class="video-player-wrapper">
+                    <video id="template-video" controls autoplay loop>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Template Info -->
+                <div class="template-info">
+                    <div>
+                        <h1 id="template-title" style="margin-bottom: var(--space-sm);">Template Title</h1>
+                        <p id="template-description"
+                            style="font-size: 1.125rem; color: var(--color-text-secondary); line-height: 1.6;">
+                            Template description
+                        </p>
+                    </div>
+
+                    <!-- Meta Information -->
+                    <div class="template-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">Author</span>
+                            <span class="meta-value" id="template-author">-</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Clips</span>
+                            <span class="meta-value" id="template-clips">-</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Created</span>
+                            <span class="meta-value" id="template-date">-</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button class="btn btn-primary btn-large" style="width: 100%;">
+                        Use This Template
+                    </button>
+
+                    <!-- Additional Info -->
+                    <div
+                        style="padding: var(--space-md); background: var(--color-bg-card); border-radius: var(--radius-md);">
+                        <h4 style="margin-bottom: var(--space-sm);">What's Included</h4>
+                        <ul style="list-style: none; color: var(--color-text-secondary);">
+                            <li style="margin-bottom: var(--space-xs);">✓ Pre-designed video template</li>
+                            <li style="margin-bottom: var(--space-xs);">✓ Customizable text and media</li>
+                            <li style="margin-bottom: var(--space-xs);">✓ Professional transitions</li>
+                            <li>✓ Ready to export in any format</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template Stats -->
+            <div class="template-stats card" style="margin-top: var(--space-xl); padding: var(--space-md);">
+                <h4 style="margin-bottom: var(--space-md);">Statistics</h4>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: var(--space-md);">
+                    <div class="stat-box">
+                        <div class="stat-icon">👁️</div>
+                        <div class="stat-value" id="stat-views">0</div>
+                        <div class="stat-label">Views</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">❤️</div>
+                        <div class="stat-value" id="stat-hearts">0</div>
+                        <div class="stat-label">Hearts</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">🎬</div>
+                        <div class="stat-value" id="stat-uses">0</div>
+                        <div class="stat-label">Uses</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">🔖</div>
+                        <div class="stat-value" id="stat-bookmarks">0</div>
+                        <div class="stat-label">Bookmarks</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-icon">💬</div>
+                        <div class="stat-value" id="stat-comments">0</div>
+                        <div class="stat-label">Comments</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div id="comments-section" class="comments-section" style="margin-top: var(--space-2xl);">
+                <h2 style="margin-bottom: var(--space-md);">Comments</h2>
+
+                <!-- Post Comment Form -->
+                <div class="post-comment-form card" style="padding: var(--space-lg); margin-bottom: var(--space-lg);">
+                    <textarea id="comment-text" placeholder="Share your thoughts..." style="width: 100%; min-height: 100px; padding: var(--space-md); 
+                                     background: var(--color-bg-secondary); border: 2px solid rgba(255, 255, 255, 0.1); 
+                                     border-radius: var(--radius-md); color: var(--color-text-primary); 
+                                     font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
+
+                    <!-- Media Upload Section -->
+                    <div
+                        style="margin-top: var(--space-md); display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <input type="file" id="comment-media-input" multiple accept="image/*,video/*,audio/*"
+                                style="display: none;" onchange="previewMedia()">
+                            <button class="btn btn-secondary"
+                                onclick="document.getElementById('comment-media-input').click()">
+                                📎 Attach Media
+                            </button>
+                            <span id="media-count"
+                                style="margin-left: var(--space-sm); color: var(--color-text-muted); font-size: 0.9rem;"></span>
+                        </div>
+                        <button class="btn btn-primary" onclick="postComment()">
+                            Post Comment
+                        </button>
+                    </div>
+
+                    <!-- Media Preview -->
+                    <div id="media-preview"
+                        style="margin-top: var(--space-md); display: none; flex-wrap: wrap; gap: var(--space-sm);">
+                    </div>
+                </div>
+
+                <!-- Comments List -->
+                <div id="comments-list">
+                    <!-- Comments will be loaded here -->
+                    <div class="skeleton"
+                        style="height: 100px; border-radius: var(--radius-lg); margin-bottom: var(--space-md);"></div>
+                </div>
+            </div>
+
+            <!-- Related Templates -->
+            <div class="related-templates">
+                <h2 style="margin-bottom: var(--space-lg);">Related Templates</h2>
+                <div id="related-templates-grid" class="related-grid">
+                    <!-- Related templates will be loaded here -->
+                    <div class="skeleton" style="height: 250px; border-radius: var(--radius-lg);"></div>
+                    <div class="skeleton" style="height: 250px; border-radius: var(--radius-lg);"></div>
+                    <div class="skeleton" style="height: 250px; border-radius: var(--radius-lg);"></div>
+                    <div class="skeleton" style="height: 250px; border-radius: var(--radius-lg);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="logo">DoubleClips</h4>
+                    <p style="color: var(--color-text-secondary);">
+                        AI-powered video editing for everyone
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../templates/index.html">Templates</a></li>
+                        <li><a href="../index.html#tools">Tools</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#support">Support</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="../privacy-policy/index.html">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 DoubleClips by Van Vat Corporation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/template-detail.js"></script>
+</body>
+
+</html>

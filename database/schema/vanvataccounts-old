@@ -1,0 +1,63 @@
+-- Van Vat Corporation Account Database Schema
+-- Database: vanvataccounts
+-- Using UUID as primary key
+-- 
+-- EXTENSIBILITY INSTRUCTIONS:
+-- When adding new user fields in the future:
+-- 1. Add new column using: ALTER TABLE users ADD COLUMN field_name data_type;
+-- 2. Update modules/routes/account.js (or account.js in root) - add field to INSERT and UPDATE queries
+-- 3. Update frontend registration form and account center edit form
+-- 4. Add validation logic if needed
+
+CREATE DATABASE IF NOT EXISTS vanvataccounts;
+USE vanvataccounts;
+
+-- Users table with UUID-based primary key
+CREATE TABLE IF NOT EXISTS users (
+    accountUUID VARCHAR(36) PRIMARY KEY,
+    accountUsername VARCHAR(50) UNIQUE NOT NULL,
+    accountEmail VARCHAR(255) UNIQUE NOT NULL,
+    accountPassword VARCHAR(255) NOT NULL,
+    
+    -- Personal Information
+    firstName VARCHAR(100) NOT NULL,
+    lastName VARCHAR(100) NOT NULL,
+    bio TEXT DEFAULT '',
+    avatarUrl VARCHAR(500) DEFAULT NULL,
+    
+    -- Account Metadata
+    reputationScore INT DEFAULT 0,
+    countryCode VARCHAR(100) DEFAULT NULL COMMENT 'Country/Location',
+    nationalID VARCHAR(255) DEFAULT NULL COMMENT 'Hashed National ID',
+    gender TINYINT DEFAULT NULL COMMENT '0=Male, 1=Female, 2=Other',
+    legalBirthday DATE DEFAULT NULL,
+    globalTierID INT DEFAULT 1 COMMENT '1=Average, higher=Premium',
+    
+    -- OAuth Provider Support (for Google, Facebook, Apple login)
+    oauthProvider VARCHAR(20) DEFAULT NULL COMMENT 'google, facebook, apple, or NULL for email registration',
+    oauthProviderId VARCHAR(255) DEFAULT NULL COMMENT 'Unique ID from OAuth provider',
+    profileComplete TINYINT DEFAULT 1 COMMENT '0=needs profile completion, 1=complete',
+    
+    -- Timestamps
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    -- Indexes for performance
+    INDEX idx_username (accountUsername),
+    INDEX idx_email (accountEmail),
+    INDEX idx_reputation (reputationScore)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Example: To add a new field 'phoneNumber' in the future, run:
+-- ALTER TABLE users ADD COLUMN phoneNumber VARCHAR(20) DEFAULT NULL AFTER accountEmail;
+
+-- =============================================================================
+-- OAuth Provider Support (Added Feb 2026)
+-- For Google, Facebook, Apple social login integration
+-- =============================================================================
+
+-- Run these ALTER statements on existing databases:
+-- ALTER TABLE users ADD COLUMN oauthProvider VARCHAR(20) DEFAULT NULL COMMENT 'google, facebook, apple, or NULL for email registration';
+-- ALTER TABLE users ADD COLUMN oauthProviderId VARCHAR(255) DEFAULT NULL COMMENT 'Unique ID from OAuth provider';
+-- ALTER TABLE users ADD COLUMN profileComplete TINYINT DEFAULT 1 COMMENT '0=needs profile completion, 1=complete';
+-- ALTER TABLE users ADD INDEX idx_oauth_provider (oauthProvider, oauthProviderId);

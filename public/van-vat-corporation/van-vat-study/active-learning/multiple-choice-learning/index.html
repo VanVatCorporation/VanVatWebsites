@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Multiple Choice Form Uploader</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+      <div class="flex items-center space-x-2">
+        <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" class="h-10 w-10" alt="logo">
+        <span class="font-bold text-xl text-blue-700">Form Uploader</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-24 max-w-5xl mx-auto px-6 pb-20">
+    <h1 class="text-3xl font-bold text-center mb-8">📄 Upload Multiple Choice Form</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <!-- File Loader -->
+      <div class="p-6 border rounded-lg bg-white shadow-sm">
+        <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+          <i class="fas fa-file-upload text-blue-700"></i> Load JSON File
+        </h2>
+        <input id="fileInput" type="file" accept=".json" class="w-full border p-2 rounded mb-4 cursor-pointer" />
+
+        <button onclick="clearFields()" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+          Clear All
+        </button>
+
+        <div class="mt-6 text-sm text-gray-600 bg-gray-50 p-3 rounded border">
+          <p><strong>Example JSON:</strong></p>
+          <pre class="text-xs bg-gray-100 p-2 rounded mt-2 overflow-x-auto">
+{
+  "title": "Sample Test",
+  "questions": [
+    {
+      "question": "Which of the following are fruits?",
+      "choices": ["Apple", "Carrot", "Banana", "Onion"],
+      "correctAnswers": [0, 2]
+    }
+  ]
+}
+</pre>
+        </div>
+      </div>
+
+      <!-- Editor & Upload -->
+      <div class="p-6 border rounded-lg bg-white shadow-sm flex flex-col">
+        <label for="formTitle" class="font-semibold text-gray-700 mb-2">Form Title</label>
+        <input id="formTitle" type="text" placeholder="Enter test title..." class="w-full border p-2 rounded mb-4" />
+
+        <label for="jsonViewer" class="font-semibold text-gray-700 mb-2">Form JSON Content</label>
+        <textarea id="jsonViewer" placeholder="Your JSON content here..."
+          class="w-full h-[350px] border p-3 font-mono text-sm rounded flex-1 mb-4"></textarea>
+
+        <button onclick="uploadForm()" class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 font-semibold">
+          🚀 Upload to Server
+        </button>
+
+        <div id="statusBox" class="hidden mt-4 p-3 rounded text-sm"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script src="https://academy.vanvatcorp.com/active-learning/multiple-choice-learning/jsonTestHandler.js"></script>
+
+  <!-- Dynamic Auth Navbar - will be populated by auth-navbar.js -->
+  <div class="hidden md:flex" id="auth-navbar-placeholder">
+    <!-- Auth navbar will be inserted here dynamically -->
+</body>
+
+</html>

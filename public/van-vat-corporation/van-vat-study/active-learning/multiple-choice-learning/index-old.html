@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Question JSON Holder - Van Vat Corporation</title>
+
+  <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+  <script async crossorigin="anonymous"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708105276845874"></script>
+
+  <meta content="JSON Question Editor" property="og:title" />
+  <meta content="Easily upload and edit JSON data for multi-choice questions." property="og:description" />
+  <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+  <meta content="https://www.vanvatcorp.com" property="og:url" />
+  <meta content="website" property="og:type" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white text-gray-800 font-inter">
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-16">
+        <a class="flex items-center space-x-2" href="#">
+          <img alt="Logo" class="h-10 w-10" src="https://www.vanvatcorp.com/public-res/logo-512.jpg" />
+          <span class="text-2xl font-bold text-blue-700">Tập đoàn Vạn Vật</span>
+        </a>
+        <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+          <a class="hover:text-blue-700 transition" href="#">Home</a>
+          <a class="hover:text-blue-700 transition" href="#">Docs</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-20">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8 text-center">📄 JSON Question Holder</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Left: File Upload -->
+      <div class="p-6 border rounded-lg shadow-sm bg-gray-50">
+        <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+          <i class="fas fa-upload text-blue-700"></i> Tải file JSON
+        </h2>
+        <p class="text-gray-600 mb-4">Tải lên tệp JSON chứa câu hỏi trắc nghiệm của bạn.</p>
+
+        <input id="fileInput" type="file" accept=".json"
+          class="block w-full mb-4 text-gray-700 border border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-700" />
+
+        <button onclick="clearText()"
+          class="px-4 py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition">
+          Xóa nội dung
+        </button>
+
+        <div class="mt-6 p-4 border border-dashed border-gray-300 rounded bg-white text-sm text-gray-600">
+          <p><strong>Hướng dẫn:</strong></p>
+          <ul class="list-disc ml-5 mt-2 space-y-1">
+            <li>Chọn file JSON từ máy tính</li>
+            <li>Nội dung sẽ hiển thị trong khung bên phải</li>
+            <li>Bạn có thể chỉnh sửa trực tiếp</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: JSON Viewer -->
+      <div class="p-6 border rounded-lg shadow-sm bg-white">
+        <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+          <i class="fas fa-code text-blue-700"></i> Nội dung JSON
+        </h2>
+        <textarea id="jsonViewer" placeholder='Nội dung JSON sẽ hiện ở đây...'
+          class="w-full h-[400px] border border-gray-300 rounded-md p-3 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-700"></textarea>
+
+        <button onclick="downloadJSON()"
+          class="mt-4 px-4 py-2 bg-blue-700 text-white font-semibold rounded-md hover:bg-blue-800 transition">
+          Tải xuống JSON
+        </button>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-blue-200 py-8">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">
+        © 2026 Tập đoàn Vạn Vật. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a aria-label="Privacy Policy" class="hover:text-white" href="https://www.vanvatcorp.com/privacy-policy">
+          Privacy Policy
+        </a>
+        <a aria-label="Terms of Service" class="hover:text-white" href="https://www.vanvatcorp.com/terms-of-service">
+          Terms of Service
+        </a>
+        <a aria-label="Sitemap" class="hover:text-white" href="/van-vat-corporation/sitemap/">
+          Sitemap
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="https://academy.vanvatcorp.com/active-learning/multiple-choice-learning/jsonTestHandler.json"></script>
+
+</body>
+
+</html>

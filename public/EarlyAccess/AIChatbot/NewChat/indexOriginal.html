@@ -1,0 +1,209 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   AI Chatbot
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white shadow-lg rounded-3xl w-full h-full max-w-full max-h-full p-6 relative">
+   <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center space-x-4">
+     <button class="text-gray-800 text-2xl" id="menuButton">
+      <i class="fas fa-bars">
+      </i>
+     </button>
+     <h1 class="text-2xl font-bold text-gray-800">
+      AI Chatbot
+     </h1>
+    </div>
+    <div class="flex items-center space-x-4 relative">
+     <div class="flex items-center space-x-1">
+      <i class="fas fa-bolt text-yellow-500 text-xl">
+      </i>
+      <span class="text-gray-800 font-medium">
+       20
+      </span>
+     </div>
+     <div class="flex items-center space-x-1">
+      <i class="fas fa-coins text-yellow-500 text-xl">
+      </i>
+      <span class="text-gray-800 font-medium">
+       250
+      </span>
+     </div>
+     <div class="relative">
+      <i class="fas fa-robot text-2xl text-blue-500 cursor-pointer" id="botIcon">
+      </i>
+      <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden" id="botDropdown">
+       <a class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-comments text-gray-500 mr-2">
+        </i>
+        <span>
+         Normal Chatbot
+        </span>
+       </a>
+       <a class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-exclamation-triangle text-red-500 mr-2">
+        </i>
+        <span>
+         Aggressive Chatbot
+        </span>
+       </a>
+       <a class="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer">
+        <i class="fas fa-bullseye text-green-500 mr-2">
+        </i>
+        <span>
+         Precise Chatbot
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="flex flex-col space-y-4 overflow-y-auto h-5/6">
+    <div class="flex items-start space-x-2">
+     <img alt="AI chatbot avatar" class="w-10 h-10 rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/kK-Opt0EdqQLHbFPb2xFoU3Vwq912BVLzKDndiiSmwo.jpg" width="40"/>
+     <div class="bg-gray-200 p-3 rounded-2xl max-w-xs md:max-w-md lg:max-w-lg">
+      <p class="text-gray-800">
+       Hello World!
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="mt-4 flex items-center relative">
+    <input class="w-full p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 pr-20" placeholder="Type your message..." type="text"/>
+    <div class="absolute right-2 flex space-x-2">
+     <button class="bg-blue-500 text-white p-2 rounded-full">
+      <i class="fas fa-paper-plane">
+      </i>
+     </button>
+     <button class="bg-blue-500 text-white p-2 rounded-full" id="uploadButton">
+      <i class="fas fa-image">
+      </i>
+     </button>
+    </div>
+   </div>
+   <div class="absolute bottom-20 right-6 bg-white p-4 rounded-lg shadow-lg hidden" id="imagePreviewModal">
+    <h2 class="text-lg font-semibold mb-2">
+     Image to send:
+    </h2>
+    <img alt="Preview of the image to be uploaded" class="w-64 h-64 object-cover cursor-pointer" height="256" id="imagePreview" onclick="document.getElementById('fileInput').click()" src="https://storage.googleapis.com/a1aa/image/XtRAynfcwb8zkMbKm4WZoDj4WIM5mCWOLAX2tEq3cQ4.jpg" width="256"/>
+    <input accept="image/*" class="hidden" id="fileInput" onchange="previewImage(event)" type="file"/>
+    <button class="mt-2 bg-blue-500 text-white p-2 rounded-full" id="closePreview">
+     <i class="fas fa-times">
+     </i>
+    </button>
+   </div>
+   <div class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 hidden" id="sideMenuOverlay">
+    <div class="fixed inset-y-0 left-0 bg-white w-64 p-6 rounded-r-3xl shadow-lg">
+     <h2 class="text-xl font-bold mb-4">
+      Menu
+     </h2>
+     <ul class="space-y-4">
+      <li>
+       <a class="flex items-center space-x-2 text-gray-800 hover:text-blue-500 cursor-pointer">
+        <i class="fas fa-plus">
+        </i>
+        <span>
+         New Chat
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center space-x-2 text-gray-800 hover:text-blue-500 cursor-pointer">
+        <i class="fas fa-bookmark">
+        </i>
+        <span>
+         Bookmark
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center space-x-2 text-gray-800 hover:text-blue-500 cursor-pointer">
+        <i class="fas fa-cog">
+        </i>
+        <span>
+         Settings
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center space-x-2 text-gray-800 hover:text-blue-500 cursor-pointer">
+        <i class="fas fa-user">
+        </i>
+        <span>
+         Account
+        </span>
+       </a>
+      </li>
+      <li>
+       <a class="flex items-center space-x-2 text-gray-800 hover:text-blue-500 cursor-pointer">
+        <i class="fas fa-history">
+        </i>
+        <span>
+         History
+        </span>
+       </a>
+      </li>
+     </ul>
+     <div class="absolute bottom-6 left-6">
+      <a class="flex items-center space-x-2 text-red-500 hover:text-red-700 cursor-pointer">
+       <i class="fas fa-sign-out-alt">
+       </i>
+       <span>
+        Log Out
+       </span>
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   document.getElementById('botIcon').addEventListener('click', function() {
+            document.getElementById('botDropdown').classList.toggle('hidden');
+        });
+
+        document.getElementById('uploadButton').addEventListener('click', function() {
+            document.getElementById('imagePreviewModal').classList.remove('hidden');
+        });
+
+        document.getElementById('closePreview').addEventListener('click', function() {
+            document.getElementById('imagePreviewModal').classList.add('hidden');
+        });
+
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('imagePreview');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        document.getElementById('imagePreview').addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+
+        document.getElementById('menuButton').addEventListener('click', function() {
+            document.getElementById('sideMenuOverlay').classList.toggle('hidden');
+        });
+
+        document.getElementById('sideMenuOverlay').addEventListener('click', function(event) {
+            if (event.target === this) {
+                document.getElementById('sideMenuOverlay').classList.add('hidden');
+            }
+        });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,65 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Music Player UI
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-900 text-white font-['Roboto'] min-h-screen flex flex-col justify-center items-center p-4">
+  <div class="w-full max-w-md bg-gray-800 rounded-3xl shadow-lg p-6 flex flex-col items-center">
+   <img alt="Album cover art showing a colorful abstract design with musical notes and waves" class="rounded-2xl mb-6 w-full object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/b94fa4e3-d929-48b6-15e5-e77f0ea570e4.jpg" width="300"/>
+   <h1 class="text-2xl font-bold mb-1 text-center">
+    Song Title
+   </h1>
+   <h2 class="text-gray-400 mb-6 text-center">
+    Artist Name
+   </h2>
+   <div class="w-full flex items-center space-x-4 mb-6">
+    <span class="text-xs text-gray-400">
+     0:00
+    </span>
+    <input class="w-full h-1 rounded-lg accent-indigo-500" max="100" min="0" type="range" value="30"/>
+    <span class="text-xs text-gray-400">
+     3:45
+    </span>
+   </div>
+   <div class="flex justify-center items-center space-x-10">
+    <button aria-label="Previous" class="text-gray-400 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-full p-3">
+     <i class="fas fa-step-backward fa-lg">
+     </i>
+    </button>
+    <button aria-label="Play/Pause" class="bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-full p-5 text-white shadow-lg">
+     <i class="fas fa-play fa-2x">
+     </i>
+    </button>
+    <button aria-label="Next" class="text-gray-400 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-full p-3">
+     <i class="fas fa-step-forward fa-lg">
+     </i>
+    </button>
+   </div>
+   <div class="w-full flex justify-between items-center mt-6 text-gray-400 text-sm">
+    <button aria-label="Shuffle" class="hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded p-2">
+     <i class="fas fa-random">
+     </i>
+    </button>
+    <button aria-label="Repeat" class="hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded p-2">
+     <i class="fas fa-redo">
+     </i>
+    </button>
+    <button aria-label="Playlist" class="hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded p-2">
+     <i class="fas fa-list">
+     </i>
+    </button>
+    <button aria-label="Volume" class="hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded p-2">
+     <i class="fas fa-volume-up">
+     </i>
+    </button>
+   </div>
+  </div>
+ </body>
+</html>

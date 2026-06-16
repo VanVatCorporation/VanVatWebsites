@@ -1,0 +1,9 @@
+/* Optional if you want reusable classes (but we'll also handle with JS) */
+.flash-green {
+  background-color: #d1fae5 !important; /* Tailwind green-100 */
+  transition: background-color 0.5s ease;
+}
+.flash-red {
+  background-color: #fee2e2 !important; /* Tailwind red-100 */
+  transition: background-color 0.5s ease;
+}

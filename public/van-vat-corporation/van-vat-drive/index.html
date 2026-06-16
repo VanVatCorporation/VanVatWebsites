@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Vạn Vật Ổ Đĩa - Van Vat Drive
+    </title>
+
+
+
+    <link href="web.ico" rel="icon" type="image/x-icon" />
+    <script async="" crossorigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708105276845874"></script>
+    <meta content="Vạn Vật Ổ Đĩa" property="og:title" />
+    <meta content="Lưu mọi thứ!" property="og:description" />
+    <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+    <meta content="https://www.vanvatcorp.com" property="og:url" />
+    <meta content="website" property="og:type" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .slide-down {
+            animation: slideDown 0.5s forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.5s forwards;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        progress[value]::-webkit-progress-bar {
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        progress[value]::-webkit-progress-value {
+            transition: width 0.2s ease, background-color 0.2s ease;
+            border-radius: 10px;
+        }
+    </style>
+
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/particles-style.css" rel="stylesheet" />
+</head>
+
+
+
+
+
+
+<body class="bg-white text-gray-800 font-inter">
+    <!-- Navbar -->
+    <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <a class="flex items-center space-x-2" href="https://www.vanvatcorp.com/">
+                    <img alt="Corporation logo, blue and white abstract geometric shape" class="h-10 w-10" height="40"
+                        src="https://www.vanvatcorp.com/public-res/logo-512.jpg"
+                        altSrc="https://storage.googleapis.com/a1aa/image/ff61740e-9851-4881-b7bc-0187d051ac31.jpg"
+                        width="40" />
+                    <span class="text-2xl font-bold text-blue-700">
+                        Tập đoàn Vạn Vật
+                    </span>
+                </a>
+                <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+                    <a class="hover:text-blue-700 transition" href="https://services.vanvatcorp.com/">
+                        Dịch vụ
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/about-us/">
+                        Về chúng tôi
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/teams/">
+                        Nhóm
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/careers/">
+                        Sự nghiệp
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/contact-us/">
+                        Liên hệ
+                    </a>
+                </div>
+                <!-- Dynamic Auth Navbar - will be populated by auth-navbar.js -->
+                <div class="hidden md:flex" id="auth-navbar-placeholder">
+                    <!-- Auth navbar will be inserted here dynamically -->
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Toggle menu"
+                        class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
+                        id="mobile-menu-button">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="https://services.vanvatcorp.com/">
+                Dịch vụ
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/about-us/">
+                Về chúng tôi
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/teams/">
+                Nhóm
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/careers/">
+                Sự nghiệp
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/contact-us/">
+                Liên hệ
+            </a>
+            <!-- Dynamic Auth Navbar Mobile - will be populated by auth-navbar.js -->
+            <div id="auth-navbar-mobile-placeholder">
+                <!-- Auth navbar mobile will be inserted here dynamically -->
+            </div>
+    </nav>
+    <!-- PDF Viewer Section -->
+    <main class="pt-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+        <h1 class="text-3xl font-bold text-blue-700 mb-8 flex flex-wrap items-center space-x-2 select-none">
+            <a href="https://services.vanvatcorp.com/"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">Vạn Vật Project</span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+            <i class="fas fa-chevron-right text-blue-500 z-20"></i>
+            <a href="./"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">
+                    Vạn Vật <span class="particle-container">
+                        <b>Drive</b>
+                        <span class="particles" aria-hidden="true"></span>
+                    </span>
+                </span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+        </h1>
+
+        <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-6 pdf-container">
+
+
+
+            <div
+                class="flex flex-col md:flex-row justify-between w-full max-w-3xl border p-4 mb-6 bg-white shadow-md rounded-lg">
+                <div class="w-full md:w-1/2 text-center border p-4 rounded-lg">
+                    <form action="upload-drag" enctype="multipart/form-data" id="uploadForm" method="post">
+                        <div class="w-36 h-36 mx-auto relative grid place-items-center border-2 border-dashed border-gray-400 rounded-lg"
+                            id="drop_zone" onclick="clickHandler(event)" ondragleave="dragLeaveHandler(event)"
+                            ondragover="dragOverHandler(event);" ondrop="dropHandler(event);">
+                            <img alt="File Upload Icon" height="150" id="fileUploadServerIcon"
+                                src="serverStatusDataStored.png" width="150" />
+                            <img alt="Upload Arrow Icon" class="absolute opacity-0 transition-opacity duration-1000"
+                                height="50" id="uploadArrowServerIcon" src="upgrade.png" width="50" />
+                            <img alt="Upload Error Icon" class="absolute opacity-0 transition-opacity duration-1000"
+                                height="70" id="uploadErrorServerIcon" src="warningSign.png" width="70" />
+                            <p class="absolute" id="uploadText">
+                                Ấn, hoặc kéo vào đây để tải lên
+                            </p>
+                        </div>
+                        <input class="mt-4" id="isFolderUpload" type="checkbox" />
+                        <label for="isFolderUpload">
+                            Tải lên thư mục
+                        </label>
+                        <br />
+                        <input id="folderNameUpload" name="folderName" type="hidden" />
+                        <input id="targetFolder" name="targetFolder" type="hidden" />
+                        <input class="hidden" id="filePicker" multiple="" name="myFile" onchange="selectFile(event)"
+                            type="file">
+                        <input class="hidden" directory="" id="folderPicker" mozdirectory="" msdirectory="" multiple=""
+                            name="myFolder" odirectory="" onchange="selectFolder(event)" type="file" webkitdirectory="">
+                    </form>
+                    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded" id="uploadButton"
+                        onclick="uploadButton(event)" type="button">
+                        <b>
+                            Tải lên
+                        </b>
+                    </button>
+                </div>
+                <div class="w-full md:w-1/2 text-center border p-4 rounded-lg">
+                    <div>
+                        <p class="mb-2">
+                            <b>
+                                Tên thư mục tùy chỉnh:
+                            </b>
+                        </p>
+                        <input class="border p-2 w-full rounded-lg" id="targetFolderInput" name="targetFolder"
+                            onchange="onTargetFolderChange()" type="text" value="ThuMucGoc" />
+                    </div>
+                    <input class="mt-4" id="old_upload" name="Old Upload" type="checkbox" value="on" />
+                    <label for="old_upload">
+                        Sử dụng Multer phiên bản cũ (không khuyến khích cho các tập tin lớn hơn 1GB)
+                    </label>
+                    <br />
+                </div>
+            </div>
+            <div class="w-full max-w-3xl border p-4 mb-6 bg-white shadow-md hidden rounded-lg"
+                id="uploadProgressContainer">
+                <label class="block mb-2" for="uploadProgressBar">
+                    Tiến độ tải lên:
+                </label>
+                <progress class="w-full h-4 mb-2 rounded-lg" id="uploadProgressBar" max="100" value="0">
+                    32%
+                </progress>
+                <label class="block" id="uploadProgressInfo">
+                    0MB/0MB (0%)
+                </label>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between w-full max-w-3xl border p-4 bg-white shadow-md rounded-lg">
+                <div class="w-full md:w-1/2 text-center border p-4 rounded-lg">
+                    <a class="block mb-2">
+                        <b>
+                            Thông tin máy chủ:
+                        </b>
+                    </a>
+                    <progress class="w-full h-4 mb-2 rounded-lg" id="diskInfoBar" max="100" value="0">
+                        32%
+                    </progress>
+                    <p class="mt-2" id="diskInfoText">
+                        <b>
+                        </b>
+                    </p>
+                </div>
+                <div class="w-full md:w-1/2 text-center border p-4 rounded-lg">
+                    <a class="block mb-2" href="/global">
+                        <b>
+                            Các file hiện có:
+                        </b>
+                    </a>
+                    <nav>
+                        <ul class="h-36 overflow-y-scroll" id="allFileList">
+                            <li class="border-b py-2">
+                                File 1
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </main>
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">
+                © 2026 Tập đoàn Vạn Vật. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Privacy Policy" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/privacy-policy">
+                    Privacy Policy
+                </a>
+                <a aria-label="Terms of Service" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/terms-of-service">
+                    Terms of Service
+                </a>
+                <a aria-label="Sitemap" class="hover:text-white" href="/van-vat-corporation/sitemap/">
+                    Sitemap
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/particles-title.js"></script>
+
+    <script src="script.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-ui.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

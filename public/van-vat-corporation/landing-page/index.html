@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Tập đoàn Vạn Vật - Van Vat Corporation</title>
+
+    <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+    <script async="" crossorigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708105276845874"></script>
+    <meta content="Tập đoàn Vạn Vật" property="og:title" />
+    <meta content="Tập đoàn Vạn Vật!" property="og:description" />
+    <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+    <meta content="https://www.vanvatcorp.com" property="og:url" />
+    <meta content="website" property="og:type" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <!-- ═══ Maintenance Banner ═══ -->
+    <div id="maintenance-banner" role="alert" aria-live="polite">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3 flex-1 min-w-0">
+                <i class="fas fa-wrench flex-shrink-0"></i>
+                <p class="truncate sm:whitespace-normal">
+                    <strong>Thông báo bảo trì:</strong> Chúng tôi đang chuyển đổi nhà đăng ký tên miền — một số dịch vụ
+                    có thể tạm thời gián đoạn.
+                    <a href="https://services.vanvatcorp.com" class="ml-1">Xem trạng thái →</a>
+                </p>
+            </div>
+            <button onclick="document.getElementById('maintenance-banner').classList.add('dismissed')"
+                aria-label="Đóng thông báo" class="flex-shrink-0 opacity-70 hover:opacity-100 transition p-1 rounded">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ Navbar ═══ -->
+    <nav id="main-nav" class="w-full fixed left-0 z-50" style="top:0" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a class="flex items-center space-x-2 group" href="https://www.vanvatcorp.com/">
+                    <img alt="Logo Tập đoàn Vạn Vật" class="h-9 w-9 rounded-lg"
+                        src="https://www.vanvatcorp.com/public-res/logo-512.jpg" width="36" height="36" />
+                    <span class="text-xl font-bold text-blue-700 group-hover:text-blue-800 transition">
+                        Tập đoàn Vạn Vật
+                    </span>
+                </a>
+                <!-- Desktop links -->
+                <div class="hidden md:flex items-center space-x-7">
+                    <a class="nav-link text-sm" href="https://services.vanvatcorp.com/">Dịch vụ</a>
+                    <a class="nav-link text-sm" href="#about">Về chúng tôi</a>
+                    <a class="nav-link text-sm" href="#team">Nhóm</a>
+                    <a class="nav-link text-sm" href="#careers">Sự nghiệp</a>
+                    <a class="nav-link text-sm" href="#contact">Liên hệ</a>
+                </div>
+                <!-- Auth placeholder -->
+                <div class="hidden md:flex" id="auth-navbar-placeholder"></div>
+                <!-- Mobile toggle -->
+                <div class="md:hidden">
+                    <button aria-label="Mở menu" id="mobile-menu-button"
+                        class="text-gray-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 rounded p-1 transition">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="py-2">
+                <a class="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
+                    href="https://services.vanvatcorp.com/">Dịch vụ</a>
+                <a class="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
+                    href="#about">Về chúng tôi</a>
+                <a class="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
+                    href="#team">Nhóm</a>
+                <a class="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
+                    href="#careers">Sự nghiệp</a>
+                <a class="block px-6 py-3 text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition"
+                    href="#contact">Liên hệ</a>
+                <div id="auth-navbar-mobile-placeholder" class="border-t border-gray-100 pt-2"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ Hero ═══ -->
+    <header id="hero" aria-label="Hero section" style="padding-top: 64px;">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-20 md:py-28 hero-content">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
+                <!-- Text -->
+                <div class="md:w-1/2 text-center md:text-left">
+                    <div class="hero-badge">
+                        <span></span>
+                        Đang hoạt động &amp; phát triển
+                    </div>
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-5xl xl:text-6xl font-extrabold leading-tight mb-6 text-white">
+                        Một tiềm năng<br />
+                        <span
+                            style="background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">phát
+                            triển không<br />ngừng nghỉ</span>
+                    </h1>
+                    <p class="text-blue-100 text-lg mb-10 max-w-md mx-auto md:mx-0 leading-relaxed">
+                        Với Tập đoàn Vạn Vật còn sơ khai nhưng đầy tiềm năng, chúng tôi hứa hẹn cung cấp các dịch vụ từ
+                        trực tiếp đến trực tuyến — mang đến trải nghiệm tốt nhất chưa từng có!
+                    </p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                        <a class="btn-primary" href="https://services.vanvatcorp.com/">
+                            <i class="fas fa-th-large mr-2 opacity-70"></i>Dịch vụ của chúng tôi
+                        </a>
+                        <a class="btn-outline" href="#contact">
+                            Liên hệ <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Image -->
+                <div class="md:w-1/2 w-full">
+                    <div class="hero-image-wrap rounded-2xl overflow-hidden">
+                        <img src="https://storage.googleapis.com/a1aa/image/fe047c91-b3de-4005-a9b4-2f0abae4e70c.jpg"
+                            alt="Đội ngũ chuyên gia Vạn Vật cùng nhau làm việc" class="w-full rounded-2xl shadow-2xl"
+                            loading="eager" width="600" height="400" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fade bottom edge into white -->
+        <div style="height:64px; background: linear-gradient(to bottom, transparent, #f9fafb);"></div>
+    </header>
+
+    <!-- ═══ Services ═══ -->
+    <section id="services" aria-label="Dịch vụ" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-14">
+                <p class="section-eyebrow">Giải pháp</p>
+                <h2 class="section-title">Các dịch vụ hiện tại</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">Từ hạ tầng đám mây đến tư vấn chiến lược — chúng tôi cung
+                    cấp đầy đủ công cụ bạn cần.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cloud -->
+                <div class="service-card">
+                    <div class="service-icon" style="background:#eff6ff;">
+                        <i class="fas fa-cloud text-blue-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Giải pháp Đám mây</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Hạ tầng đám mây linh hoạt và bảo mật, tùy chỉnh
+                        theo nhu cầu doanh nghiệp.</p>
+                </div>
+                <!-- Data -->
+                <div class="service-card">
+                    <div class="service-icon" style="background:#f0fdf4;">
+                        <i class="fas fa-chart-bar text-green-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Phân tích Dữ liệu</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Khai thác insight từ dữ liệu, hỗ trợ ra quyết định
+                        kinh doanh thông minh hơn.</p>
+                </div>
+                <!-- Security -->
+                <div class="service-card">
+                    <div class="service-icon" style="background:#faf5ff;">
+                        <i class="fas fa-shield-alt text-purple-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">An ninh Mạng</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Bảo vệ tài sản số với các giải pháp bảo mật tiên
+                        tiến, đáng tin cậy.</p>
+                </div>
+                <!-- Consulting -->
+                <div class="service-card">
+                    <div class="service-icon" style="background:#fffbeb;">
+                        <i class="fas fa-handshake text-amber-600"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Consulting</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Tư vấn chuyên sâu giúp tối ưu vận hành và đẩy nhanh
+                        tăng trưởng.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider mx-auto" style="max-width:1200px;"></div>
+
+    <!-- ═══ About ═══ -->
+    <section id="about" aria-label="Về chúng tôi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex flex-col md:flex-row items-center gap-14">
+                <!-- Image -->
+                <div class="md:w-1/2 w-full">
+                    <div style="position:relative; display:inline-block; width:100%;">
+                        <div
+                            style="position:absolute; inset:-10px; background:linear-gradient(135deg,#dbeafe,#ede9fe); border-radius:20px; z-index:0;">
+                        </div>
+                        <img src="https://storage.googleapis.com/a1aa/image/b21ccaa5-26c6-4a29-c815-46a049da337e.jpg"
+                            alt="Trụ sở Tập đoàn Vạn Vật" class="rounded-2xl shadow-lg w-full"
+                            style="position:relative; z-index:1;" loading="lazy" width="600" height="400" />
+                    </div>
+                </div>
+                <!-- Text -->
+                <div class="md:w-1/2">
+                    <p class="section-eyebrow">Về chúng tôi</p>
+                    <h2 class="section-title mb-6">Tập đoàn Vạn Vật</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Được thành lập vào 2025, Tập đoàn Vạn Vật có khả năng cung cấp cho người dùng những tiện ích,
+                        cơ sở hạ tầng, dịch vụ — từ phi trực tuyến đến trực tuyến, giúp khai thác tối đa tiềm năng
+                        trong mọi lĩnh vực, bao gồm giải trí, cá nhân hóa, hỗ trợ,...
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Với tiềm năng phát triển cao, tập đoàn hứa hẹn sẽ mở rộng trên trường quốc tế, mang thương hiệu
+                        Việt Nam ra toàn cầu!
+                    </p>
+                    <!-- Stats row -->
+                    <div class="grid grid-cols-3 gap-4 mb-8">
+                        <div class="about-stat text-center">
+                            <div class="text-2xl font-extrabold text-blue-700">2025</div>
+                            <div class="text-xs text-gray-500 mt-1">Thành lập</div>
+                        </div>
+                        <div class="about-stat text-center">
+                            <div class="text-2xl font-extrabold text-blue-700">4+</div>
+                            <div class="text-xs text-gray-500 mt-1">Dịch vụ</div>
+                        </div>
+                        <div class="about-stat text-center">
+                            <div class="text-2xl font-extrabold text-blue-700">VN</div>
+                            <div class="text-xs text-gray-500 mt-1">Khởi nguồn</div>
+                        </div>
+                    </div>
+                    <a class="inline-flex items-center gap-2 px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition shadow-sm"
+                        href="/van-vat-corporation/contact-us/">
+                        Tìm hiểu thêm <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider mx-auto" style="max-width:1200px;"></div>
+
+    <!-- ═══ Roadmap ═══ -->
+    <section aria-label="Lộ trình" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-16">
+                <p class="section-eyebrow">Hành trình</p>
+                <h2 class="section-title">Roadmap</h2>
+            </div>
+            <!-- Desktop timeline -->
+            <div class="hidden md:block relative max-w-5xl mx-auto">
+                <!-- Track line -->
+                <div
+                    style="position:absolute; top:23px; left:12.5%; right:12.5%; height:2px; background:linear-gradient(90deg,#1d4ed8 25%,#f59e0b 25% 75%,#6b7280 75%); border-radius:1px;">
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <!-- Milestone 1: done -->
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot active"><i class="fas fa-check text-sm"></i></div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm font-bold text-green-600 mb-1">01/2025</p>
+                            <p class="text-gray-600 text-sm">Thành lập tập đoàn và xây dựng đội ngũ cốt lõi.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 2: done -->
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot active"><i class="fas fa-check text-sm"></i></div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm font-bold text-green-600 mb-1">06/2025</p>
+                            <p class="text-gray-600 text-sm">Ra mắt các dịch vụ trực tuyến đầu tiên.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 3: done -->
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot active"><i class="fas fa-check text-sm"></i></div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm font-bold text-green-600 mb-1">12/2025</p>
+                            <p class="text-gray-600 text-sm">Mở rộng thị trường quốc tế và hợp tác chiến lược.</p>
+                        </div>
+                    </div>
+                    <!-- Milestone 4: current -->
+                    <div class="roadmap-node">
+                        <div class="roadmap-dot current"><i class="fas fa-star text-sm"></i></div>
+                        <div class="mt-4 text-center">
+                            <p class="text-sm font-bold text-amber-600 mb-1">06/2026 — Hiện tại</p>
+                            <p class="text-gray-600 text-sm">Đạt vị thế hàng đầu trong ngành và phát triển bền vững.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile timeline -->
+            <div class="md:hidden space-y-6 max-w-sm mx-auto">
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="roadmap-dot active w-10 h-10 text-sm"><i class="fas fa-check text-xs"></i></div>
+                        <div class="flex-1 w-px bg-green-300 mt-1"></div>
+                    </div>
+                    <div class="pb-4">
+                        <p class="font-bold text-green-600 text-sm">01/2025</p>
+                        <p class="text-gray-600 text-sm mt-1">Thành lập tập đoàn và xây dựng đội ngũ cốt lõi.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="roadmap-dot active w-10 h-10 text-sm"><i class="fas fa-check text-xs"></i></div>
+                        <div class="flex-1 w-px bg-green-300 mt-1"></div>
+                    </div>
+                    <div class="pb-4">
+                        <p class="font-bold text-green-600 text-sm">06/2025</p>
+                        <p class="text-gray-600 text-sm mt-1">Ra mắt các dịch vụ trực tuyến đầu tiên.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="roadmap-dot active w-10 h-10 text-sm"><i class="fas fa-check text-xs"></i></div>
+                        <div class="flex-1 w-px bg-amber-300 mt-1"></div>
+                    </div>
+                    <div class="pb-4">
+                        <p class="font-bold text-green-600 text-sm">12/2025</p>
+                        <p class="text-gray-600 text-sm mt-1">Mở rộng thị trường quốc tế và hợp tác chiến lược.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center">
+                        <div class="roadmap-dot current w-10 h-10 text-sm"><i class="fas fa-star text-xs"></i></div>
+                    </div>
+                    <div>
+                        <p class="font-bold text-amber-600 text-sm">06/2026 — Hiện tại</p>
+                        <p class="text-gray-600 text-sm mt-1">Đạt vị thế hàng đầu trong ngành và phát triển bền vững.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider mx-auto" style="max-width:1200px;"></div>
+
+    <!-- ═══ Team ═══ -->
+    <section id="team" aria-label="Đội ngũ lãnh đạo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-14">
+                <p class="section-eyebrow">Con người</p>
+                <h2 class="section-title">Các vị lãnh đạo</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="team-card">
+                    <img class="team-avatar" src="https://www.vanvatcorp.com/res/ceo.jpg" alt="Nguyễn Quốc Việt - CEO"
+                        loading="lazy" />
+                    <h3 class="font-bold text-gray-900">Nguyễn Quốc Việt</h3>
+                    <p class="text-blue-600 text-sm font-medium mt-1 mb-2">Chief Executive Officer</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Nhà sáng lập Tập đoàn Vạn Vật. Mang đến những ý
+                        tưởng điên rồ nhưng hết sức khả thi và thiết thực.</p>
+                </div>
+                <div class="team-card">
+                    <img class="team-avatar"
+                        src="https://storage.googleapis.com/a1aa/image/27e82b7a-96b8-4f11-b592-cb74673a2557.jpg"
+                        alt="Maria Lopez - CFO" loading="lazy" />
+                    <h3 class="font-bold text-gray-900">Maria Lopez</h3>
+                    <p class="text-blue-600 text-sm font-medium mt-1 mb-2">Chief Financial Officer</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Expert in financial strategy and corporate growth
+                        management.</p>
+                </div>
+                <div class="team-card">
+                    <img class="team-avatar"
+                        src="https://storage.googleapis.com/a1aa/image/e219925a-5746-4a81-fd09-b0b7a8bd7e2d.jpg"
+                        alt="David Kim - CTO" loading="lazy" />
+                    <h3 class="font-bold text-gray-900">David Kim</h3>
+                    <p class="text-blue-600 text-sm font-medium mt-1 mb-2">Chief Technology Officer</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Leading technology innovation and product
+                        development.</p>
+                </div>
+                <div class="team-card">
+                    <img class="team-avatar"
+                        src="https://storage.googleapis.com/a1aa/image/1c6a1c33-a31a-46c2-32f8-4cd1f211d660.jpg"
+                        alt="Samantha Green - CMO" loading="lazy" />
+                    <h3 class="font-bold text-gray-900">Samantha Green</h3>
+                    <p class="text-blue-600 text-sm font-medium mt-1 mb-2">Chief Marketing Officer</p>
+                    <p class="text-gray-500 text-xs leading-relaxed">Driving brand strategy and customer engagement
+                        worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider mx-auto" style="max-width:1200px;"></div>
+
+    <!-- ═══ Careers ═══ -->
+    <section id="careers" aria-label="Cơ hội nghề nghiệp" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-14">
+                <p class="section-eyebrow">Tuyển dụng</p>
+                <h2 class="section-title">Join Our Team</h2>
+                <p class="text-gray-500 mt-3 max-w-2xl mx-auto">
+                    We're always looking for talented and passionate individuals to help us shape the future.
+                    Explore our current openings and become part of the Tập đoàn Vạn Vật family.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="job-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            style="width:36px;height:36px;border-radius:8px;background:#eff6ff;display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-code text-blue-600 text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900">Software Engineer</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Develop and maintain scalable software
+                        solutions in a collaborative environment.</p>
+                    <a class="text-sm text-blue-700 font-semibold hover:underline flex items-center gap-1"
+                        href="/van-vat-corporation/contact-us/">Apply Now <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+                <div class="job-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            style="width:36px;height:36px;border-radius:8px;background:#f0fdf4;display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-tasks text-green-600 text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900">Product Manager</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Lead product development cycles and coordinate
+                        cross-functional teams.</p>
+                    <a class="text-sm text-blue-700 font-semibold hover:underline flex items-center gap-1"
+                        href="/van-vat-corporation/contact-us/">Apply Now <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+                <div class="job-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div
+                            style="width:36px;height:36px;border-radius:8px;background:#faf5ff;display:flex;align-items:center;justify-content:center;">
+                            <i class="fas fa-pencil-ruler text-purple-600 text-sm"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900">UX/UI Designer</h3>
+                    </div>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Design intuitive user experiences and
+                        interfaces for our products.</p>
+                    <a class="text-sm text-blue-700 font-semibold hover:underline flex items-center gap-1"
+                        href="/van-vat-corporation/contact-us/">Apply Now <i class="fas fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider mx-auto" style="max-width:1200px;"></div>
+
+    <!-- ═══ Contact ═══ -->
+    <section id="contact" aria-label="Liên hệ" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="text-center mb-14">
+                <p class="section-eyebrow">Kết nối</p>
+                <h2 class="section-title">Liên hệ chúng tôi</h2>
+            </div>
+            <div class="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto">
+                <!-- Form -->
+                <div class="md:w-1/2">
+                    <form action="#" method="POST"
+                        class="space-y-5 bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow-sm">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="name">Họ và tên</label>
+                            <input class="contact-input" id="name" name="name" placeholder="Nhập họ và tên" required
+                                type="text" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="email">Địa chỉ
+                                Email</label>
+                            <input class="contact-input" id="email" name="email" placeholder="you@example.com" required
+                                type="email" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="message">Nội
+                                dung</label>
+                            <textarea class="contact-input resize-none" id="message" name="message"
+                                placeholder="Nhập nội dung tin nhắn..." required rows="5"></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-blue-700 text-white font-semibold py-3 rounded-lg hover:bg-blue-800 active:scale-95 transition shadow-sm"
+                            type="submit">
+                            <i class="fas fa-paper-plane mr-2 opacity-80"></i>Gửi tin nhắn
+                        </button>
+                    </form>
+                </div>
+                <!-- Contact info -->
+                <div class="md:w-1/2 flex flex-col justify-center gap-6">
+                    <div class="flex items-start gap-4">
+                        <div
+                            style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 text-sm mb-0.5">Địa chỉ</p>
+                            <p class="text-gray-500 text-sm">1234 Innovation Drive, Huyện Bình Chánh,<br />Thành Phố Hồ
+                                Chí Minh, VN 700000</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div
+                            style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-phone text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 text-sm mb-0.5">Điện thoại</p>
+                            <p class="text-gray-500 text-sm">+84327777596</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div
+                            style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-envelope text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 text-sm mb-0.5">Email</p>
+                            <p class="text-gray-500 text-sm">contact@vanvatcorp.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div
+                            style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-globe text-blue-600"></i>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-800 text-sm mb-0.5">Website</p>
+                            <p class="text-gray-500 text-sm">www.vanvatcorp.com</p>
+                        </div>
+                    </div>
+                    <!-- Social -->
+                    <div class="flex gap-3 mt-2">
+                        <a aria-label="Facebook" href="#"
+                            class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-blue-100 flex items-center justify-center text-blue-700 hover:text-blue-800 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a aria-label="Twitter" href="#"
+                            class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-blue-100 flex items-center justify-center text-blue-700 hover:text-blue-800 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a aria-label="LinkedIn" href="#"
+                            class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-blue-100 flex items-center justify-center text-blue-700 hover:text-blue-800 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a aria-label="Instagram" href="#"
+                            class="w-10 h-10 rounded-lg bg-gray-100 hover:bg-blue-100 flex items-center justify-center text-blue-700 hover:text-blue-800 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ Footer ═══ -->
+    <footer id="main-footer" class="py-8">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" class="h-6 w-6 rounded opacity-80"
+                        alt="Logo" />
+                    <p class="text-sm text-slate-400">© 2026 Tập đoàn Vạn Vật. All rights reserved.</p>
+                </div>
+                <div class="flex items-center gap-6 text-sm">
+                    <a class="text-slate-400 hover:text-white transition"
+                        href="https://www.vanvatcorp.com/privacy-policy">Privacy Policy</a>
+                    <a class="text-slate-400 hover:text-white transition"
+                        href="https://www.vanvatcorp.com/terms-of-service">Terms of Service</a>
+                    <a class="text-slate-400 hover:text-white transition"
+                        href="/van-vat-corporation/sitemap/">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══ Scripts ═══ -->
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Soprise — Mua sắm thông minh, vươn lên cùng nhau</title>
+    <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div id="utility-bar">
+        <div class="utility-inner">
+            <div class="utility-left">
+                <a class="utility-bar-link" href="/seller/login"><i class="fas fa-store"></i> Kênh Người Bán</a>
+                <span class="utility-divider">|</span>
+                <a class="utility-bar-link" href="/seller/register">Trở thành Người Bán Soprise</a>
+                <span class="utility-divider">|</span>
+                <a class="utility-bar-link" href="#">Tải ứng dụng</a>
+            </div>
+            <div class="utility-right">
+                <a class="utility-bar-link" href="#"><i class="fas fa-bell"></i> Thông Báo</a>
+                <span class="utility-divider">|</span>
+                <a class="utility-bar-link" href="#"><i class="fas fa-question-circle"></i> Hỗ Trợ</a>
+                <span class="utility-divider">|</span>
+                <a class="utility-bar-link" href="/about"><i class="fas fa-info-circle"></i> Về Soprise</a>
+            </div>
+        </div>
+    </div>
+
+    <header id="main-header">
+        <div class="header-inner">
+            <a class="header-logo" href="/">
+                <img src="https://www.vanvatcorp.com/public-res/logo-512.jpg" alt="Logo Soprise" />
+                <span class="header-logo-text">Sop<span>rise</span></span>
+            </a>
+            <div class="search-wrap">
+                <div class="search-input-wrap">
+                    <input type="text" class="search-input" id="search-input"
+                        placeholder="Tìm sản phẩm, thương hiệu, và nhiều hơn nữa..." autocomplete="off"
+                        aria-label="Tìm kiếm sản phẩm" />
+                    <div class="search-suggestions" id="search-suggestions" role="listbox"></div>
+                </div>
+                <button class="search-btn" id="search-btn" aria-label="Tìm kiếm"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <button class="header-action-btn" id="cart-btn" aria-label="Giỏ hàng">
+                    <span style="position:relative"><i class="fas fa-shopping-cart"></i><span class="cart-badge"
+                            id="cart-count">0</span></span>
+                    <span>Giỏ hàng</span>
+                </button>
+                <a class="header-action-btn" href="#" aria-label="Tài khoản"><i class="fas fa-user-circle"></i><span>Tài
+                        khoản</span></a>
+            </div>
+        </div>
+    </header>
+
+    <nav id="cat-nav" aria-label="Danh mục sản phẩm">
+        <div class="cat-nav-inner" id="cat-nav-inner"></div>
+    </nav>
+
+    <main id="page-body">
+        <section id="banner-section" aria-label="Banner quảng cáo">
+            <div class="banner-carousel">
+                <div class="banner-slide banner-slide-1 active">
+                    <div>
+                        <div class="banner-eyebrow">⚡ Flash Sale mỗi ngày</div>
+                        <div class="banner-title">Giảm đến<br>50% hôm nay</div>
+                        <div class="banner-sub">Hàng ngàn sản phẩm chính hãng</div>
+                        <a class="banner-cta" href="#">Mua ngay <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="banner-slide banner-slide-2">
+                    <div>
+                        <div class="banner-eyebrow">🌱 Người bán được bảo vệ</div>
+                        <div class="banner-title">Phí minh bạch,<br>không ẩn</div>
+                        <div class="banner-sub">Cam kết không tăng phí trong 3 năm</div>
+                        <a class="banner-cta" href="/about#seller-story">Tìm hiểu thêm <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="banner-slide banner-slide-3">
+                    <div>
+                        <div class="banner-eyebrow">🚀 Mới toanh</div>
+                        <div class="banner-title">Gian hàng của bạn<br>chỉ trong 30 phút</div>
+                        <div class="banner-sub">Đăng ký miễn phí, không cần thẻ tín dụng</div>
+                        <a class="banner-cta" href="/about#final-cta">Bắt đầu bán <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <button class="banner-nav prev" id="banner-prev" aria-label="Slide trước"><i
+                        class="fas fa-chevron-left"></i></button>
+                <button class="banner-nav next" id="banner-next" aria-label="Slide tiếp theo"><i
+                        class="fas fa-chevron-right"></i></button>
+                <div class="banner-dots">
+                    <button class="banner-dot active" data-slide="0"></button>
+                    <button class="banner-dot" data-slide="1"></button>
+                    <button class="banner-dot" data-slide="2"></button>
+                </div>
+            </div>
+            <div class="banner-side">
+                <div class="banner-side-card banner-side-card-1">
+                    <div class="side-card-label">Ưu đãi đặc biệt</div>
+                    <div class="side-card-title">Miễn phí vận chuyển<br>đơn từ 99k</div>
+                    <div class="side-card-sub">Áp dụng toàn quốc</div>
+                </div>
+                <div class="banner-side-card banner-side-card-2">
+                    <div class="side-card-label">Seller mới</div>
+                    <div class="side-card-title">0 đồng phí<br>3 tháng đầu</div>
+                    <div class="side-card-sub">Đăng ký ngay hôm nay</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="flash-section" aria-label="Flash Sale">
+            <div class="flash-header">
+                <div class="flash-title">
+                    <div class="flash-label"><i class="fas fa-bolt"></i> FLASH SALE</div>
+                    <div class="flash-countdown">
+                        <span class="countdown-block" id="cd-h">02</span>
+                        <span class="countdown-sep">:</span>
+                        <span class="countdown-block" id="cd-m">47</span>
+                        <span class="countdown-sep">:</span>
+                        <span class="countdown-block" id="cd-s">33</span>
+                    </div>
+                </div>
+                <a class="flash-see-all" href="#">Xem tất cả <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="flash-grid" id="flash-grid"></div>
+        </section>
+
+        <section id="main-section" aria-label="Gợi ý sản phẩm">
+            <div class="section-header-row">
+                <div class="section-title-text"><i class="fas fa-th"></i> GỢI Ý HÔM NAY</div>
+                <a class="section-see-all" href="#">Xem tất cả <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="filter-row" role="group" aria-label="Lọc sản phẩm">
+                <span class="filter-label">Sắp xếp:</span>
+                <button class="filter-btn active" data-sort="default">Phổ biến</button>
+                <button class="filter-btn" data-sort="price-asc">Giá tăng dần</button>
+                <button class="filter-btn" data-sort="price-desc">Giá giảm dần</button>
+                <button class="filter-btn" data-sort="newest">Mới nhất</button>
+                <button class="filter-btn" data-sort="bestseller">Bán chạy</button>
+            </div>
+            <div class="product-grid" id="main-product-grid"></div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <span class="footer-brand-text">Soprise — Tập đoàn Vạn Vật © 2026</span>
+                <div class="footer-links">
+                    <a href="/about">Về Soprise</a>
+                    <a href="/about#seller-story">Kênh người bán</a>
+                    <a href="https://www.vanvatcorp.com/privacy-policy">Chính sách bảo mật</a>
+                    <a href="https://www.vanvatcorp.com/terms-of-service">Điều khoản</a>
+                    <a href="https://www.vanvatcorp.com/van-vat-corporation/contact-us/">Liên hệ</a>
+                </div>
+            </div>
+            <div class="footer-copy">Soprise là sản phẩm của Tập đoàn Vạn Vật. Mọi quyền được bảo lưu.</div>
+        </div>
+    </footer>
+
+    <div id="toast" role="alert" aria-live="polite"></div>
+
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Progress Bar</title>
+    <style>
+        progress {
+            width: 100%;
+            height: 30px;
+        }
+
+            progress::-webkit-progress-bar {
+                border-radius: 15px;
+            }
+
+            progress::-webkit-progress-value {
+                border-radius: 15px;
+            }
+
+            progress::-moz-progress-bar {
+                border-radius: 15px;
+            }
+    </style>
+</head>
+<body id="body">
+    <progress id="progressBar" value="0" max="100"></progress>
+    <button onclick="updateProgress()">Update Progress</button>
+
+    <script>
+        function updateProgress() {
+            const progressBar = document.getElementById('progressBar');
+            const body = document.getElementById('body');
+            let value = progressBar.value;
+            if (value < 100) {
+                value += 10;
+                progressBar.value = value;
+                const percentage = value / 100;
+                const red = Math.floor(255 * percentage);
+                const green = Math.floor(255 * (1 - percentage));
+                progressBar.style.setProperty('accent-color', `rgb(${red}, ${green}, 0)`);
+                //progressBar.style.background = `linear-gradient(to right, rgb(${red}, ${green}, 0) ${value}%, #e0e0e0 ${value}%)`;
+                body.style.background = `linear-gradient(to right, rgb(${128 + red / 2}, ${128 + green / 2}, 128) ${100}%, #e0e0e0 ${100}%)`;
+            }
+        }
+    </script>
+</body>
+</html>

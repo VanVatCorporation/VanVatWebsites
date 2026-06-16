@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Hoàn tất hồ sơ - Vạn Vật Corporation</title>
+
+    <link href="https://www.vanvatcorp.com/public-res/logo-512.jpg" rel="icon" type="image/x-icon" />
+    <meta content="Hoàn tất hồ sơ - Vạn Vật" property="og:title" />
+    <meta content="Hoàn tất thông tin tài khoản của bạn" property="og:description" />
+    <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+    <meta content="https://account.vanvatcorp.com" property="og:url" />
+    <meta content="website" property="og:type" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white text-gray-800 font-inter min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <a class="flex items-center space-x-2" href="https://www.vanvatcorp.com/">
+                    <img alt="Corporation logo" class="h-10 w-10" height="40"
+                        src="https://www.vanvatcorp.com/public-res/logo-512.jpg" width="40" />
+                    <span class="text-2xl font-bold text-blue-700">
+                        Tập đoàn Vạn Vật
+                    </span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Complete Profile Section -->
+    <main class="pt-24 max-w-3xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
+        <h1 class="text-4xl font-bold text-center text-gray-900 mb-4">
+            Hoàn tất hồ sơ của bạn
+        </h1>
+        <p class="text-center text-gray-600 mb-12">
+            Vui lòng điền thông tin còn thiếu để hoàn tất đăng ký
+        </p>
+
+        <form id="completeProfileForm" class="bg-white p-8 rounded-lg shadow-lg space-y-6" novalidate>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Column 1: Account Basics -->
+                <div class="space-y-6">
+                    <h2 class="text-xl font-bold text-gray-800 border-b pb-2">Thông tin tài khoản</h2>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" for="firstName">Họ</label>
+                            <input
+                                class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                                id="firstName" name="firstName" placeholder="First Name" type="text" />
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" for="lastName">Tên</label>
+                            <input
+                                class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                                id="lastName" name="lastName" placeholder="Last Name" type="text" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="username" class="block text-gray-700 font-semibold mb-2">
+                            Tên người dùng <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="username" name="username" placeholder="Username" required
+                            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-700" />
+                        <p class="text-xs text-gray-500 mt-1">Tên hiển thị công khai của bạn</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="password">
+                            Mật khẩu <span class="text-red-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <input
+                                class="w-full border border-gray-300 rounded-md px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                                id="password" name="password" placeholder="Tạo mật khẩu" required type="password"
+                                minlength="6" />
+                            <button aria-label="Toggle password visibility"
+                                class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-600 hover:text-gray-900 focus:outline-none"
+                                type="button" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">Ít nhất 6 ký tự - dùng để đăng nhập bằng email</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="confirmPassword">
+                            Nhập lại mật khẩu <span class="text-red-500">*</span>
+                        </label>
+                        <div class="relative">
+                            <input
+                                class="w-full border border-gray-300 rounded-md px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                                id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required
+                                type="password" />
+                            <button aria-label="Toggle confirm password visibility"
+                                class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-600 hover:text-gray-900 focus:outline-none"
+                                type="button" id="toggleConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Personal Details -->
+                <div class="space-y-6">
+                    <h2 class="text-xl font-bold text-gray-800 border-b pb-2">Thông tin cá nhân</h2>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="gender">
+                            Giới tính <span class="text-red-500">*</span>
+                        </label>
+                        <div class="flex items-center space-x-6 mt-3">
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input class="form-radio text-blue-700 h-5 w-5" id="male" name="gender" required
+                                    type="radio" value="0" />
+                                <span class="ml-2 text-gray-700">Nam</span>
+                            </label>
+                            <label class="inline-flex items-center cursor-pointer">
+                                <input class="form-radio text-blue-700 h-5 w-5" id="female" name="gender" required
+                                    type="radio" value="1" />
+                                <span class="ml-2 text-gray-700">Nữ</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="birthdateContainer">
+                        <label class="block text-gray-700 font-semibold mb-2" for="birthdate">
+                            Ngày sinh <span class="text-red-500" id="birthdateRequired">*</span>
+                        </label>
+                        <input
+                            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                            id="birthdate" name="birthdate" required type="date" />
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="location">Quốc tịch</label>
+                        <select
+                            class="w-full border border-gray-300 rounded-md px-4 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-700"
+                            id="location" name="location">
+                            <option value="">Chọn quốc tịch (tùy chọn)</option>
+                            <option value="US">USA</option>
+                            <option value="EN">England</option>
+                            <option value="AU">Australia</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" for="nationalID">Căn cước công dân</label>
+                        <div class="relative">
+                            <input
+                                class="w-full border border-gray-300 rounded-md px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-700"
+                                id="nationalID" name="nationalID" placeholder="National ID (tùy chọn)"
+                                type="password" />
+                            <button aria-label="Toggle national ID visibility"
+                                class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-600 hover:text-gray-900 focus:outline-none"
+                                type="button" id="toggleNationalID">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 italic">Sẽ được mã hóa bảo mật. Cung cấp để tăng điểm uy
+                            tín.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="hidden text-red-600 font-semibold text-center mt-4"></div>
+            <div id="successMessage" class="hidden text-green-600 font-semibold text-center mt-4"></div>
+
+            <button
+                class="w-full bg-blue-700 text-white font-semibold py-3 rounded-md hover:bg-blue-800 transition mt-8 shadow-lg text-lg"
+                type="submit" id="submitBtn">
+                Hoàn tất đăng ký
+            </button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">
+                © 2026 Tập đoàn Vạn Vật. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Privacy Policy" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/privacy-policy">
+                    Privacy Policy
+                </a>
+                <a aria-label="Terms of Service" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/terms-of-service">
+                    Terms of Service
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://account.vanvatcorp.com/complete-profile/script.js"></script>
+</body>
+
+</html>

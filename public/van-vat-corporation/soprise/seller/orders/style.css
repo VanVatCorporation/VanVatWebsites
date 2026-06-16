@@ -1,0 +1,663 @@
+/* ══ ORDERS PAGE SPECIFIC ══ */
+.page-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray-500);
+}
+
+.breadcrumb a {
+    color: var(--gray-500);
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.breadcrumb a:hover {
+    color: var(--blue);
+}
+
+.breadcrumb i {
+    font-size: 10px;
+}
+
+.breadcrumb-current {
+    color: var(--gray-900);
+    font-weight: 600;
+}
+
+.page-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-outline {
+    height: 36px;
+    padding: 0 16px;
+    background: var(--white);
+    border: 1.5px solid var(--gray-300);
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-700);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: border-color .15s, color .15s;
+}
+
+.btn-outline:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+/* Status tabs */
+.order-tabs {
+    display: flex;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.order-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.order-tab {
+    flex-shrink: 0;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-500);
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.order-tab:hover {
+    color: var(--blue);
+}
+
+.order-tab.active {
+    color: var(--blue);
+    border-bottom-color: var(--blue);
+    font-weight: 600;
+}
+
+.tab-count {
+    background: var(--gray-100);
+    color: var(--gray-500);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 999px;
+}
+
+.order-tab.active .tab-count {
+    background: var(--blue-pale);
+    color: var(--blue);
+}
+
+/* Filter panel */
+.filter-panel {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-top: none;
+    padding: 14px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-chip-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-chip-label {
+    font-size: 12px;
+    color: var(--gray-500);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.filter-chip {
+    height: 30px;
+    padding: 0 12px;
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all .15s;
+}
+
+.filter-chip:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.filter-chip.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+}
+
+.filter-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--gray-200);
+}
+
+.filter-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-select-wrap {
+    position: relative;
+}
+
+.filter-select {
+    height: 34px;
+    padding: 0 32px 0 12px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--gray-700);
+    background: var(--white);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.filter-select-wrap::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    pointer-events: none;
+    font-size: 11px;
+}
+
+.filter-search {
+    height: 34px;
+    padding: 0 12px 0 34px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--gray-900);
+    outline: none;
+    flex: 1;
+    transition: border-color .2s;
+    background: var(--white);
+}
+
+.filter-search:focus {
+    border-color: var(--blue);
+}
+
+.filter-search::placeholder {
+    color: var(--gray-400);
+}
+
+.filter-search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.filter-input-wrap {
+    position: relative;
+    flex: 1;
+}
+
+.filter-action-btns {
+    display: flex;
+    gap: 6px;
+    margin-left: auto;
+}
+
+.btn-apply {
+    height: 34px;
+    padding: 0 16px;
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.btn-apply:hover {
+    background: var(--blue-dk);
+}
+
+.btn-reset {
+    height: 34px;
+    padding: 0 14px;
+    background: var(--white);
+    color: var(--gray-700);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color .15s;
+}
+
+.btn-reset:hover {
+    border-color: var(--gray-400);
+}
+
+/* Orders table */
+.orders-table-wrap {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table th {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-500);
+    text-align: left;
+    padding: 12px 14px;
+    background: var(--gray-50);
+    border-bottom: 1px solid var(--gray-200);
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.orders-table th.center {
+    text-align: center;
+}
+
+.orders-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--gray-50);
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.orders-table tr:last-child td {
+    border-bottom: none;
+}
+
+.orders-table tr:hover td {
+    background: var(--gray-50);
+}
+
+/* Checkbox */
+.row-check {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--blue);
+}
+
+/* Product cell */
+.order-product-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+}
+
+.order-product-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    background: var(--gray-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    border: 1px solid var(--gray-200);
+}
+
+.order-product-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.order-code {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 2px;
+}
+
+.order-product-name {
+    font-size: 12.5px;
+    color: var(--gray-700);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.order-qty {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-top: 2px;
+}
+
+/* Amount cell */
+.order-amount {
+    font-weight: 700;
+    color: var(--gray-900);
+    white-space: nowrap;
+}
+
+.order-amount-sub {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-top: 2px;
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.confirmed {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.pickup {
+    background: #fce7f3;
+    color: #9d174d;
+}
+
+.status-badge.shipping {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.status-badge.delivered {
+    background: var(--green-lt);
+    color: var(--green-dk);
+}
+
+.status-badge.returned {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge.cancelled {
+    background: var(--gray-100);
+    color: var(--gray-500);
+}
+
+/* Countdown cell */
+.order-countdown {
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.order-countdown.urgent {
+    color: var(--red);
+}
+
+.order-countdown.normal {
+    color: var(--gray-700);
+}
+
+.order-countdown.done {
+    color: var(--gray-400);
+}
+
+/* Shipping cell */
+.shipping-badge {
+    display: inline-block;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: .03em;
+}
+
+/* Action buttons cell */
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+}
+
+.action-link {
+    font-size: 12px;
+    color: var(--blue);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 2px 0;
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.action-link:hover {
+    color: var(--blue-dk);
+    text-decoration: underline;
+}
+
+.action-link.red {
+    color: var(--red);
+}
+
+.action-link.red:hover {
+    color: #b91c1c;
+}
+
+.action-link.green {
+    color: var(--green-dk);
+}
+
+/* Bulk action bar */
+.bulk-bar {
+    background: var(--navy);
+    color: var(--white);
+    padding: 10px 16px;
+    display: none;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.bulk-bar.visible {
+    display: flex;
+}
+
+.bulk-bar-count {
+    font-weight: 600;
+}
+
+.bulk-btn {
+    height: 32px;
+    padding: 0 14px;
+    background: rgba(255, 255, 255, .15);
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 6px;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.bulk-btn:hover {
+    background: rgba(255, 255, 255, .25);
+}
+
+/* Empty state */
+.orders-empty {
+    display: none;
+    text-align: center;
+    padding: 64px 24px;
+    color: var(--gray-400);
+}
+
+.orders-empty.visible {
+    display: block;
+}
+
+.orders-empty i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.orders-empty p {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.orders-empty span {
+    font-size: 12px;
+}
+
+/* Sort row */
+.sort-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-top: none;
+    font-size: 12px;
+    color: var(--gray-500);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sort-label {
+    font-weight: 500;
+}
+
+.sort-btn {
+    height: 28px;
+    padding: 0 12px;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 11px;
+    color: var(--gray-600);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all .15s;
+}
+
+.sort-btn:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.sort-btn.active {
+    background: var(--blue-pale);
+    border-color: var(--blue);
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.bulk-ship-btn {
+    height: 32px;
+    padding: 0 14px;
+    background: var(--green);
+    border: none;
+    border-radius: 6px;
+    color: var(--white);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: background .15s;
+}
+
+.bulk-ship-btn:hover {
+    background: var(--green-dk);
+}

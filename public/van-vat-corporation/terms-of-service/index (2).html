@@ -1,0 +1,453 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Terms of Service - Tập đoàn Vạn Vật</title>
+  <link href="https://placehold.co/favicon.ico" rel="icon" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-inter min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="flex items-center justify-between h-16">
+        <a class="flex items-center space-x-2" href="https://www.vanvatcorp.com/">
+          <img alt="Corporation logo, blue and white abstract geometric shape" class="h-10 w-10" height="40"
+            src="https://storage.googleapis.com/a1aa/image/28a99fb5-957b-41e7-d639-22ac24dcc0cc.jpg" width="40" />
+          <span class="text-2xl font-bold text-blue-700">
+            Tập đoàn Vạn Vật
+          </span>
+        </a>
+        <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+          <a class="hover:text-blue-700 transition" href="https://services.vanvatcorp.com/">
+            Dịch vụ
+          </a>
+          <a class="hover:text-blue-700 transition" href="/van-vat-corporation/about-us/">
+            Về chúng tôi
+          </a>
+          <a class="hover:text-blue-700 transition" href="/van-vat-corporation/teams/">
+            Nhóm
+          </a>
+          <a class="hover:text-blue-700 transition" href="/van-vat-corporation/careers/">
+            Sự nghiệp
+          </a>
+          <a class="hover:text-blue-700 transition" href="/van-vat-corporation/contact-us/">
+            Liên hệ
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-6 font-semibold text-gray-700">
+          <div class="relative inline-block text-left">
+            <button id="language-button" aria-haspopup="true" aria-expanded="false"
+              class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-white text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700"
+              type="button">
+              <span id="current-language">English</span>
+              <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="language-menu"
+              class="origin-top-right absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 hidden z-50">
+              <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="language-button">
+                <button data-lang="en"
+                  class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-900"
+                  role="menuitem" type="button">English</button>
+                <button data-lang="vi"
+                  class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-900"
+                  role="menuitem" type="button">Tiếng Việt</button>
+                <button data-lang="fr"
+                  class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-900"
+                  role="menuitem" type="button">Français</button>
+                <button data-lang="es"
+                  class="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-100 hover:text-blue-900"
+                  role="menuitem" type="button">Español</button>
+              </div>
+            </div>
+          </div>
+          <a class="inline-block px-5 py-2 rounded-md bg-gray-700 text-white font-semibold hover:bg-gray-800 transition"
+            href="https://account.vanvatcorp.com/login/">
+            Đăng nhập
+          </a>
+          <a class="inline-block px-5 py-2 rounded-md bg-blue-700 text-white font-semibold hover:bg-blue-800 transition"
+            href="https://account.vanvatcorp.com/register/">
+            Đăng ký
+          </a>
+        </div>
+        <div class="md:hidden">
+          <button aria-label="Toggle menu"
+            class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
+            id="mobile-menu-button">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="https://services.vanvatcorp.com/">
+        Dịch vụ
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/about-us/">
+        Về chúng tôi
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/teams/">
+        Nhóm
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/careers/">
+        Sự nghiệp
+      </a>
+      <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/contact-us/">
+        Liên hệ
+      </a>
+      <a class="block mx-6 my-3 px-5 py-2 rounded-md bg-gray-700 text-white font-semibold text-center hover:bg-gray-800 transition"
+        href="https://account.vanvatcorp.com/login/">
+        Đăng nhập
+      </a>
+      <a class="block mx-6 my-3 px-5 py-2 rounded-md bg-blue-700 text-white font-semibold text-center hover:bg-blue-800 transition"
+        href="https://account.vanvatcorp.com/register/">
+        Đăng ký
+      </a>
+    </div>
+  </nav>
+
+  <!-- Terms of Service Content -->
+  <main class="pt-24 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 py-20" id="content">
+    <!-- English content default -->
+    <article data-lang="en" class="language-content">
+      <h1 class="text-4xl font-extrabold text-blue-700 mb-8 text-center">Terms of Service</h1>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
+        <p class="text-gray-700 leading-relaxed">
+          By accessing or using Van Vat Corporation’s services, you agree to be bound by these Terms of Service and all
+          applicable laws and regulations.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">2. Use of Services</h2>
+        <p class="text-gray-700 leading-relaxed">
+          You agree to use our services only for lawful purposes and in a way that does not infringe the rights of
+          others or restrict their use and enjoyment of the services.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">3. Account Responsibility</h2>
+        <p class="text-gray-700 leading-relaxed">
+          You are responsible for maintaining the confidentiality of your account information and for all activities
+          that occur under your account.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">4. Intellectual Property</h2>
+        <p class="text-gray-700 leading-relaxed">
+          All content, trademarks, and data on this site are the property of Van Vat Corporation or its licensors and
+          are protected by intellectual property laws.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">5. Termination</h2>
+        <p class="text-gray-700 leading-relaxed">
+          We reserve the right to suspend or terminate your access to our services at any time, without notice, for
+          conduct that we believe violates these Terms or is harmful to other users.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">6. Limitation of Liability</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Van Vat Corporation shall not be liable for any damages arising from the use or inability to use our services.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">7. Changes to Terms</h2>
+        <p class="text-gray-700 leading-relaxed">
+          We may update these Terms of Service from time to time. Continued use of the services after changes
+          constitutes acceptance of the new terms.
+        </p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">8. Contact</h2>
+        <p class="text-gray-700 leading-relaxed">
+          For any questions regarding these Terms of Service, please contact us at:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 mt-4">
+          <li>Email: contact@Tập đoàn Vạn Vật.com</li>
+          <li>Phone: +1 (555) 123-4567</li>
+          <li>Address: 1234 Innovation Drive, Suite 100, Tech City, TX 75001</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Vietnamese content -->
+    <article data-lang="vi" class="language-content hidden">
+      <h1 class="text-4xl font-extrabold text-blue-700 mb-8 text-center">Điều khoản dịch vụ</h1>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">1. Chấp nhận điều khoản</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Bằng việc truy cập hoặc sử dụng dịch vụ của Tập đoàn Vạn Vật, bạn đồng ý tuân thủ các Điều khoản dịch vụ này
+          và tất cả các luật và quy định áp dụng.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">2. Sử dụng dịch vụ</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Bạn đồng ý sử dụng dịch vụ của chúng tôi chỉ cho các mục đích hợp pháp và không vi phạm quyền của người khác
+          hoặc hạn chế việc sử dụng và tận hưởng dịch vụ của họ.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">3. Trách nhiệm tài khoản</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Bạn chịu trách nhiệm giữ bí mật thông tin tài khoản của mình và mọi hoạt động xảy ra dưới tài khoản đó.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">4. Sở hữu trí tuệ</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Tất cả nội dung, nhãn hiệu và dữ liệu trên trang web thuộc sở hữu của Tập đoàn Vạn Vật hoặc các bên cấp phép
+          và được bảo vệ bởi luật sở hữu trí tuệ.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">5. Chấm dứt</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Chúng tôi có quyền tạm ngưng hoặc chấm dứt quyền truy cập dịch vụ của bạn bất cứ lúc nào, không cần thông báo,
+          nếu bạn vi phạm các Điều khoản này hoặc có hành vi gây hại cho người dùng khác.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">6. Giới hạn trách nhiệm</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Tập đoàn Vạn Vật không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng hoặc không thể sử
+          dụng dịch vụ của chúng tôi.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">7. Thay đổi điều khoản</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Chúng tôi có thể cập nhật các Điều khoản dịch vụ này theo thời gian. Việc tiếp tục sử dụng dịch vụ sau khi có
+          thay đổi đồng nghĩa với việc bạn chấp nhận các điều khoản mới.
+        </p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">8. Liên hệ</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Nếu bạn có bất kỳ câu hỏi nào liên quan đến các Điều khoản dịch vụ này, vui lòng liên hệ với chúng tôi qua:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 mt-4">
+          <li>Email: contact@Tập đoàn Vạn Vật.com</li>
+          <li>Điện thoại: +1 (555) 123-4567</li>
+          <li>Địa chỉ: 1234 Innovation Drive, Suite 100, Tech City, TX 75001</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- French content -->
+    <article data-lang="fr" class="language-content hidden">
+      <h1 class="text-4xl font-extrabold text-blue-700 mb-8 text-center">Conditions d'utilisation</h1>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">1. Acceptation des conditions</h2>
+        <p class="text-gray-700 leading-relaxed">
+          En accédant ou en utilisant les services de Van Vat Corporation, vous acceptez d'être lié par ces Conditions
+          d'utilisation et toutes les lois et réglementations applicables.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">2. Utilisation des services</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Vous acceptez d'utiliser nos services uniquement à des fins légales et d'une manière qui ne porte pas atteinte
+          aux droits des autres ou ne restreint pas leur utilisation et leur jouissance des services.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">3. Responsabilité du compte</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Vous êtes responsable de la confidentialité des informations de votre compte et de toutes les activités qui se
+          produisent sous votre compte.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">4. Propriété intellectuelle</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Tout le contenu, les marques et les données sur ce site sont la propriété de Van Vat Corporation ou de ses
+          concédants et sont protégés par les lois sur la propriété intellectuelle.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">5. Résiliation</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Nous nous réservons le droit de suspendre ou de résilier votre accès à nos services à tout moment, sans
+          préavis, pour un comportement que nous estimons violer ces Conditions ou nuire à d'autres utilisateurs.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">6. Limitation de responsabilité</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Van Vat Corporation ne pourra être tenue responsable des dommages résultant de l'utilisation ou de
+          l'incapacité à utiliser nos services.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">7. Modifications des conditions</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Nous pouvons mettre à jour ces Conditions d'utilisation de temps à autre. L'utilisation continue des services
+          après les modifications constitue une acceptation des nouvelles conditions.
+        </p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">8. Contact</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Pour toute question concernant ces Conditions d'utilisation, veuillez nous contacter à :
+        </p>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 mt-4">
+          <li>Email : contact@Tập đoàn Vạn Vật.com</li>
+          <li>Téléphone : +1 (555) 123-4567</li>
+          <li>Adresse : 1234 Innovation Drive, Suite 100, Tech City, TX 75001</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- Spanish content -->
+    <article data-lang="es" class="language-content hidden">
+      <h1 class="text-4xl font-extrabold text-blue-700 mb-8 text-center">Términos de servicio</h1>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">1. Aceptación de los términos</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Al acceder o utilizar los servicios de Van Vat Corporation, usted acepta estar sujeto a estos Términos de
+          servicio y a todas las leyes y regulaciones aplicables.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">2. Uso de los servicios</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Usted acepta usar nuestros servicios solo para fines legales y de una manera que no infrinja los derechos de
+          otros ni restrinja su uso y disfrute de los servicios.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">3. Responsabilidad de la cuenta</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Usted es responsable de mantener la confidencialidad de la información de su cuenta y de todas las actividades
+          que ocurran bajo su cuenta.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">4. Propiedad intelectual</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Todo el contenido, marcas y datos en este sitio son propiedad de Van Vat Corporation o sus licenciantes y
+          están protegidos por leyes de propiedad intelectual.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">5. Terminación</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Nos reservamos el derecho de suspender o terminar su acceso a nuestros servicios en cualquier momento, sin
+          previo aviso, por conducta que consideremos que viola estos Términos o es perjudicial para otros usuarios.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">6. Limitación de responsabilidad</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Van Vat Corporation no será responsable por daños derivados del uso o la imposibilidad de usar nuestros
+          servicios.
+        </p>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-semibold mb-4">7. Cambios en los términos</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Podemos actualizar estos Términos de servicio de vez en cuando. El uso continuado de los servicios después de
+          los cambios constituye la aceptación de los nuevos términos.
+        </p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-semibold mb-4">8. Contacto</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Para cualquier pregunta relacionada con estos Términos de servicio, por favor contáctenos en:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 mt-4">
+          <li>Correo electrónico: contact@Tập đoàn Vạn Vật.com</li>
+          <li>Teléfono: +1 (555) 123-4567</li>
+          <li>Dirección: 1234 Innovation Drive, Suite 100, Tech City, TX 75001</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-blue-200 py-8">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm">
+        © 2024 Tập đoàn Vạn Vật. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a aria-label="Privacy Policy" class="hover:text-white" href="#">
+          Privacy Policy
+        </a>
+        <a aria-label="Terms of Service" class="hover:text-white" href="#">
+          Terms of Service
+        </a>
+        <a aria-label="Sitemap" class="hover:text-white" href="#">
+          Sitemap
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Language dropdown toggle
+    const langButton = document.getElementById('language-button');
+    const langMenu = document.getElementById('language-menu');
+    const currentLangSpan = document.getElementById('current-language');
+    const langButtons = langMenu.querySelectorAll('button[data-lang]');
+    const contentArticles = document.querySelectorAll('.language-content');
+
+    langButton.addEventListener('click', () => {
+      langMenu.classList.toggle('hidden');
+      const expanded = langButton.getAttribute('aria-expanded') === 'true';
+      langButton.setAttribute('aria-expanded', !expanded);
+    });
+
+    // Close language menu if clicked outside
+    document.addEventListener('click', (e) => {
+      if (!langButton.contains(e.target) && !langMenu.contains(e.target)) {
+        langMenu.classList.add('hidden');
+        langButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Language switch handler
+    langButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const selectedLang = button.getAttribute('data-lang');
+        // Update visible content
+        contentArticles.forEach(article => {
+          if (article.getAttribute('data-lang') === selectedLang) {
+            article.classList.remove('hidden');
+          } else {
+            article.classList.add('hidden');
+          }
+        });
+        // Update button label
+        currentLangSpan.textContent = button.textContent;
+        // Close menu
+        langMenu.classList.add('hidden');
+        langButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+  <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+</body>
+
+</html>

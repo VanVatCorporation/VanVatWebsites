@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Vạn Vật CampSite
+    </title>
+
+    <link href="web.ico" rel="icon" type="image/x-icon" />
+    <script async="" crossorigin="anonymous"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708105276845874"></script>
+    <meta content="Vạn Vật CampSite" property="og:title" />
+    <meta content="Cắm trại vui vẻ!" property="og:description" />
+    <meta content="https://www.vanvatcorp.com/FullyPublic/preview2.png" property="og:image" />
+    <meta content="https://www.vanvatcorp.com" property="og:url" />
+    <meta content="website" property="og:type" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/body-style.css" rel="stylesheet" />
+    <link href="https://www.vanvatcorp.com/public-res/particles-style.css" rel="stylesheet" />
+    <link href="https://travel.vanvatcorp.com/camping/booking-style.css" rel="stylesheet" />
+    <link href="https://travel.vanvatcorp.com/camping/booking-style-anim.css" rel="stylesheet" />
+</head>
+
+<body class="bg-white text-gray-800 font-inter">
+    <!-- Navbar -->
+    <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div class="flex items-center justify-between h-16">
+                <a class="flex items-center space-x-2" href="https://www.vanvatcorp.com/">
+                    <img alt="Corporation logo, blue and white abstract geometric shape" class="h-10 w-10" height="40"
+                        src="https://www.vanvatcorp.com/public-res/logo-512.jpg"
+                        altSrc="https://storage.googleapis.com/a1aa/image/ff61740e-9851-4881-b7bc-0187d051ac31.jpg"
+                        width="40" />
+                    <span class="text-2xl font-bold text-blue-700">
+                        Tập đoàn Vạn Vật
+                    </span>
+                </a>
+                <div class="hidden md:flex space-x-8 font-semibold text-gray-700">
+                    <a class="hover:text-blue-700 transition" href="https://services.vanvatcorp.com/">
+                        Dịch vụ
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/about-us/">
+                        Về chúng tôi
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/teams/">
+                        Nhóm
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/careers/">
+                        Sự nghiệp
+                    </a>
+                    <a class="hover:text-blue-700 transition" href="/van-vat-corporation/contact-us/">
+                        Liên hệ
+                    </a>
+                </div>
+                <!-- Dynamic Auth Navbar - will be populated by auth-navbar.js -->
+                <div class="hidden md:flex" id="auth-navbar-placeholder">
+                    <!-- Auth navbar will be inserted here dynamically -->
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Toggle menu"
+                        class="text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-700"
+                        id="mobile-menu-button">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-white border-t border-gray-200" id="mobile-menu">
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="https://services.vanvatcorp.com/">
+                Dịch vụ
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/about-us/">
+                Về chúng tôi
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50" href="/van-vat-corporation/teams/">
+                Nhóm
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/careers/">
+                Sự nghiệp
+            </a>
+            <a class="block px-6 py-3 text-gray-700 font-semibold hover:bg-blue-50"
+                href="/van-vat-corporation/contact-us/">
+                Liên hệ
+            </a>
+            <!-- Dynamic Auth Navbar Mobile - will be populated by auth-navbar.js -->
+            <div id="auth-navbar-mobile-placeholder">
+                <!-- Auth navbar mobile will be inserted here dynamically -->
+            </div>
+    </nav>
+    <!-- PDF Viewer Section -->
+    <main class="pt-24 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12">
+        <h1 class="text-3xl font-bold text-blue-700 mb-8 flex flex-wrap items-center space-x-2 select-none">
+            <a href="https://services.vanvatcorp.com/"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">Vạn Vật Project</span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+            <i class="fas fa-chevron-right text-blue-500 z-20"></i>
+            <a href="https://travel.vanvatcorp.com/camping"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">Vạn Vật Cắm Trại</span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+            <i class="fas fa-chevron-right text-blue-500 z-20"></i>
+            <a href="./"
+                class="group relative inline-block px-3 py-1 rounded-md cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-blue-700">
+                <span class="relative z-10">
+                    Vạn Vật <span class="particle-container">
+                        <b>CampSite</b>
+                        <span class="particles" aria-hidden="true"></span>
+                    </span>
+                </span>
+                <span
+                    class="absolute inset-0 bg-transparent group-hover:bg-gray-300 group-active:bg-gray-600 rounded-md transition-colors"></span>
+            </a>
+        </h1>
+        <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-lg p-6 pdf-container">
+            <!-- Actual body of the web -->
+            <div class="booking-container">
+                <h2 class="text-2xl font-bold text-blue-800 mb-6">Đặt chỗ cắm trại - CampSite</h2>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="booking-date">
+                        Chọn ngày
+                    </label>
+                    <input
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="booking-date" type="date" />
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="location">
+                        Chọn địa điểm
+                    </label>
+                    <select
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="location">
+                        <option value="VN_DaLat_01">Vạn Vật CampSite Đà Lạt 01 - VN</option>
+                        <option value="VN_DakLak_01">Vạn Vật CampSite Đắk Lắk 01 - VN</option>
+                        <option value="AU_Adelaide_01">Vạn Vật CampSite Adelaide Forest 01 - Australia</option>
+                        <option value="AU_Adelaide_02">Vạn Vật CampSite Adelaide Forest 02 - Australia</option>
+                        <option value="AU_Adelaide_03">Vạn Vật CampSite Adelaide Forest 03 - Australia</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">
+                        Chọn khu vực
+                    </label>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="area-card p-4 border border-gray-300 rounded-md cursor-pointer hover:border-blue-500 transition"
+                            data-area="A">
+                            <h3 class="font-semibold text-lg">Khu A</h3>
+                            <p class="text-gray-600 text-sm">Gần hồ, view đẹp</p>
+                            <p class="text-green-600 font-medium">200.000 VNĐ</p>
+                        </div>
+                        <div class="area-card p-4 border border-gray-300 rounded-md cursor-pointer hover:border-blue-500 transition"
+                            data-area="B">
+                            <h3 class="font-semibold text-lg">Khu B</h3>
+                            <p class="text-gray-600 text-sm">Gần rừng, yên tĩnh</p>
+                            <p class="text-green-600 font-medium">150.000 VNĐ</p>
+                        </div>
+                        <div class="area-card p-4 border border-gray-300 rounded-md cursor-pointer hover:border-blue-500 transition"
+                            data-area="C">
+                            <h3 class="font-semibold text-lg">Khu C</h3>
+                            <p class="text-gray-600 text-sm">Gần khu vực sinh hoạt chung</p>
+                            <p class="text-green-600 font-medium">100.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">
+                        Chọn khung giờ
+                    </label>
+                    <div class="slot-grid">
+                        <div class="slot unavailable" data-time="00:00">12:00 AM</div>
+                        <div class="slot unavailable" data-time="02:00">02:00 AM</div>
+                        <div class="slot unavailable" data-time="04:00">04:00 AM</div>
+                        <div class="slot unavailable" data-time="06:00">06:00 AM</div>
+                        <div class="slot available" data-time="08:00">8:00 AM</div>
+                        <div class="slot available" data-time="10:00">10:00 AM</div>
+                        <div class="slot unavailable" data-time="12:00">12:00 PM</div>
+                        <div class="slot available" data-time="14:00">2:00 PM</div>
+                        <div class="slot available" data-time="16:00">4:00 PM</div>
+                        <div class="slot unavailable" data-time="18:00">6:00 PM</div>
+                        <div class="slot unavailable" data-time="20:00">8:00 PM</div>
+                        <div class="slot unavailable" data-time="22:00">10:00 PM</div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="guests">
+                        Số lượng người
+                    </label>
+                    <select
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="guests">
+                        <option value="1">1 người</option>
+                        <option value="2">2 người</option>
+                        <option value="3">3 người</option>
+                        <option value="4">4 người</option>
+                        <option value="5">5+ người</option>
+                    </select>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="name">
+                        Họ và tên
+                    </label>
+                    <input
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="name" type="text" placeholder="Nhập họ và tên" />
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="phone">
+                        Số điện thoại
+                    </label>
+                    <input
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="phone" type="tel" placeholder="Nhập số điện thoại" />
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="email">
+                        Email
+                    </label>
+                    <input
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="email" type="email" placeholder="Nhập email" />
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="nationalID">
+                        Căn cước đối chiếu với tài khoản
+                    </label>
+                    <input
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="nationalID" type="text" placeholder="Nhập số căn cước" />
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2" for="notes">
+                        Ghi chú thêm
+                    </label>
+                    <textarea
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        id="notes" rows="3" placeholder="Ghi chú thêm về yêu cầu đặc biệt..."></textarea>
+                </div>
+
+                <label class="block text-gray-700 font-bold mb-2">
+                    Điểm uy tín của tài khoản cho phép bạn đặt vé! (100 > 25)
+                </label>
+
+                <button
+                    class="w-full bg-blue-700 text-white py-3 px-4 rounded-md font-semibold hover:bg-blue-800 transition"
+                    id="book-now">
+                    Đặt ngay!
+                </button>
+
+                <label class="block text-gray-700 italic mb-2">
+                    Bằng cách đặt vé, bạn đồng ý với
+                    <a href="https://www.vanvatcorp.com/terms-of-service" class="text-blue-600 hover:underline">Điều
+                        khoản và điều kiện</a>
+                    cũng như
+                    <a href="https://www.vanvatcorp.com/privacy-policy" class="text-blue-600 hover:underline">Chính sách
+                        bảo mật</a>
+                    của chúng tôi.
+                </label>
+
+
+                <div class="success-message" id="success-message">
+                    <div class="flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <h3 class="font-semibold">Đặt chỗ thành công!</h3>
+                    </div>
+                    <p class="mt-2">Cảm ơn bạn đã đặt chỗ tại Vạn Vật CampSite. Chúng tôi sẽ liên hệ với bạn trong thời
+                        gian sớm nhất để xác nhận.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Overlay -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black bg-opacity-60 hidden z-60"></div>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" class="fixed inset-0 flex items-center justify-center hidden z-70 px-4">
+        <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[80vh] flex flex-col">
+            <header class="px-6 py-4 border-b border-gray-300">
+                <h2 class="text-xl font-bold text-gray-800">Điều khoản và điều kiện</h2>
+            </header>
+            <main class="px-6 py-4 overflow-y-auto flex-grow text-gray-700" style="max-height: 50vh;">
+                <p>
+                    <!-- Put your full terms of service text here -->
+                    1. Hiện tại dịch vụ còn sơ khai, quý khách vui lòng tự chuẩn bị tư trang cá nhân như lều trại, đồ
+                    ăn, thức uống, đồ dùng vệ sinh cá nhân, sạc năng lượng mặt trời và các đồ dùng thiết yếu khác.
+                    <br /><br />
+                    2. Do yếu tố môi trường hoang dã, Vạn Vật CampSite không đảm bảo việc quý khách sẽ an toàn 100% với
+                    thể loại thiên nhiên này, nếu quý khách bị rắn cắn, vắt hút máu, hay những sự cố nguy hiểm đến tính
+                    mạng, Vạn Vật CampSite có thể hỗ trợ nhân đạo để cứu sống quý khách khỏi cơn nguy kịch, trên tinh
+                    thần thiện chí, và không chịu trách nhiệm hay nghĩa vụ pháp lý.
+                    <br /><br />
+                    3. Dịch vụ cứu hộ có thể còn chưa đảm bảo, do đó nếu quý khách đi quá xa trong vùng kiểm soát của
+                    Vạn Vật CampSite thì mọi hậu quả quý khách sẽ là người chịu trách nhiệm.
+                    <br /><br />
+                    4. Trại cá tư nhân không thuộc sở hữu của Vạn Vật CampSite, do đó quý khách vui lòng không tương tác
+                    với cá dưới bất kì hình thức nào, bao gồm việc cho ăn và cầm nắm. Mọi tổn thất quý khách sẽ là người
+                    chịu trách nhiệm. Tất nhiên quý khách có thể xem và quay video tùy ý.
+                    <br /><br />
+                    <!-- Add more content to enable scrolling -->
+                </p>
+            </main>
+            <footer class="px-6 py-4 border-t border-gray-300 flex items-center justify-between">
+                <label class="inline-flex items-center space-x-2 text-gray-700">
+                    <input type="checkbox" id="terms-agree-checkbox" class="form-checkbox h-5 w-5 text-blue-600" />
+                    <span>Tôi đồng ý với các điều khoản</span>
+                </label>
+                <button id="terms-confirm-btn" disabled
+                    class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition">
+                    Tiếp tục
+                </button>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- Terms of Service Modal (Onboarding Carousel) -->
+    <div id="terms-modal-card"
+        class="fixed inset-0 flex items-center justify-center hidden z-70 px-4 scale-75 opacity-0 transition-all duration-750 ease-out">
+        <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[80vh] flex flex-col">
+            <header class="px-6 py-4 border-b border-gray-300 hidden">
+                <!-- Hidden header; using inline title instead for animation -->
+            </header>
+            <main class="px-6 py-4 flex-grow flex flex-col overflow-hidden" style="max-height: 60vh;">
+                <!-- Title Section (Fixed across cards, animated) -->
+                <div id="title-section" class="mb-4 text-center opacity-0">
+                    <h2 class="text-2xl font-bold text-blue-800"></h2>
+                    <hr class="my-2 border-gray-300 w-24 mx-auto">
+                </div>
+
+                <!-- Description Section (Changes per card, animated) -->
+                <div id="description-section"
+                    class="flex-grow overflow-y-auto text-gray-700 text-lg leading-relaxed opacity-0">
+                    <!-- Content will be updated via JS -->
+                </div>
+            </main>
+            <footer class="px-6 py-4 border-t border-gray-300 flex items-center justify-between">
+                <button id="prev-btn" disabled
+                    class="px-4 py-2 rounded-md border border-gray-400 text-gray-500 hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed">
+                    Trước
+                </button>
+                <span id="card-indicator" class="text-gray-600">Card 1/3</span>
+                <button id="next-btn" disabled
+                    class="px-4 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                    data-countdown="5">
+                    Tiếp tục (5s)
+                </button>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="fixed inset-0 flex items-center justify-center hidden z-80 px-4">
+        <div class="bg-white rounded-lg shadow-lg max-w-5xl w-full max-h-[80vh] flex flex-col">
+            <header class="px-6 py-4 border-b border-gray-300">
+                <h2 class="text-xl font-bold text-gray-800">Thanh toán đặt chỗ</h2>
+            </header>
+            <main id="payment-main"
+                class="px-6 py-4 overflow-y-auto flex-grow text-gray-700 flex flex-col md:flex-row gap-6"
+                style="max-height: 60vh;">
+                <!-- Credit Card Payment Zone -->
+                <section id="payment-form-section" class="flex-1 border border-gray-300 rounded-md p-6 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-4">Thanh toán thẻ tín dụng</h3>
+                    <form id="credit-card-form" class="space-y-4" onsubmit="return false;">
+                        <!-- ... your existing credit card form inputs ... -->
+                        <!-- (Keep the same inputs as before) -->
+                        <div>
+                            <label for="card-number" class="block mb-1 font-medium">Số thẻ tín dụng</label>
+                            <div class="relative">
+                                <input type="text" id="card-number" maxlength="19" placeholder="1234 5678 9012 3456"
+                                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 pr-12"
+                                    autocomplete="cc-number" inputmode="numeric" />
+                                <img id="card-logo" src="" alt=""
+                                    class="absolute right-3 top-1/2 transform -translate-y-1/2 h-6 w-auto hidden" />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="card-name" class="block mb-1 font-medium">Tên trên thẻ</label>
+                            <input type="text" id="card-name" placeholder="Nguyen Van A"
+                                class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                autocomplete="cc-name" />
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-1">
+                                <label for="card-expiry" class="block mb-1 font-medium">Hạn sử dụng (MM/YY)</label>
+                                <input type="text" id="card-expiry" maxlength="5" placeholder="03/11"
+                                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    autocomplete="cc-exp" inputmode="numeric" />
+                            </div>
+                            <div class="flex-1">
+                                <label for="card-cvv" class="block mb-1 font-medium">CVV</label>
+                                <input type="text" id="card-cvv" maxlength="3" placeholder="123"
+                                    class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    autocomplete="cc-csc" inputmode="numeric" />
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Mobile Banking QR Code Zone -->
+                <section id="payment-qr-section"
+                    class="flex-1 border border-gray-300 rounded-md p-6 shadow-sm flex flex-col items-center justify-center">
+                    <h3 class="text-lg font-semibold mb-4">Thanh toán qua Mobile Banking</h3>
+                    <p class="mb-4 text-center">Quét mã QR bên dưới để thanh toán nhanh chóng và an toàn.</p>
+                    <div class="w-48 h-48 bg-gray-100 flex items-center justify-center rounded-md shadow-inner">
+                        <div class="w-40 h-40 relative">
+                            <img src="https://travel.vanvatcorp.com/camping/temporary-payment-solution.jpg"
+                                alt="QR Code" />
+                            <div id="payment-qr-spinner"
+                                class="bg-black bg-opacity-60 absolute inset-0 flex items-center justify-center hidden">
+                                <div
+                                    class="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Loading & Success Container (hidden initially)
+                <section id="payment-loading-section" class="hidden absolute inset-0 bg-white bg-opacity-95 flex flex-col items-center justify-center z-90 rounded-lg p-6">
+                  <div id="spinner" class="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+                  <div id="success-tick" class="hidden text-green-600" style="font-size: 4rem;">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p id="loading-text" class="mt-4 text-gray-700 text-lg font-semibold select-none">Đang xử lý giao dịch...</p>
+                  <p id="success-text" class="mt-4 text-green-600 text-lg font-semibold select-none hidden">Giao dịch thành công!</p>
+                </section> -->
+
+            </main>
+            <footer class="px-6 py-4 border-t border-gray-300 flex justify-end space-x-4">
+                <button id="payment-cancel-btn"
+                    class="px-4 py-2 rounded-md border border-gray-400 hover:bg-gray-100 transition">Hủy</button>
+                <button id="payment-confirm-btn"
+                    class="bg-blue-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-blue-700 transition">Thanh
+                    toán</button>
+            </footer>
+        </div>
+    </div>
+
+
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner"
+        class="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 hidden z-90">
+        <div id="spinner" class="w-16 h-16 border-4 border-blue-600 border-t-transparent rounded-full animate-spin">
+        </div>
+
+        <!-- Success Tick -->
+        <div id="success-tick" class="hidden text-green-600" style="font-size: 4rem;">
+            <i class="fas fa-check-circle"></i>
+        </div>
+
+        <!-- Failure X -->
+        <div id="failure-x" class="hidden text-red-500" style="font-size: 4rem;">
+            <i class="fas fa-times-circle"></i>
+        </div>
+
+        <p class="mt-4 text-white text-lg font-semibold select-none" id="loading-spinner-text-display"></p>
+        <p class="mt-4 text-white text-lg font-semibold select-none hidden" id="loading-spinner-text-replacement"></p>
+
+
+        <div id="extra-details-popup"
+            class="mt-6 hidden bg-white rounded-lg shadow-lg max-w-md w-full max-h-64 overflow-y-auto p-4 z-10">
+            <div class="flex justify-between items-center mb-3">
+                <h4 class="font-bold text-gray-800">Chi tiết</h4>
+                <button id="close-details-popup" class="text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+            </div>
+            <div id="details-content" class="text-gray-700 text-sm leading-relaxed">
+                <!-- Dynamic content via JS, e.g., "Thẻ tín dụng không hợp lệ hoặc hết hạn." -->
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-blue-200 py-8 mt-20">
+        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">
+                © 2026 Tập đoàn Vạn Vật. All rights reserved.
+            </p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a aria-label="Privacy Policy" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/privacy-policy">
+                    Privacy Policy
+                </a>
+                <a aria-label="Terms of Service" class="hover:text-white"
+                    href="https://www.vanvatcorp.com/terms-of-service">
+                    Terms of Service
+                </a>
+                <a aria-label="Sitemap" class="hover:text-white" href="/van-vat-corporation/sitemap/">
+                    Sitemap
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://www.vanvatcorp.com/public-res/mobile-stuff.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-navbar.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/particles-title.js"></script>
+    <script src="https://travel.vanvatcorp.com/camping/loading-spinner.js"></script>
+    <script src="https://travel.vanvatcorp.com/camping/terms-card.js"></script>
+    <script src="https://travel.vanvatcorp.com/camping/popups.js"></script>
+    <script src="https://travel.vanvatcorp.com/camping/booking.js"></script>
+    <script src="https://travel.vanvatcorp.com/camping/payments.js"></script>
+    <script src="https://www.vanvatcorp.com/public-res/auth-ui.js"></script>
+</body>
+
+</html>
