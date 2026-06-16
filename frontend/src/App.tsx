@@ -16,6 +16,10 @@ import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 import TermsOfService from './pages/legal/TermsOfService';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
+import SopriseAbout from './pages/soprise/SopriseAbout';
+import VanVatBook from './pages/social/VanVatBook';
+import Services from './pages/services/Services';
+import Teams from './pages/teams/Teams';
 
 function App() {
   return (
@@ -37,6 +41,10 @@ function App() {
         <Route path="/van-vat-corporation/terms-of-service" element={<TermsOfService />} />
         <Route path="/van-vat-corporation/login" element={<Login />} />
         <Route path="/van-vat-corporation/register" element={<Register />} />
+        <Route path="/van-vat-corporation/soprise/about" element={<SopriseAbout />} />
+        <Route path="/van-vat-corporation/van-vat-book" element={<VanVatBook />} />
+        <Route path="/van-vat-corporation/services" element={<Services />} />
+        <Route path="/van-vat-corporation/teams" element={<Teams />} />
         <Route path="/van-vat-corporation/error/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
