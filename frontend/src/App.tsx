@@ -9,6 +9,9 @@ import ContactUsPage from './pages/ContactUsPage';
 import Soprise from './pages/soprise/Soprise';
 import SopriseSellerLogin from './pages/soprise/seller/SopriseSellerLogin';
 import SopriseSellerDashboard from './pages/soprise/seller/SopriseSellerDashboard';
+import Crypshop from './pages/crypshop/Crypshop';
+import Cryptocurrencies from './pages/cryptocurrencies/Cryptocurrencies';
+import NotFound from './pages/error/NotFound';
 
 function App() {
   return (
@@ -24,7 +27,10 @@ function App() {
         <Route path="/van-vat-corporation/soprise" element={<Soprise />} />
         <Route path="/van-vat-corporation/soprise/seller/login" element={<SopriseSellerLogin />} />
         <Route path="/van-vat-corporation/soprise/seller/dashboard" element={<SopriseSellerDashboard />} />
-        {/* Future routes can be added here */}
+        <Route path="/van-vat-corporation/crypshop" element={<Crypshop />} />
+        <Route path="/van-vat-corporation/cryptocurrencies" element={<Cryptocurrencies />} />
+        <Route path="/van-vat-corporation/error/404" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
