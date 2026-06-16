@@ -12,6 +12,10 @@ import SopriseSellerDashboard from './pages/soprise/seller/SopriseSellerDashboar
 import Crypshop from './pages/crypshop/Crypshop';
 import Cryptocurrencies from './pages/cryptocurrencies/Cryptocurrencies';
 import NotFound from './pages/error/NotFound';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+import TermsOfService from './pages/legal/TermsOfService';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
 
 function App() {
   return (
@@ -29,6 +33,10 @@ function App() {
         <Route path="/van-vat-corporation/soprise/seller/dashboard" element={<SopriseSellerDashboard />} />
         <Route path="/van-vat-corporation/crypshop" element={<Crypshop />} />
         <Route path="/van-vat-corporation/cryptocurrencies" element={<Cryptocurrencies />} />
+        <Route path="/van-vat-corporation/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/van-vat-corporation/terms-of-service" element={<TermsOfService />} />
+        <Route path="/van-vat-corporation/login" element={<Login />} />
+        <Route path="/van-vat-corporation/register" element={<Register />} />
         <Route path="/van-vat-corporation/error/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
