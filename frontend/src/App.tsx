@@ -20,6 +20,11 @@ import SopriseAbout from './pages/soprise/SopriseAbout';
 import VanVatBook from './pages/social/VanVatBook';
 import Services from './pages/services/Services';
 import Teams from './pages/teams/Teams';
+import VanVatDrive from './pages/drive/VanVatDrive';
+import VanVatAcademy from './pages/academy/VanVatAcademy';
+import VanVatCamping from './pages/camping/VanVatCamping';
+import VanVatHealthcare from './pages/healthcare/VanVatHealthcare';
+import VanVatMusic from './pages/music/VanVatMusic';
 
 function App() {
   return (
@@ -45,6 +50,11 @@ function App() {
         <Route path="/van-vat-corporation/van-vat-book" element={<VanVatBook />} />
         <Route path="/van-vat-corporation/services" element={<Services />} />
         <Route path="/van-vat-corporation/teams" element={<Teams />} />
+        <Route path="/van-vat-corporation/van-vat-drive" element={<VanVatDrive />} />
+        <Route path="/van-vat-corporation/van-vat-academy" element={<VanVatAcademy />} />
+        <Route path="/van-vat-corporation/van-vat-camping" element={<VanVatCamping />} />
+        <Route path="/van-vat-corporation/van-vat-healthcare" element={<VanVatHealthcare />} />
+        <Route path="/van-vat-corporation/van-vat-music" element={<VanVatMusic />} />
         <Route path="/van-vat-corporation/error/404" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
